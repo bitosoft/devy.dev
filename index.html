@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devy - A shell-based AI coding assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #FAF7F2;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .hero .highlight {
+            background: linear-gradient(to right, #4A90E2, #50E3C2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-dark {
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .footer-icon {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: #333;
+        }
+        .hero-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+        .get-started {
+            background-color: #F0F0F0;
+            border-radius: 10px;
+            padding: 2rem;
+        }
+        .code-block {
+            background-color: #282c34;
+            color: #abb2bf;
+            border-radius: 5px;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-terminal"></i> Devy</a>
+            <div class="d-flex">
+                <a href="#get-started" class="btn btn-dark">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero container my-5 ">
+        <h1>Shell-based <span class="highlight">AI</span><br>coding assistant</h1>
+        <p class="lead mt-3">Boost your coding productivity with AI-powered assistance right in your terminal</p>        
+    </header>
+
+    <section class="container mb-5">
+        <div class="hero-image-container">
+            <img src="demo.gif" alt="Devy App Screenshot" class="img-fluid rounded-3 shadow">
+        </div>
+    </section>
+
+    <section class="container mb-5">
+        <div class="row text-center">
+            <div class="col-md-3 col-6 mb-4">
+                <i class="fas fa-terminal feature-icon"></i>
+                <h5>Shell-based<br>Interface</h5>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <i class="fas fa-brain feature-icon"></i>
+                <h5>AI-powered<br>Assistance</h5>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <i class="fas fa-bolt feature-icon"></i>
+                <h5>Instant<br>Suggestions</h5>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <i class="fas fa-code feature-icon"></i>
+                <h5>Multi-language<br>Support</h5>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <i class="fas fa-history feature-icon"></i>
+                <h5>Context-aware<br>Responses</h5>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <i class="fas fa-cogs feature-icon"></i>
+                <h5>Customizable<br>Settings</h5>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <i class="fas fa-user-shield feature-icon"></i>
+                <h5>Privacy<br>Focused</h5>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <i class="fas fa-rocket feature-icon"></i>
+                <h5>Blazing Fast<br>Performance</h5>
+            </div>
+        </div>
+    </section>
+
+    <section id="get-started" class="container my-5 get-started">
+        <h2 class="text-center mb-4">Get Started Quickly</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p>Devy is easy to install and start using. Just follow these simple steps:</p>
+                <ol>
+                    <li>Install Devy using pip</li>
+                    <li>Run Devy in your terminal</li>
+                    <li>Start coding with AI assistance!</li>
+                </ol>
+                <a href="https://github.com" class="btn btn-dark mt-3">View Full Documentation</a>
+            </div>
+            <div class="col-md-6">
+                <div class="code-block">
+                    <pre><code>
+# Install Devy
+pip install devy
+
+# Run Devy
+devy
+
+# Start coding with AI assistance
+devy> What's the best way to implement a binary search in Python?
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container text-center py-4">
+        <div class="mb-3">
+            <i class="fab fa-python footer-icon"></i>
+            <span>Built with Python</span>
+        </div>
+        <p class="text-muted">Open-source and community-driven</p>
+        <div>
+            <a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-dark"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
