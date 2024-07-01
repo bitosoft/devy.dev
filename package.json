@@ -1,0 +1,13 @@
+{
+  "name": "devy-site",
+  "version": "1.0.0",
+  "description": "The static website for Devy. Devy is a powerful, shell-based AI coding assistant designed to boost your productivity and streamline your coding workflow. With Devy, you can leverage the power of AI to get instant code suggestions, explanations, and solutions right in your terminal.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Justice Ogbonna",
+  "devDependencies": {
+    "vhs": "^0.2.0"
+  }
+}

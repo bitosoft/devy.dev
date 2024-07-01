@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,71 +8,104 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --primary-blue: #0099FF;
+            --secondary-blue: #66CCFF;
+            --dark-blue: #0066CC;
+        }
+
         body {
             background-color: #FAF7F2;
         }
+
         .navbar-brand {
             font-weight: bold;
+            color: var(--primary-blue) !important;
         }
+
         .hero h1 {
             font-size: 4rem;
             font-weight: bold;
         }
+
         .hero .highlight {
-            background: linear-gradient(to right, #4A90E2, #50E3C2);
+            background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .btn-dark {
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
             border-radius: 20px;
             padding: 10px 20px;
         }
+
+        .btn-primary:hover {
+            background-color: var(--dark-blue);
+            border-color: var(--dark-blue);
+        }
+
         .feature-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
+            color: var(--primary-blue);
         }
+
         .footer-icon {
             font-size: 1.5rem;
             margin: 0 10px;
-            color: #333;
+            color: var(--primary-blue);
         }
+
         .hero-image-container {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 5rem;
         }
+
         .get-started {
             background-color: #F0F0F0;
             border-radius: 10px;
             padding: 2rem;
         }
+
         .code-block {
             background-color: #282c34;
             color: #abb2bf;
             border-radius: 5px;
             padding: 1rem;
         }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-terminal"></i> Devy</a>
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="Devy Logo" class="logo">
+            </a>
             <div class="d-flex">
-                <a href="#get-started" class="btn btn-dark">Get Started</a>
+                <a href="#get-started" class="btn btn-primary">Get Started</a>
             </div>
         </div>
     </nav>
 
     <header class="hero container my-5 ">
         <h1>Shell-based <span class="highlight">AI</span><br>coding assistant</h1>
-        <p class="lead mt-3">Boost your coding productivity with AI-powered assistance right in your terminal</p>        
+        <p class="lead mt-3">Boost your coding productivity with AI-powered assistance right in your terminal</p>
     </header>
 
     <section class="container mb-5">
         <div class="hero-image-container">
-            <img src="demo.gif" alt="Devy App Screenshot" class="img-fluid rounded-3 shadow">
+            <img src="devy.gif" alt="Devy App Screenshot" class="img-fluid rounded-3 shadow">
         </div>
     </section>
 
@@ -122,7 +156,7 @@
                     <li>Run Devy in your terminal</li>
                     <li>Start coding with AI assistance!</li>
                 </ol>
-                <a href="https://github.com" class="btn btn-dark mt-3">View Full Documentation</a>
+                <a href="https://github.com" class="btn btn-primary mt-3">View Full Documentation</a>
             </div>
             <div class="col-md-6">
                 <div class="code-block">
@@ -143,16 +177,16 @@ devy> What's the best way to implement a binary search in Python?
 
     <footer class="container text-center py-4">
         <div class="mb-3">
-            <i class="fab fa-python footer-icon"></i>
-            <span>Built with Python</span>
+            <img src="assets/logo.png" alt="Devy Logo" class="logo">
         </div>
         <p class="text-muted">Open-source and community-driven</p>
         <div>
-            <a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-dark"><i class="fab fa-github"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-twitter footer-icon"></i></a>
+            <a href="#" class="text-dark"><i class="fab fa-github footer-icon"></i></a>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
