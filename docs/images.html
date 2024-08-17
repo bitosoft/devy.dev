@@ -1,0 +1,1311 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="../assets/css/libs.bundle.css" />
+    
+    <!-- 
+      Theme Sans Serif CSS
+      Remove the "disabled" attribute if you want to enable Sans Serif for headings.
+    -->
+    <link rel="stylesheet" href="../assets/css/theme-sans-serif.bundle.css" id="themeSansSerif" disabled />
+    
+    <!--
+      Demo JS
+      Remove the code below on a production website.
+    -->
+    <script src="../assets/js/demo.bundle.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>Goodkit</title>
+  </head>
+  <body class="docs-body">
+
+    <!-- MODALS -->
+    <!-- Sign in -->
+    <div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" aria-labelledby="modalSignInHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSignInHeading">
+              Sign In
+            </h1>
+    
+            <!-- Text -->
+            <p>
+              Don’t have an account? <a href="sign-up.html">Sign up</a>
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="signInEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="signInEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="signInPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signInPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="signInPasswordCaption" data-toggle="password" href="#signInPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign in
+              </button>
+    
+            </form>
+    
+            <!-- Link -->
+            <a class="fs-sm" href="password-reset.html">
+              Forgot your password?
+            </a>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sign up -->
+    <div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="modalSignUpHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSignUpHeading">
+              Sign Up
+            </h1>
+    
+            <!-- Text -->
+            <p>
+              Create beautiful marketing websites in hours instead of weeks.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="signUpEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="signUpEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="signUpPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signUpPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="signUpPasswordCaption" data-toggle="password" href="#signUpPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign up
+              </button>
+    
+            </form>
+    
+            <!-- Link -->
+            <small class="text-muted">
+              Already have an account? <a href="sign-in.html">Login</a>
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Password reset -->
+    <div class="modal fade" id="modalPasswordReset" tabindex="-1" role="dialog" aria-labelledby="modalPasswordResetHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="display-4 mb-4" id="modalPasswordResetHeading">
+              Password reset
+            </h1>
+    
+            <!-- Text -->
+            <p class="text-muted">
+              Enter your email to reset your password.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="passwordResetEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="passwordResetEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Reset password
+              </button>
+    
+            </form>
+    
+            <!-- Text -->
+            <small class="text-muted">
+              Remember your password? <a href="sign-in.html">Log in</a>.
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sale -->
+    <div class="modal fade" id="modalSale" tabindex="-1" role="dialog" aria-labelledby="modalSaleHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Image -->
+            <img class="img-fluid mb-4 mt-n11" src="../assets/img/illustrations/illustration-4.png" alt="...">
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSaleHeading">
+              30 Day Free Trial
+            </h1>
+    
+            <!-- Text -->
+            <p class="text-muted">
+              We’ll help you get started by getting you guides and all the basic informaiton.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="saleModalEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="saleModalEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Start Trial
+              </button>
+    
+            </form>
+    
+            <!-- Text -->
+            <small class="text-muted">
+              <a class="text-reset" data-bs-dismiss="modal" href="#!">No thanks, I hate free stuff.</a>
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white border-bottom">
+      <div class="container-lg">
+    
+        <!-- Brand -->
+        <a class="navbar-brand d-lg-none" href="../index.html">Goodkit</a>
+    
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-end w-100">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="landingsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Landings
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-xl dropdown-menu-flush" aria-labelledby="landingsDropdown">
+                  <div class="row align-items-center gx-0">
+                    <div class="col-md-6 order-1 dropdown-menu-col rounded-top-start-0 bg-gray-900 pt-4 py-lg-5">
+                      <div class="dropdown-menu-body">
+                
+                        <!-- Heading -->
+                        <h6 class="dropdown-header text-uppercase text-primary-light d-none d-lg-block">
+                          Services
+                        </h6>
+                
+                        <!-- Links -->
+                        <a class="d-flex text-decoration-none" href="../coworking.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.133 2.036c6.945 3.876 9.445 8.206 7.5 12.99-4.97-.79-7.47-5.12-7.5-12.99z" fill="#335EEA" opacity=".3"/><path d="M18.742 2.036c-6.945 3.876-9.445 8.206-7.5 12.99 4.97-.79 7.47-5.12 7.5-12.99z" fill="#335EEA" opacity=".3"/><path d="M12 1c-4.076 6.83-4.076 11.83 0 15 3.91-3.17 3.91-8.17 0-15z" fill="#335EEA" opacity=".3"/><path d="M6.344 13h11.312a1 1 0 01.958 1.287l-2.186 7.288A2 2 0 0114.512 23H9.488a2 2 0 01-1.916-1.425l-2.186-7.288A1 1 0 016.344 13z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Coworking
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              Minimal, image-focused content
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="../hiring-agency.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M12 11a4 4 0 110-8 4 4 0 010 8z" fill="#335EEA" opacity=".3"/><path d="M3 20.2c.388-4.773 4.262-7.2 8.983-7.2 4.788 0 8.722 2.293 9.015 7.2.012.195 0 .8-.751.8H3.727c-.25 0-.747-.54-.726-.8z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Hiring Platform
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              A hiring service platform
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="../course.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M6 3h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2zm-.5 2a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm0 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1z" fill="#335EEA" opacity=".3"/><path d="M11.352 14.572l2.605-1.78a.5.5 0 00.001-.825l-2.605-1.792a.5.5 0 00-.783.412v3.572a.5.5 0 00.782.413z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Course
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              React programming course
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="../software-automation.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 7a1 1 0 110-2h8a4 4 0 110 8H8a2 2 0 100 4h9a1 1 0 010 2H8a4 4 0 110-8h8a2 2 0 100-4H8z" fill="#335EEA" opacity=".3"/><path d="M9.707 8.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 1.414L7.414 6l2.293 2.293zM14.293 20.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 00-1.414 1.414L16.586 18l-2.293 2.293z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Automated Integrations
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              Digital integration software
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                
+                      </div>
+                    </div>
+                    <div class="col-md-6 order-0 dropdown-menu-col">
+                      <div class="dropdown-menu-body">
+                
+                        <!-- Heading -->
+                        <h6 class="dropdown-header text-uppercase d-none d-lg-block">
+                          Software
+                        </h6>
+                
+                        <!-- Links -->
+                        <a class="d-flex text-decoration-none text-reset" href="../robo-advisor.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" fill="#335EEA" opacity=".3"/><path d="M18.5 11h-13A1.5 1.5 0 004 12.5v.5h4.586a1 1 0 01.707.293l1 1a2.414 2.414 0 003.414 0l1-1a1 1 0 01.707-.293H20v-.5a1.5 1.5 0 00-1.5-1.5zM5.5 6A1.5 1.5 0 004 7.5V8h16v-.5A1.5 1.5 0 0018.5 6h-13z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Robo Advisor
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              A simple and professional layout
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="../analytics-saas.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4.002 12.2L13 14V4.062A8.001 8.001 0 0112 20a8 8 0 01-7.998-7.8z" fill="#335EEA" opacity=".3"/><path d="M3.06 10.012A8.001 8.001 0 0111 3v8.6l-7.94-1.588z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Analytics SaaS
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              UI-heavy product example
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="../e-commerce-platform.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M18.145 11.844l-.698 4.185a1 1 0 01-1.165.82L4.913 14.78a1 1 0 01-.783-.709L2.306 7.685a1 1 0 01.961-1.275h13.726l.613-2.627a1.18 1.18 0 011.15-.912h2.064a1.18 1.18 0 110 2.36h-1.128l-1.547 6.613z" fill="#335EEA" opacity=".3"/><path d="M6.5 21a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm9 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              E-Commerce Platform
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              SaaS for sales of goods
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="../mobile-chat-app.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M7.139 4v15h9.722V4H7.14zm.694-3h8.334c1.406 0 2.083.981 2.083 2.5v17c0 1.519-.677 2.5-2.083 2.5H7.833c-1.406 0-2.083-.981-2.083-2.5v-17c0-1.519.677-2.5 2.083-2.5z" fill="#335EEA"/><path fill="#335EEA" opacity=".3" d="M7 4v15h10V4z"/><circle fill="#335EEA" cx="12" cy="21" r="1"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Mobile Apps
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              Minimal layout for mobile apps
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                
+                      </div>
+                      <div class="dropdown-menu-footer align-items-center d-none d-lg-flex">
+                
+                        <!-- Text -->
+                        <span>Sans Serif Headers</span>
+                
+                        <!-- Switch -->
+                        <form class="ms-auto me-n3">
+                          <div class="form-check form-switch mb-0">
+                            <input class="form-check-input family-switch" type="checkbox" id="familySwitch" onchange="switchFamily(this.checked)">
+                            <label class="form-check-label" for="familySwitch"></label>
+                          </div>
+                        </form>
+                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Pages
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="pagesDropdown">
+                  <div class="row gx-0">
+                    <div class="col">
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Company
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="../about-orig.html">
+                        About
+                      </a>
+                      <a class="dropdown-item" href="../pricing-orig.html">
+                        Pricing
+                      </a>
+                      <a class="dropdown-item" href="../pricing-feature-list.html">
+                        Pricing Table
+                      </a>
+                      <a class="dropdown-item" href="../career-listing.html">
+                        Careers
+                      </a>
+                      <a class="dropdown-item" href="../career-benefits.html">
+                        Job benefits
+                      </a>
+                      <a class="dropdown-item" href="../contact.html">
+                        Contact
+                      </a>
+                      <a class="dropdown-item" href="../faq.html">
+                        FAQ
+                      </a><a class="dropdown-item" href="../terms.html">
+                        Terms
+                      </a>
+                
+                    </div>
+                    <div class="col">
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Blog
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="../blog-listing.html">
+                        Listing
+                      </a>
+                      <a class="dropdown-item" href="../blog-post.html">
+                        Article
+                      </a>
+                      <a class="dropdown-item" href="../blog-post-cover.html">
+                        Cover Article
+                      </a>
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Help Center
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="../help-center.html">
+                        Overview
+                      </a>
+                      <a class="dropdown-item" href="../help-center-article.html">
+                        Article
+                      </a>
+                
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+    
+          <!-- Brand -->
+          <a class="navbar-brand d-none d-lg-block px-lg-6" href="../index-orig.html">Goodkit</a>
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-start w-100">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="accountDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Account
+              </a>
+              <div class="dropdown-positioner">
+                <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="signInDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Sign In
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="signInDropright">
+                        <a class="dropdown-item" href="../sign-in-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="../sign-in.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignIn">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="signUpDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Sign Up
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="signUpDropright">
+                        <a class="dropdown-item" href="../sign-up-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="../sign-up.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignUp">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="passwordResetDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Password Reset
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="passwordResetDropright">
+                        <a class="dropdown-item" href="../password-reset-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="../password-reset.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalPasswordReset">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="errorsDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Errors
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="errorsDropright">
+                        <a class="dropdown-item" href="../error-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="../error.html">
+                          Simple
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="docsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Docs
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="docsDropdown">
+                  <a class="d-flex align-items-center text-reset text-decoration-none" href="../docs/index.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 3v.5A1.5 1.5 0 009.5 5h5A1.5 1.5 0 0016 3.5V3h2a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h2z" fill="#335EEA" opacity=".3"/><path d="M11 2a1 1 0 012 0h1.5a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-5a.5.5 0 01-.5-.5v-1a.5.5 0 01.5-.5H11z" fill="#335EEA"/><rect fill="#335EEA" opacity=".3" x="7" y="10" width="5" height="2" rx="1"/><rect fill="#335EEA" opacity=".3" x="7" y="14" width="9" height="2" rx="1"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Documentation
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>Compiling and building.</span>
+                
+                    </div>
+                
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="../docs/alerts.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.5 4h4A1.5 1.5 0 0111 5.5v1A1.5 1.5 0 019.5 8h-4A1.5 1.5 0 014 6.5v-1A1.5 1.5 0 015.5 4zm9 12h4a1.5 1.5 0 011.5 1.5v1a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-1a1.5 1.5 0 011.5-1.5z" fill="#335EEA"/><path d="M5.5 10h4a1.5 1.5 0 011.5 1.5v7A1.5 1.5 0 019.5 20h-4A1.5 1.5 0 014 18.5v-7A1.5 1.5 0 015.5 10zm9-6h4A1.5 1.5 0 0120 5.5v7a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-7A1.5 1.5 0 0114.5 4z" fill="#335EEA" opacity=".3"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Components
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>Full list of pieces in the theme</span>
+                
+                    </div>
+                
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="../docs/changelog.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.857 2h7.88a1.5 1.5 0 01.968.355l4.764 4.029A1.5 1.5 0 0120 7.529v12.554c0 1.79-.02 1.917-1.857 1.917H5.857C4.02 22 4 21.874 4 20.083V3.917C4 2.127 4.02 2 5.857 2z" fill="#335EEA" opacity=".3"/><rect fill="#335EEA" x="6" y="11" width="9" height="2" rx="1"/><rect fill="#335EEA" x="6" y="15" width="5" height="2" rx="1"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Changelog
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>This is the new version</span>
+                
+                    </div>
+                
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item d-lg-none">
+              <div class="nav-link">
+    
+                <!-- Text -->
+                <span>
+                  Sans Serif Headers
+                </span>
+    
+                <!-- Switch -->
+                <form class="ms-auto me-n3">
+                  <div class="form-check form-switch mb-0">
+                    <input class="form-check-input family-switch" type="checkbox" id="familySwitchMobile" onchange="switchFamily(this.checked)">
+                    <label class="form-check-label" for="familySwitchMobile"></label>
+                  </div>
+                </form>
+    
+              </div>
+            </li>
+          </ul>
+    
+        </div>
+    
+      </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <nav class="navbar-dark docs-breadcrumb">
+      <div class="container-lg">
+        <div class="row align-items-center">
+          <div class="col">
+    
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb breadcrumb-dark px-0 mb-0">
+              <li class="breadcrumb-item">
+                <a href="index.html">Docs</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Images
+              </li>
+            </ol>
+    
+          </div>
+          <div class="col-auto">
+    
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docsSidenav" aria-controls="docsSidenav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <section>
+      <div class="container-fluid">
+        <div class="row align-items-start">
+          <div class="col-lg-3 col-xl-2 docs-sidenav docs-sidenav-start">
+
+            <!-- Collapse -->
+            <div class="collapse d-lg-block" id="docsSidenav">
+              <div class="border-bottom border-bottom-lg-0 py-6 py-md-9 px-lg-8">
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Basics
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-6">
+                  <li class="mb-2">
+                    <a class="text-reset" href="index.html">Setup</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="changelog.html">Changelog</a>
+                  </li>
+                </ul>
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Design
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-6">
+                  <li class="mb-2">
+                    <a class="text-reset" href="figma.html">Figma</a>
+                  </li>
+                </ul>
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Components
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-6">
+                  <li class="mb-2">
+                    <a class="text-reset" href="accordion.html">Accordion</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="alerts.html">Alerts</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="avatars.html">Avatars</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="badges.html">Badges</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="breadcrumb.html">Breadcrumb</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="buttons.html">Buttons</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="button-group.html">Button group</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="cards.html">Cards</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="decorations.html">Decorations</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="dropdowns.html">Dropdowns</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="forms.html">Forms</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="icons.html">Icons</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="images.html">Images</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="list-group.html">List group</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="modal.html">Modal</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="navbar.html">Navbar</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="navs-tabs.html">Navs & tabs</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="offcanvas.html">Offcanvas</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="pagination.html">Pagination</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="placeholders.html">Placeholders</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="popovers.html">Popovers</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="progress.html">Progress</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="shapes.html">Shapes</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="spinners.html">Spinners</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="tables.html">Tables</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="timeline.html">Timeline</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="toasts.html">Toasts</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="tooltips.html">Tooltips</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="typography.html">Typography</a>
+                  </li>
+                </ul>
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Plugins
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-6">
+                  <li class="mb-2">
+                    <a class="text-reset" href="aos.html">AOS</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="bigpicture.html">BigPicture</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="countup.html">Count up</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="flickity.html">Flickity</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="isotope.html">Isotope</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="jarallax.html">Jarallax</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="map.html">Map</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="smooth-scroll.html">Smooth scroll</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="typed.html">Typed</a>
+                  </li>
+                </ul>
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Utilities
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-0">
+                  <li class="mb-2">
+                    <a class="text-reset" href="background.html">Background</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="border.html">Border</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="lift.html">Lift</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="position.html">Position</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="sizing.html">Sizing</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="type.html">Type</a>
+                  </li>
+                </ul>
+            
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-9 col-xl-8 offset-lg-3 offset-xl-2 py-6 py-md-9 px-lg-10">
+
+            <!-- Heading -->
+            <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h1 class="font-sans-serif mb-0">
+                  Images
+                </h1>
+            
+            
+            </div>
+            
+            <!-- Text -->
+            
+              <!-- Link -->
+              <p>
+                <a href="https://getbootstrap.com/docs/5.2/content/images/" target="_blank">
+                  <i class="fe fe-external-link pe-1"></i> Bootstrap Documentation
+                </a>
+              </p>
+            
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+              <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h2 class="font-sans-serif mb-0" id="imageGrid" >
+                  Image grid
+                </h2>
+            
+                  <!-- Badge -->
+                  <div class="badge bg-primary-soft h6 font-sans-serif mb-0 ms-3">Goodkit Exclusive</div>
+            
+              </div>
+            
+              <!-- Text -->
+              <p>
+                Responsive image grid layouts.
+              </p>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Image grid -->
+                <div class="img-grid img-grid-1 w-xl-50">
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid rounded-top-start-3 rounded-bottom-end-3 shadow-lg" data-jarallax-element="-30" src="../assets/img/avatars/avatar-jumbo-1.jpg" alt="...">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid rounded-top-start rounded-bottom-end shadow-lg" data-jarallax-element="-85" src="../assets/img/avatars/avatar-2.jpg" alt="...">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid rounded-top-start rounded-bottom-end shadow-lg" data-jarallax-element="-45" src="../assets/img/avatars/avatar-8.jpg" alt="...">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid rounded-top-start rounded-bottom-end shadow-lg" data-jarallax-element="-50" src="../assets/img/avatars/avatar-10.jpg" alt="...">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid rounded-top-start rounded-bottom-end shadow-lg" data-jarallax-element="-20" src="../assets/img/avatars/avatar-6.jpg" alt="...">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid rounded-top-start rounded-bottom-end shadow-lg" data-jarallax-element="-15" src="../assets/img/avatars/avatar-4.jpg" alt="...">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid rounded-top-start rounded-bottom-end shadow-lg" data-jarallax-element="-10" src="../assets/img/avatars/avatar-3.jpg" alt="...">
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="card-footer">
+                <code class="html highlight">
+                  &lt;div&nbsp;class=&quot;img-grid&nbsp;img-grid-1&quot;&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;rounded-top-start-3&nbsp;rounded-top-end-3&nbsp;shadow-lg&quot;&nbsp;data-jarallax-element=&quot;-30&quot;&nbsp;src=&quot;../assets/img/avatars/avatar-jumbo-1.jpg&quot;&nbsp;alt=&quot;...&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;rounded-top-start&nbsp;rounded-bottom-end&nbsp;shadow-lg&quot;&nbsp;data-jarallax-element=&quot;-85&quot;&nbsp;src=&quot;../assets/img/avatars/avatar-2.jpg&quot;&nbsp;alt=&quot;...&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;rounded-top-start&nbsp;rounded-bottom-end&nbsp;shadow-lg&quot;&nbsp;data-jarallax-element=&quot;-45&quot;&nbsp;src=&quot;../assets/img/avatars/avatar-8.jpg&quot;&nbsp;alt=&quot;...&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;rounded-top-start&nbsp;rounded-bottom-end&nbsp;shadow-lg&quot;&nbsp;data-jarallax-element=&quot;-50&quot;&nbsp;src=&quot;../assets/img/avatars/avatar-10.jpg&quot;&nbsp;alt=&quot;...&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;rounded-top-start&nbsp;rounded-bottom-end&nbsp;shadow-lg&quot;&nbsp;data-jarallax-element=&quot;-20&quot;&nbsp;src=&quot;../assets/img/avatars/avatar-6.jpg&quot;&nbsp;alt=&quot;...&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;rounded-top-start&nbsp;rounded-bottom-end&nbsp;shadow-lg&quot;&nbsp;data-jarallax-element=&quot;-15&quot;&nbsp;src=&quot;../assets/img/avatars/avatar-4.jpg&quot;&nbsp;alt=&quot;...&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;rounded-top-start&nbsp;rounded-bottom-end&nbsp;shadow-lg&quot;&nbsp;data-jarallax-element=&quot;-10&quot;&nbsp;src=&quot;../assets/img/avatars/avatar-3.jpg&quot;&nbsp;alt=&quot;...&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&lt;/div&gt;<br />
+                </code>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+            
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Image grid -->
+                <div class="img-grid img-grid-2">
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid border border-4 border-md-7 border-white shadow" src="../assets/img/coworking/office-1.jpg" alt="..." data-jarallax-element="-75">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid border border-4 border-md-7 border-white shadow" src="../assets/img/coworking/office-2.jpg" alt="..." data-jarallax-element="-45">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid border border-4 border-md-7 border-white shadow" src="../assets/img/coworking/office-3.jpg" alt="..." data-jarallax-element="-25">
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="card-footer">
+                <code class="html highlight">
+                  &lt;div&nbsp;class=&quot;img-grid&nbsp;img-grid-2&quot;&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;border&nbsp;border-4&nbsp;border-md-7&nbsp;border-white&nbsp;shadow&quot;&nbsp;src=&quot;../assets/img/coworking/office-1.jpg&quot;&nbsp;alt=&quot;...&quot;&nbsp;data-jarallax-element=&quot;-75&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;border&nbsp;border-4&nbsp;border-md-7&nbsp;border-white&nbsp;shadow&quot;&nbsp;src=&quot;../assets/img/coworking/office-2.jpg&quot;&nbsp;alt=&quot;...&quot;&nbsp;data-jarallax-element=&quot;-45&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;border&nbsp;border-4&nbsp;border-md-7&nbsp;border-white&nbsp;shadow&quot;&nbsp;src=&quot;../assets/img/coworking/office-3.jpg&quot;&nbsp;alt=&quot;...&quot;&nbsp;data-jarallax-element=&quot;-25&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&lt;/div&gt;
+                </code>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+            
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Image grid -->
+                <div class="img-grid img-grid-3">
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid border border-4 border-md-7 border-white shadow" src="../assets/img/course/office-2.jpg" alt="..." data-jarallax-element="-55">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid border border-4 border-md-7 border-white shadow" src="../assets/img/course/office-1.jpg" alt="..." data-jarallax-element="-105">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid border border-4 border-md-7 border-white shadow" src="../assets/img/course/office-3.jpg" alt="..." data-jarallax-element="-35">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Card -->
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="position-static flickity-buttons-adjacent flickity-buttons-bottom-end" data-flickity='{"imagesLoaded": true, "pageDots": false, "wrapAround": true}'>
+                          <div class="w-100">
+                            <blockquote class="text-center pb-6 pb-md-0 mb-0">
+
+                              <!-- Logo -->
+                              <div class="img-fluid svg-shim text-pinterest text-center mx-auto mb-3 mb-md-5" style="max-width: 132px;">
+                                <svg viewBox="0 0 119 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M27.7945 11.3191C29.0692 11.3191 30.2921 10.2476 30.5048 8.92569C30.7562 7.63902 29.8922 6.56752 28.6185 6.56752C27.3444 6.56752 26.1213 7.63902 25.9054 8.92569C25.6568 10.2476 26.4853 11.3191 27.7945 11.3191ZM114.293 15.1435H117.145C117.536 15.1435 117.764 14.9833 117.852 14.6151C117.989 14.0449 118.129 13.4756 118.273 12.9073C118.358 12.5759 118.167 12.3247 117.803 12.3247H114.989C115.192 11.5105 115.981 8.86711 115.981 7.14376C115.981 3.70203 113.087 0.774522 108.98 0.774522C104.342 0.774522 101.324 3.91741 101.324 8.33988C101.324 9.62981 101.801 11.1334 102.392 12.0661C102.137 12.0514 101.883 12.0441 101.628 12.0443C98.1038 12.0443 95.884 13.9746 95.884 16.7834C95.884 19.4195 97.9421 20.4439 99.8798 21.1256C101.601 21.7314 103.186 22.0132 103.186 23.3709C103.186 24.2863 102.314 24.8235 100.607 24.8235C98.582 24.8235 97.469 23.8606 97.1861 23.4953C97.378 23.3431 97.6634 22.9807 97.6634 22.3769C97.6634 21.5323 97.0758 20.8429 95.9845 20.8429C95.0611 20.8429 94.2805 21.6033 94.0845 22.6036C92.6015 23.8286 90.9829 24.6225 88.6872 24.6225C86.4268 24.6225 85.2536 23.4354 85.2536 20.9093C85.7835 21.0722 87.1634 21.2679 88.0754 21.2679C91.9028 21.2679 94.5113 19.512 94.5113 15.9956C94.5113 14.1047 92.8673 12.1189 89.6149 12.1189H89.6075C85.3298 12.1189 82.9337 14.855 81.8875 17.8644C81.5943 17.7931 81.3007 17.7239 81.0066 17.6569C81.2405 16.9894 81.4085 16.2158 81.4085 15.3581C81.4085 13.8718 80.4969 12.1189 78.0576 12.1189C76.3584 12.1189 74.7466 13.2427 73.6295 14.927C73.9075 13.8283 74.0917 13.0966 74.1037 13.0476C74.1765 12.7602 74.058 12.4402 73.6142 12.4402H71.1105C70.7537 12.4402 70.5019 12.5675 70.4005 12.9777C70.3324 13.2513 69.4722 16.6593 68.6347 19.9778C68.1073 22.0469 65.3786 24.6225 61.9489 24.6225C59.6882 24.6225 58.5159 23.3573 58.5159 20.8302C59.1074 21.068 60.4255 21.2677 61.3371 21.2677C65.3202 21.2677 67.773 19.5118 67.773 15.9954C67.773 14.1045 66.1292 12.1187 62.8764 12.1187H62.8694C58.0525 12.1187 55.1018 15.8964 54.6018 20.1797C54.3938 21.9603 52.9055 24.4054 51.292 24.4054C50.5059 24.4054 50.0676 23.9069 50.0676 23.0605C50.0676 22.3296 50.5772 20.5423 51.1358 18.3025C51.3229 17.5532 51.6069 16.4101 51.9218 15.1435H54.5406C54.9304 15.1435 55.159 14.9833 55.2476 14.6151C55.3729 14.085 55.6029 13.1602 55.6681 12.9073C55.7525 12.5759 55.5625 12.3247 55.1975 12.3247H52.6224C52.6224 12.3247 53.808 7.54827 53.8362 7.42556C53.9503 6.93987 53.5478 6.6596 53.1267 6.74901C53.1267 6.74901 51.1363 7.14242 50.7672 7.22014C50.3961 7.29595 50.1081 7.50175 49.9741 8.04181L48.9199 12.3247H46.8522C46.4624 12.3247 46.2331 12.4853 46.1457 12.8527C46.0084 13.4228 45.8682 13.9922 45.7252 14.5609C45.6397 14.8923 45.8306 15.1435 46.1952 15.1435H48.223C48.2086 15.2021 47.4905 17.96 46.9098 20.4298C46.6364 21.6175 45.7208 24.3966 44.2215 24.3966C43.3258 24.3966 42.9474 23.9404 42.9474 22.9619C42.9474 21.421 44.4496 17.5637 44.4496 15.8133C44.4496 13.4753 43.2073 12.1206 40.6624 12.1206C39.0582 12.1206 37.3948 13.1665 36.6899 14.0844C36.6899 14.0844 36.9038 13.333 36.9769 13.0442C37.0551 12.739 36.893 12.4392 36.4961 12.4392H34.0078C33.4783 12.4392 33.3319 12.725 33.2542 13.0394C33.2231 13.1655 32.3265 16.7206 31.4657 20.1334C30.877 22.4703 29.4465 24.423 27.917 24.423C27.1305 24.423 26.7803 23.9247 26.7803 23.0783C26.7803 22.347 27.2483 20.5425 27.8066 18.3028C28.486 15.5762 29.0853 13.3307 29.1494 13.0685C29.233 12.7323 29.0842 12.4394 28.6551 12.4394H26.1518C25.6983 12.4394 25.5364 12.6797 25.4408 13.0135C25.4408 13.0135 24.7363 15.7065 23.9902 18.7045C23.4484 20.8802 22.85 23.0963 22.85 24.1376C22.85 25.9957 23.6762 27.3963 25.9478 27.3963C27.701 27.3963 29.0885 26.4986 30.148 25.3548C29.9923 25.9739 29.893 26.3658 29.8829 26.4058C29.7915 26.7597 29.9023 27.0726 30.3152 27.0726H32.8769C33.3228 27.0726 33.4942 26.8915 33.5873 26.4988C33.677 26.1242 35.5902 18.5257 35.5902 18.5257C36.0959 16.4845 37.3467 15.133 39.1063 15.133C39.9407 15.133 40.6629 15.6908 40.5793 16.775C40.4864 17.9676 39.062 22.2523 39.062 24.1328C39.062 25.5562 39.5847 27.3976 42.2383 27.3976C44.0471 27.3976 45.3786 26.522 46.3469 25.3919C46.7014 26.5913 47.6407 27.3976 49.3636 27.3976C52.2269 27.3976 53.9528 25.6829 54.9668 23.9605C55.8082 25.9616 57.7789 27.3967 60.6688 27.3967C63.6142 27.3967 65.8935 26.1429 67.5089 24.4385L67.0051 26.4337C66.9136 26.7931 67.0685 27.0756 67.4863 27.0756H70.0216C70.3688 27.0756 70.6158 26.8974 70.7059 26.5292C70.7505 26.3485 71.1168 24.919 71.6342 22.8879C72.6237 19.001 74.214 14.9685 76.6037 14.9685C77.4465 14.9685 77.7921 15.4443 77.7921 16.1937C77.7921 16.5471 77.6905 16.8525 77.6027 17.0162C76.4445 16.7838 75.5126 17.3611 75.5126 18.6099C75.5126 19.4235 76.3605 20.1631 77.5049 20.1631C78.3793 20.1631 79.1023 19.9466 79.6788 19.5547C80.2463 19.6729 80.8126 19.7972 81.3774 19.9276C81.2906 20.4912 81.2461 21.0607 81.2445 21.631C81.2445 24.7508 83.4507 27.3965 87.4051 27.3965C90.5039 27.3965 92.6305 26.2519 94.4662 24.7845C95.3485 26.2423 97.5765 27.4204 100.5 27.4204C104.506 27.4204 106.778 25.317 106.778 22.5368C106.778 20.0203 104.732 19.0941 102.622 18.3229C100.907 17.6973 99.4765 17.3571 99.4765 16.1332C99.4765 15.1301 100.259 14.6712 101.599 14.6712C102.469 14.6712 103.122 14.8604 103.47 14.9591C103.816 15.8331 104.532 16.8008 105.753 16.8008C106.787 16.8008 107.251 15.9753 107.251 15.2151C107.251 13.051 103.681 12.8242 103.681 8.18309C103.681 5.29712 105.298 2.91636 108.648 2.91636C110.975 2.91636 112.495 4.40654 112.495 6.81161C112.495 8.79455 111.304 12.3245 111.304 12.3245H109.279C108.89 12.3245 108.661 12.4851 108.573 12.8525C108.436 13.4228 108.295 13.9922 108.151 14.5608C108.066 14.8921 108.257 15.1433 108.622 15.1433H110.599C110.599 15.1433 108.555 22.7531 108.555 24.137C108.555 25.9951 109.592 27.3953 111.865 27.3953C115.079 27.3953 117.088 25.2862 117.961 22.2193C118.029 21.9821 117.896 21.789 117.658 21.789H116.431C116.187 21.789 116.045 21.9299 115.983 22.1715C115.706 23.2602 115.019 24.4056 113.668 24.4056C112.881 24.4056 112.443 23.9071 112.443 23.0609C112.443 22.3298 112.923 20.6181 113.512 18.3028C113.793 17.2003 114.293 15.1435 114.293 15.1435ZM88.949 15.0135C90.0857 15.0135 90.6257 15.777 90.6257 16.6869C90.6257 18.2259 89.4435 19.1643 87.5946 19.1643C86.9329 19.1643 86.0078 19.006 85.4616 18.8222C85.6912 17.4069 86.7057 15.0135 88.949 15.0135ZM62.211 15.0135C63.4551 15.0135 63.887 15.777 63.887 16.6869C63.887 18.2259 62.7054 19.1643 60.8567 19.1643C60.1948 19.1643 59.2697 19.006 58.7237 18.8222C58.952 17.4069 59.8516 15.0135 62.211 15.0135ZM13.0223 0.741211C4.91171 0.741211 0.822266 6.6127 0.822266 11.509C0.822266 14.4736 1.93388 17.1111 4.31808 18.0938C4.70903 18.2554 5.05922 18.0993 5.1726 17.6623C5.25147 17.3598 5.43803 16.5969 5.52127 16.2789C5.63579 15.8467 5.59123 15.695 5.27574 15.3183C4.58826 14.4995 4.14896 13.4395 4.14896 11.938C4.14896 7.58197 7.37668 3.68232 12.5538 3.68232C17.1383 3.68232 19.6568 6.51066 19.6568 10.288C19.6568 15.258 17.4787 19.4526 14.2447 19.4526C12.4589 19.4526 11.122 17.9613 11.5505 16.1323C12.0635 13.9487 13.0574 11.5921 13.0574 10.0159C13.0574 8.60503 12.3074 7.42824 10.7551 7.42824C8.92949 7.42824 7.46294 9.33518 7.46294 11.8898C7.46294 13.5168 8.00747 14.6172 8.00747 14.6172C8.00747 14.6172 6.13917 22.6101 5.81173 24.0099C5.15951 26.7976 5.71352 30.2151 5.76035 30.5602C5.78803 30.7647 6.04835 30.8133 6.16628 30.659C6.33464 30.4371 8.50877 27.7267 9.2482 25.0182C9.45733 24.2513 10.4489 20.2804 10.4489 20.2804C11.042 21.4228 12.7755 22.429 14.619 22.429C20.1065 22.429 23.8298 17.3774 23.8298 10.6157C23.8298 5.50292 19.5409 0.741211 13.0223 0.741211Z" fill="currentColor"/>
+                                </svg>
+                              </div>
+
+                              <!-- Text -->
+                              <p class="fs-lg mb-5 mb-md-8">
+                                <q>
+                                  I walked in the door at Pinterest and realized within 15 minutes of my interviews that I was going to get this job thanks to Goodkit.
+                                </q>
+                              </p>
+
+                              <!-- Footer -->
+                              <div class="d-flex align-items-center justify-content-center">
+
+                                <!-- Avatar -->
+                                <div class="avatar avatar-sm">
+                                  <img class="avatar-img rounded-circle" src="../assets/img/avatars/avatar-5.jpg" alt="...">
+                                </div>
+
+                                <!-- Body -->
+                                <div class="ms-4 text-start">
+
+                                  <!-- Title -->
+                                  <p class="fw-bold mb-0">
+                                    Katie Williams
+                                  </p>
+
+                                  <!-- Position -->
+                                  <p class="small text-muted mt-n1 mb-0">
+                                    Developer at Pinterest
+                                  </p>
+
+                                </div>
+
+                              </div>
+
+                            </blockquote>
+                          </div>
+                          <div class="w-100">
+                            <blockquote class="text-center pb-6 pb-md-0 mb-0">
+
+                              <!-- Logo -->
+                              <div class="img-fluid svg-shim text-pinterest text-center mx-auto mb-3 mb-md-5" style="max-width: 102px;">
+                                <svg viewBox="0 0 86 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M73.4135 22.4746C74.6112 22.594 75.8083 22.7223 77.0026 22.855L79.6394 16.1576L82.1457 23.4727C83.4317 23.6385 84.7171 23.8125 85.9986 23.9941L81.6045 11.1664L86 0.000884651H82.2773L82.2386 0.055733L79.8641 6.08758L77.7794 0.0017693H74.1038L77.8984 11.0791L73.4137 22.4746H73.4135ZM70.6336 22.2121V0.000884651H66.9594V21.9004C68.1849 21.9977 69.4109 22.1021 70.6336 22.2118V22.2121ZM43.033 20.9701C44.0248 20.9701 45.0156 20.9777 46.0046 20.986V12.826H50.4185V9.35106H46.0049V3.47992H51.0884V0.000884651H42.3163V20.973C42.5545 20.973 42.7939 20.9692 43.033 20.9701ZM31.6252 21.1824C32.8493 21.1376 34.0745 21.0998 35.3015 21.0691V3.48051H38.7358V0.0017693H28.1909V3.48051H31.6258V21.1824H31.6252ZM3.52461 23.5244V10.2914L7.87512 22.99C9.21302 22.8355 10.5529 22.6901 11.8965 22.5527V0.00117954H8.37107V13.7083L3.67655 0.00117954H0V24H0.0220736C1.18682 23.8343 2.35557 23.6768 3.52461 23.5244ZM24.6479 3.47963V0.00117954H15.875V22.1767C18.7938 21.9175 21.716 21.7002 24.6408 21.5247V18.0431C22.9448 18.1445 21.2523 18.2613 19.5638 18.3913V12.8274H23.9777V9.35047H19.5638V3.47963H24.6479ZM58.3701 17.8767V0H54.6798V21.1951C57.6153 21.3059 60.5394 21.4605 63.4537 21.6551V18.1713C61.7623 18.059 60.0681 17.9614 58.3701 17.8764V17.8767Z" fill="currentColor"/>
+                                </svg>
+                              </div>
+
+                              <!-- Text -->
+                              <p class="fs-lg mb-5 mb-md-8">
+                                <q>
+                                  I started this course without understanding variables. I left with a full-time position at Netflix as a developer. Wild.
+                                </q>
+                              </p>
+
+                              <!-- Footer -->
+                              <div class="d-flex align-items-center justify-content-center">
+
+                                <!-- Avatar -->
+                                <div class="avatar avatar-sm">
+                                  <img class="avatar-img rounded-circle" src="../assets/img/avatars/avatar-3.jpg" alt="...">
+                                </div>
+
+                                <!-- Body -->
+                                <div class="ms-4 text-start">
+
+                                  <!-- Title -->
+                                  <p class="fw-bold mb-0">
+                                    Jenny Fyfe
+                                  </p>
+
+                                  <!-- Position -->
+                                  <p class="small text-muted mt-n1 mb-0">
+                                    React at Netflix
+                                  </p>
+
+                                </div>
+
+                              </div>
+
+                            </blockquote>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="card-footer">
+                <code class="html highlight">
+                  &lt;div&nbsp;class=&quot;img-grid&nbsp;img-grid-3&quot;&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;border&nbsp;border-4&nbsp;border-md-7&nbsp;border-white&nbsp;shadow&quot;&nbsp;src=&quot;../assets/img/course/office-2.jpg&quot;&nbsp;alt=&quot;...&quot;&nbsp;data-jarallax-element=&quot;-55&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;border&nbsp;border-4&nbsp;border-md-7&nbsp;border-white&nbsp;shadow&quot;&nbsp;src=&quot;../assets/img/course/office-1.jpg&quot;&nbsp;alt=&quot;...&quot;&nbsp;data-jarallax-element=&quot;-105&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;border&nbsp;border-4&nbsp;border-md-7&nbsp;border-white&nbsp;shadow&quot;&nbsp;src=&quot;../assets/img/course/office-3.jpg&quot;&nbsp;alt=&quot;...&quot;&nbsp;data-jarallax-element=&quot;-35&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Card&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;card&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&lt;/div&gt;
+                </code>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+            
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Image grid -->
+                <div class="img-grid img-grid-4">
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid border border-4 border-md-7 border-white shadow" src="../assets/img/career/office-1.jpg" alt="..." data-jarallax-element="-85">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid border border-4 border-md-7 border-white shadow" src="../assets/img/career/office-2.jpg" alt="..." data-jarallax-element="-50">
+
+                  </div>
+                  <div class="img-grid-item">
+
+                    <!-- Image -->
+                    <img class="img-fluid border border-4 border-md-7 border-white shadow" src="../assets/img/career/office-3.jpg" alt="..." data-jarallax-element="-25">
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="card-footer">
+                <code class="html highlight">
+                  &lt;div&nbsp;class=&quot;img-grid&nbsp;img-grid-4&quot;&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;border&nbsp;border-4&nbsp;border-md-7&nbsp;border-white&nbsp;shadow&quot;&nbsp;src=&quot;../assets/img/career/office-1.jpg&quot;&nbsp;alt=&quot;...&quot;&nbsp;data-jarallax-element=&quot;-85&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;border&nbsp;border-4&nbsp;border-md-7&nbsp;border-white&nbsp;shadow&quot;&nbsp;src=&quot;../assets/img/career/office-2.jpg&quot;&nbsp;alt=&quot;...&quot;&nbsp;data-jarallax-element=&quot;-50&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;img-grid-item&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Image&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img&nbsp;class=&quot;img-fluid&nbsp;border&nbsp;border-4&nbsp;border-md-7&nbsp;border-white&nbsp;shadow&quot;&nbsp;src=&quot;../assets/img/career/office-3.jpg&quot;&nbsp;alt=&quot;...&quot;&nbsp;data-jarallax-element=&quot;-25&quot;&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&lt;/div&gt;
+                </code>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-xl-2 d-none d-xl-block docs-sidenav docs-sidenav-end">
+
+            <!-- List -->
+            <div class="my-6 my-md-9 px-lg-8 border-start">
+
+              <!-- List -->
+              <ul class="list-unstyled fs-xs mb-0">
+                <li class="mb-2">
+                  <a class="text-reset" href="#imageGrid" data-scroll>Image grid</a>
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="../assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="../assets/js/theme.bundle.js"></script>
+
+  </body>
+</html>

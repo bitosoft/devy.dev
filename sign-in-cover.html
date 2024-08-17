@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+    
+    <!-- 
+      Theme Sans Serif CSS
+      Remove the "disabled" attribute if you want to enable Sans Serif for headings.
+    -->
+    <link rel="stylesheet" href="./assets/css/theme-sans-serif.bundle.css" id="themeSansSerif" disabled />
+    
+    <!--
+      Demo JS
+      Remove the code below on a production website.
+    -->
+    <script src="./assets/js/demo.bundle.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>Goodkit</title>
+  </head>
+  <body>
+
+    <!-- BODY -->
+    <main class="border-multicolor">
+      <div class="container-lg d-flex flex-column">
+        <div class="row align-items-center justify-content-center gx-0 min-vh-100 mt-n1">
+          <div class="col-md-7 col-lg-5 py-10 py-md-12 text-center">
+
+            <!-- Heading -->
+            <h1 class="display-4 mb-4">
+              Sign In
+            </h1>
+
+            <!-- Text -->
+            <p class="text-muted">
+              Don’t have an account? <a href="sign-up-cover.html">Sign up</a>
+            </p>
+
+            <!-- Form -->
+            <form class="mb-6">
+
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="authEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="authEmail" type="email" placeholder="Your email">
+              </div>
+
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="authPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="authPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="authPasswordCaption" data-toggle="password" href="#authPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign in
+              </button>
+
+            </form>
+
+            <!-- Link -->
+            <a class="fs-sm" href="password-reset-cover.html">
+              Forgot your password?
+            </a>
+
+          </div>
+          <div class="col-lg-6 offset-lg-1 align-self-stretch d-none d-lg-block">
+
+            <!-- Image -->
+            <div class="h-100 vw-50 bg-cover border-top border-top-4 border-transparent" style="background-image: url(assets/img/authentication/cover-1.png); background-clip: content-box;"></div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="./assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="./assets/js/theme.bundle.js"></script>
+
+  </body>
+</html>

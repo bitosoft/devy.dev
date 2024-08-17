@@ -1,0 +1,1763 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+    
+    <!-- 
+      Theme Sans Serif CSS
+      Remove the "disabled" attribute if you want to enable Sans Serif for headings.
+    -->
+    <link rel="stylesheet" href="./assets/css/theme-sans-serif.bundle.css" id="themeSansSerif" disabled />
+    
+    <!--
+      Demo JS
+      Remove the code below on a production website.
+    -->
+    <script src="./assets/js/demo.bundle.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>Goodkit</title>
+  </head>
+  <body style="padding-top: 108px;">
+
+    <!-- MODALS -->
+    <!-- Sign in -->
+    <div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" aria-labelledby="modalSignInHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSignInHeading">
+              Sign In
+            </h1>
+    
+            <!-- Text -->
+            <p>
+              Don’t have an account? <a href="sign-up.html">Sign up</a>
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="signInEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="signInEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="signInPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signInPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="signInPasswordCaption" data-toggle="password" href="#signInPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign in
+              </button>
+    
+            </form>
+    
+            <!-- Link -->
+            <a class="fs-sm" href="password-reset.html">
+              Forgot your password?
+            </a>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sign up -->
+    <div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="modalSignUpHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSignUpHeading">
+              Sign Up
+            </h1>
+    
+            <!-- Text -->
+            <p>
+              Create beautiful marketing websites in hours instead of weeks.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="signUpEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="signUpEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="signUpPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signUpPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="signUpPasswordCaption" data-toggle="password" href="#signUpPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign up
+              </button>
+    
+            </form>
+    
+            <!-- Link -->
+            <small class="text-muted">
+              Already have an account? <a href="sign-in.html">Login</a>
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Password reset -->
+    <div class="modal fade" id="modalPasswordReset" tabindex="-1" role="dialog" aria-labelledby="modalPasswordResetHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="display-4 mb-4" id="modalPasswordResetHeading">
+              Password reset
+            </h1>
+    
+            <!-- Text -->
+            <p class="text-muted">
+              Enter your email to reset your password.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="passwordResetEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="passwordResetEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Reset password
+              </button>
+    
+            </form>
+    
+            <!-- Text -->
+            <small class="text-muted">
+              Remember your password? <a href="sign-in.html">Log in</a>.
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sale -->
+    <div class="modal fade" id="modalSale" tabindex="-1" role="dialog" aria-labelledby="modalSaleHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Image -->
+            <img class="img-fluid mb-4 mt-n11" src="./assets/img/illustrations/illustration-4.png" alt="...">
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSaleHeading">
+              30 Day Free Trial
+            </h1>
+    
+            <!-- Text -->
+            <p class="text-muted">
+              We’ll help you get started by getting you guides and all the basic informaiton.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="saleModalEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="saleModalEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Start Trial
+              </button>
+    
+            </form>
+    
+            <!-- Text -->
+            <small class="text-muted">
+              <a class="text-reset" data-bs-dismiss="modal" href="#!">No thanks, I hate free stuff.</a>
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container-lg">
+    
+        <!-- Brand -->
+        <a class="navbar-brand d-lg-none" href="./index.html">Goodkit</a>
+    
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-end w-100">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="landingsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Landings
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-xl dropdown-menu-flush" aria-labelledby="landingsDropdown">
+                  <div class="row align-items-center gx-0">
+                    <div class="col-md-6 order-1 dropdown-menu-col rounded-top-start-0 bg-gray-900 pt-4 py-lg-5">
+                      <div class="dropdown-menu-body">
+                
+                        <!-- Heading -->
+                        <h6 class="dropdown-header text-uppercase text-primary-light d-none d-lg-block">
+                          Services
+                        </h6>
+                
+                        <!-- Links -->
+                        <a class="d-flex text-decoration-none" href="./coworking.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.133 2.036c6.945 3.876 9.445 8.206 7.5 12.99-4.97-.79-7.47-5.12-7.5-12.99z" fill="#335EEA" opacity=".3"/><path d="M18.742 2.036c-6.945 3.876-9.445 8.206-7.5 12.99 4.97-.79 7.47-5.12 7.5-12.99z" fill="#335EEA" opacity=".3"/><path d="M12 1c-4.076 6.83-4.076 11.83 0 15 3.91-3.17 3.91-8.17 0-15z" fill="#335EEA" opacity=".3"/><path d="M6.344 13h11.312a1 1 0 01.958 1.287l-2.186 7.288A2 2 0 0114.512 23H9.488a2 2 0 01-1.916-1.425l-2.186-7.288A1 1 0 016.344 13z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Coworking
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              Minimal, image-focused content
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="./hiring-agency.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M12 11a4 4 0 110-8 4 4 0 010 8z" fill="#335EEA" opacity=".3"/><path d="M3 20.2c.388-4.773 4.262-7.2 8.983-7.2 4.788 0 8.722 2.293 9.015 7.2.012.195 0 .8-.751.8H3.727c-.25 0-.747-.54-.726-.8z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Hiring Platform
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              A hiring service platform
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="./course.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M6 3h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2zm-.5 2a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm0 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1z" fill="#335EEA" opacity=".3"/><path d="M11.352 14.572l2.605-1.78a.5.5 0 00.001-.825l-2.605-1.792a.5.5 0 00-.783.412v3.572a.5.5 0 00.782.413z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Course
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              React programming course
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="./software-automation.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 7a1 1 0 110-2h8a4 4 0 110 8H8a2 2 0 100 4h9a1 1 0 010 2H8a4 4 0 110-8h8a2 2 0 100-4H8z" fill="#335EEA" opacity=".3"/><path d="M9.707 8.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 1.414L7.414 6l2.293 2.293zM14.293 20.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 00-1.414 1.414L16.586 18l-2.293 2.293z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Automated Integrations
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              Digital integration software
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                
+                      </div>
+                    </div>
+                    <div class="col-md-6 order-0 dropdown-menu-col">
+                      <div class="dropdown-menu-body">
+                
+                        <!-- Heading -->
+                        <h6 class="dropdown-header text-uppercase d-none d-lg-block">
+                          Software
+                        </h6>
+                
+                        <!-- Links -->
+                        <a class="d-flex text-decoration-none text-reset" href="./robo-advisor.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" fill="#335EEA" opacity=".3"/><path d="M18.5 11h-13A1.5 1.5 0 004 12.5v.5h4.586a1 1 0 01.707.293l1 1a2.414 2.414 0 003.414 0l1-1a1 1 0 01.707-.293H20v-.5a1.5 1.5 0 00-1.5-1.5zM5.5 6A1.5 1.5 0 004 7.5V8h16v-.5A1.5 1.5 0 0018.5 6h-13z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Robo Advisor
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              A simple and professional layout
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="./analytics-saas.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4.002 12.2L13 14V4.062A8.001 8.001 0 0112 20a8 8 0 01-7.998-7.8z" fill="#335EEA" opacity=".3"/><path d="M3.06 10.012A8.001 8.001 0 0111 3v8.6l-7.94-1.588z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Analytics SaaS
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              UI-heavy product example
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="./e-commerce-platform.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M18.145 11.844l-.698 4.185a1 1 0 01-1.165.82L4.913 14.78a1 1 0 01-.783-.709L2.306 7.685a1 1 0 01.961-1.275h13.726l.613-2.627a1.18 1.18 0 011.15-.912h2.064a1.18 1.18 0 110 2.36h-1.128l-1.547 6.613z" fill="#335EEA" opacity=".3"/><path d="M6.5 21a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm9 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              E-Commerce Platform
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              SaaS for sales of goods
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="./mobile-chat-app.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M7.139 4v15h9.722V4H7.14zm.694-3h8.334c1.406 0 2.083.981 2.083 2.5v17c0 1.519-.677 2.5-2.083 2.5H7.833c-1.406 0-2.083-.981-2.083-2.5v-17c0-1.519.677-2.5 2.083-2.5z" fill="#335EEA"/><path fill="#335EEA" opacity=".3" d="M7 4v15h10V4z"/><circle fill="#335EEA" cx="12" cy="21" r="1"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Mobile Apps
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              Minimal layout for mobile apps
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                
+                      </div>
+                      <div class="dropdown-menu-footer align-items-center d-none d-lg-flex">
+                
+                        <!-- Text -->
+                        <span>Sans Serif Headers</span>
+                
+                        <!-- Switch -->
+                        <form class="ms-auto me-n3">
+                          <div class="form-check form-switch mb-0">
+                            <input class="form-check-input family-switch" type="checkbox" id="familySwitch" onchange="switchFamily(this.checked)">
+                            <label class="form-check-label" for="familySwitch"></label>
+                          </div>
+                        </form>
+                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Pages
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="pagesDropdown">
+                  <div class="row gx-0">
+                    <div class="col">
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Company
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="./about-orig.html">
+                        About
+                      </a>
+                      <a class="dropdown-item" href="./pricing-orig.html">
+                        Pricing
+                      </a>
+                      <a class="dropdown-item" href="./pricing-feature-list.html">
+                        Pricing Table
+                      </a>
+                      <a class="dropdown-item" href="./career-listing.html">
+                        Careers
+                      </a>
+                      <a class="dropdown-item" href="./career-benefits.html">
+                        Job benefits
+                      </a>
+                      <a class="dropdown-item" href="./contact.html">
+                        Contact
+                      </a>
+                      <a class="dropdown-item" href="./faq.html">
+                        FAQ
+                      </a><a class="dropdown-item" href="./terms.html">
+                        Terms
+                      </a>
+                
+                    </div>
+                    <div class="col">
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Blog
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="./blog-listing.html">
+                        Listing
+                      </a>
+                      <a class="dropdown-item" href="./blog-post.html">
+                        Article
+                      </a>
+                      <a class="dropdown-item" href="./blog-post-cover.html">
+                        Cover Article
+                      </a>
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Help Center
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="./help-center.html">
+                        Overview
+                      </a>
+                      <a class="dropdown-item" href="./help-center-article.html">
+                        Article
+                      </a>
+                
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+    
+          <!-- Brand -->
+          <a class="navbar-brand d-none d-lg-block px-lg-6" href="./index-orig.html">Goodkit</a>
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-start w-100">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="accountDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Account
+              </a>
+              <div class="dropdown-positioner">
+                <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="signInDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Sign In
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="signInDropright">
+                        <a class="dropdown-item" href="./sign-in-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="./sign-in.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignIn">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="signUpDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Sign Up
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="signUpDropright">
+                        <a class="dropdown-item" href="./sign-up-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="./sign-up.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignUp">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="passwordResetDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Password Reset
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="passwordResetDropright">
+                        <a class="dropdown-item" href="./password-reset-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="./password-reset.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalPasswordReset">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="errorsDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Errors
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="errorsDropright">
+                        <a class="dropdown-item" href="./error-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="./error.html">
+                          Simple
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="docsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Docs
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="docsDropdown">
+                  <a class="d-flex align-items-center text-reset text-decoration-none" href="./docs/index.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 3v.5A1.5 1.5 0 009.5 5h5A1.5 1.5 0 0016 3.5V3h2a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h2z" fill="#335EEA" opacity=".3"/><path d="M11 2a1 1 0 012 0h1.5a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-5a.5.5 0 01-.5-.5v-1a.5.5 0 01.5-.5H11z" fill="#335EEA"/><rect fill="#335EEA" opacity=".3" x="7" y="10" width="5" height="2" rx="1"/><rect fill="#335EEA" opacity=".3" x="7" y="14" width="9" height="2" rx="1"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Documentation
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>Compiling and building.</span>
+                
+                    </div>
+                
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="./docs/alerts.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.5 4h4A1.5 1.5 0 0111 5.5v1A1.5 1.5 0 019.5 8h-4A1.5 1.5 0 014 6.5v-1A1.5 1.5 0 015.5 4zm9 12h4a1.5 1.5 0 011.5 1.5v1a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-1a1.5 1.5 0 011.5-1.5z" fill="#335EEA"/><path d="M5.5 10h4a1.5 1.5 0 011.5 1.5v7A1.5 1.5 0 019.5 20h-4A1.5 1.5 0 014 18.5v-7A1.5 1.5 0 015.5 10zm9-6h4A1.5 1.5 0 0120 5.5v7a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-7A1.5 1.5 0 0114.5 4z" fill="#335EEA" opacity=".3"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Components
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>Full list of pieces in the theme</span>
+                
+                    </div>
+                
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="./docs/changelog.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.857 2h7.88a1.5 1.5 0 01.968.355l4.764 4.029A1.5 1.5 0 0120 7.529v12.554c0 1.79-.02 1.917-1.857 1.917H5.857C4.02 22 4 21.874 4 20.083V3.917C4 2.127 4.02 2 5.857 2z" fill="#335EEA" opacity=".3"/><rect fill="#335EEA" x="6" y="11" width="9" height="2" rx="1"/><rect fill="#335EEA" x="6" y="15" width="5" height="2" rx="1"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Changelog
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>This is the new version</span>
+                
+                    </div>
+                
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item d-lg-none">
+              <div class="nav-link">
+    
+                <!-- Text -->
+                <span>
+                  Sans Serif Headers
+                </span>
+    
+                <!-- Switch -->
+                <form class="ms-auto me-n3">
+                  <div class="form-check form-switch mb-0">
+                    <input class="form-check-input family-switch" type="checkbox" id="familySwitchMobile" onchange="switchFamily(this.checked)">
+                    <label class="form-check-label" for="familySwitchMobile"></label>
+                  </div>
+                </form>
+    
+              </div>
+            </li>
+          </ul>
+    
+        </div>
+    
+      </div>
+    </nav>
+
+    <!-- WELCOME -->
+    <section class="pt-6 pt-md-11">
+      <div class="container-lg">
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-10 text-center">
+
+            <!-- Heading -->
+            <h1 class="display-3 mb-4" data-aos="fade-up">
+              Hire <span class="text-underline-warning">trustworthy</span> people without the headache.
+            </h1>
+
+            <!-- Text -->
+            <p class="fs-lg text-muted" data-aos="fade-up" data-aos-delay="50">
+              Find the perfect hire in under 72 hours or our services are free.
+            </p>
+
+            <!-- Button -->
+            <a class="btn btn-primary lift" href="#!" data-aos="fade-up" data-aos-delay="100">
+              Start Hiring
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="py-10 py-md-12">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-12">
+
+            <!-- Divider -->
+            <hr class="hr-sm bg-warning mx-auto mb-10 mb-md-12" data-aos="fade-up" data-aos-delay="100">
+
+          </div>
+        </div>
+        <div class="row mt-n6">
+          <div class="col-md-4 text-center mt-6" data-aos="fade-up" data-aos-delay="100">
+
+            <!-- Image -->
+            <img class="img-fluid mb-6" src="assets/img/illustrations/illustration-2.png" alt="...">
+
+            <!-- Heading -->
+            <h2>
+              Increase Conversions
+            </h2>
+
+            <!-- Text -->
+            <small class="text-muted">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis.
+            </small>
+
+          </div>
+          <div class="col-md-4 text-center mt-6" data-aos="fade-up" data-aos-delay="150">
+
+            <!-- Image -->
+            <img class="img-fluid mb-6" src="assets/img/illustrations/illustration-3.png" alt="...">
+
+            <!-- Heading -->
+            <h2>
+              Drive Engagement
+            </h2>
+
+            <!-- Text -->
+            <small class="text-muted">
+              Tempor dictum neque. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet.
+            </small>
+
+          </div>
+          <div class="col-md-4 text-center mt-6" data-aos="fade-up" data-aos-delay="200">
+
+            <!-- Image -->
+            <img class="img-fluid mb-6" src="assets/img/illustrations/illustration-4.png" alt="...">
+
+            <!-- Heading -->
+            <h2>
+              Grow Retention
+            </h2>
+
+            <!-- Text -->
+            <small class="text-muted">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis.
+            </small>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHARED BACKGROUND -->
+    <div class="bg-gradient-light">
+
+      <!-- CTA -->
+      <section>
+        <div class="container-lg">
+          <div class="row">
+            <div class="col-12 offset-xl-n1">
+
+              <!-- Image -->
+              <img class="img-fluid max-vw-100 mw-sm-100 ms-n4 ms-sm-0" src="assets/img/hiring-agency/office.jpg" alt="..." data-jarallax-element="-30">
+
+            </div>
+            <div class="col-12 col-sm-10 col-xl-7 offset-n12 offset-sm-n11 offset-xl-n6">
+
+              <!-- Card -->
+              <div class="card card-lg border-top-2 border-primary mt-14 mt-md-18 mt-xl-12">
+                <div class="card-body">
+
+                  <!-- Heading -->
+                  <h2 class="display-4 mb-4">
+                    Download our guide to hiring strategies for tech roles.
+                  </h2>
+
+                  <!-- Text -->
+                  <p class="text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque. In hac habitasse platea dictumst. Proin sit amet convallis enim. Sed auctor lorem id tortor dignissim, in sollicitudin odio porta.
+                  </p>
+
+                  <!-- Form -->
+                  <form>
+                    <div class="form-group">
+                      <label class="visually-hidden" for="downloadName">
+                        Your name
+                      </label>
+                      <input class="form-control form-control-underline" id="downloadName" type="text" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                      <label class="visually-hidden" for="downloadEmail">
+                        Your name
+                      </label>
+                      <input class="form-control form-control-underline" id="downloadEmail" type="email" placeholder="Your email">
+                    </div>
+                    <button class="btn w-100 btn-primary lift">
+                      Download the Guide
+                    </button>
+                  </form>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="pt-10 pt-md-12">
+        <div class="container-lg">
+          <div class="row">
+            <div class="col-md-6">
+
+              <!-- Divider -->
+              <hr class="hr-sm bg-warning ms-0 mb-6">
+
+              <!-- Heading -->
+              <h2 class="display-4 mb-9">
+                Explore our services to find the match.
+              </h2>
+
+            </div>
+          </div>
+          <div class="row mt-n6">
+            <div class="col-md-6 col-lg-3">
+
+              <!-- Card -->
+              <div class="card card-sm rounded-top-start rounded-bottom-end mt-6">
+
+                <!-- Image  -->
+                <img class="card-img rounded-top-start" src="assets/img/hiring-agency/service-1.jpg" alt="...">
+
+                <!-- Shape -->
+                <div class="position-relative">
+                  <div class="shape shape-fluid-x shape-top text-white">
+                    <div class="shape-img pb-5">
+                      <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                    </div>
+                  </div>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body">
+
+                  <!-- Heading -->
+                  <h3 class="font-sans-serif mb-2">
+                    Defining Roles
+                  </h3>
+
+                  <!-- Text -->
+                  <small class="text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan.
+                  </small>
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-md-6 col-lg-3">
+
+              <!-- Card -->
+              <div class="card card-sm rounded-top-start rounded-bottom-end mt-6">
+
+                <!-- Image  -->
+                <img class="card-img rounded-top-start" src="assets/img/hiring-agency/service-2.jpg" alt="...">
+
+                <!-- Shape -->
+                <div class="position-relative">
+                  <div class="shape shape-fluid-x shape-top text-white">
+                    <div class="shape-img pb-5">
+                      <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                    </div>
+                  </div>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body">
+
+                  <!-- Heading -->
+                  <h3 class="font-sans-serif mb-2">
+                    Creating Reqs
+                  </h3>
+
+                  <!-- Text -->
+                  <small class="text-muted">
+                    In hac habitasse platea dictumst. Proin sit amet convallis enim. Sed auctor lorem id tortor dignissim.
+                  </small>
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-md-6 col-lg-3">
+
+              <!-- Card -->
+              <div class="card card-sm rounded-top-start rounded-bottom-end mt-6">
+
+                <!-- Image  -->
+                <img class="card-img rounded-top-start" src="assets/img/hiring-agency/service-3.jpg" alt="...">
+
+                <!-- Shape -->
+                <div class="position-relative">
+                  <div class="shape shape-fluid-x shape-top text-white">
+                    <div class="shape-img pb-5">
+                      <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                    </div>
+                  </div>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body">
+
+                  <!-- Heading -->
+                  <h3 class="font-sans-serif mb-2">
+                    Interviewing
+                  </h3>
+
+                  <!-- Text -->
+                  <small class="text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan.
+                  </small>
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-md-6 col-lg-3">
+
+              <!-- Card -->
+              <div class="card card-sm rounded-top-start rounded-bottom-end mt-6">
+
+                <!-- Image  -->
+                <img class="card-img rounded-top-start" src="assets/img/hiring-agency/service-4.jpg" alt="...">
+
+                <!-- Shape -->
+                <div class="position-relative">
+                  <div class="shape shape-fluid-x shape-top text-white">
+                    <div class="shape-img pb-5">
+                      <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                    </div>
+                  </div>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body">
+
+                  <!-- Heading -->
+                  <h3 class="font-sans-serif mb-2">
+                    Onboarding
+                  </h3>
+
+                  <!-- Text -->
+                  <small class="text-muted">
+                    In hac habitasse platea dictumst. Proin sit amet convallis enim. Sed auctor lorem id tortor dignissim.
+                  </small>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROFILES -->
+      <section class="pt-10 pt-md-12">
+        <div class="container-lg position-relative" style="z-index: 1;">
+          <div class="row justify-content-end">
+            <div class="col-12 col-md-7">
+
+              <!-- Heading -->
+              <h2 class="display-4 mb-4">
+                Hire <span class="text-underline-warning">talented</span> employees in hours instead of weeks.
+              </h2>
+
+              <!-- Text -->
+              <p class="text-muted mb-9 mb-md-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque. In hac habitasse platea dictumst. Proin sit amet convallis enim. Sed auctor lorem id tortor dignissim, in sollicitudin odio porta.
+              </p>
+
+            </div>
+          </div>
+          <div class="row mt-n5 mt-md-n12">
+            <div class="col-md-4">
+
+              <!-- Card -->
+              <div class="position-relative mt-5">
+
+                <!-- Decoration -->
+                <div class="position-absolute bottom-start text-warning mb-n12 ms-n10">
+                  <svg width="185" height="186" viewBox="0 0 185 186" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="currentColor"/><circle cx="22" cy="2" r="2" fill="currentColor"/><circle cx="42" cy="2" r="2" fill="currentColor"/><circle cx="62" cy="2" r="2" fill="currentColor"/><circle cx="82" cy="2" r="2" fill="currentColor"/><circle cx="102" cy="2" r="2" fill="currentColor"/><circle cx="122" cy="2" r="2" fill="currentColor"/><circle cx="142" cy="2" r="2" fill="currentColor"/><circle cx="162" cy="2" r="2" fill="currentColor"/><circle cx="182" cy="2" r="2" fill="currentColor"/><circle cx="2" cy="22" r="2" fill="currentColor"/><circle cx="22" cy="22" r="2" fill="currentColor"/><circle cx="42" cy="22" r="2" fill="currentColor"/><circle cx="62" cy="22" r="2" fill="currentColor"/><circle cx="82" cy="22" r="2" fill="currentColor"/><circle cx="102" cy="22" r="2" fill="currentColor"/><circle cx="122" cy="22" r="2" fill="currentColor"/><circle cx="142" cy="22" r="2" fill="currentColor"/><circle cx="162" cy="22" r="2" fill="currentColor"/><circle cx="182" cy="22" r="2" fill="currentColor"/><circle cx="2" cy="42" r="2" fill="currentColor"/><circle cx="22" cy="42" r="2" fill="currentColor"/><circle cx="42" cy="42" r="2" fill="currentColor"/><circle cx="62" cy="42" r="2" fill="currentColor"/><circle cx="82" cy="42" r="2" fill="currentColor"/><circle cx="102" cy="42" r="2" fill="currentColor"/><circle cx="122" cy="42" r="2" fill="currentColor"/><circle cx="142" cy="42" r="2" fill="currentColor"/><circle cx="162" cy="42" r="2" fill="currentColor"/><circle cx="182" cy="42" r="2" fill="currentColor"/><circle cx="2" cy="62" r="2" fill="currentColor"/><circle cx="22" cy="62" r="2" fill="currentColor"/><circle cx="42" cy="62" r="2" fill="currentColor"/><circle cx="62" cy="62" r="2" fill="currentColor"/><circle cx="82" cy="62" r="2" fill="currentColor"/><circle cx="102" cy="62" r="2" fill="currentColor"/><circle cx="122" cy="62" r="2" fill="currentColor"/><circle cx="142" cy="62" r="2" fill="currentColor"/><circle cx="162" cy="62" r="2" fill="currentColor"/><circle cx="182" cy="62" r="2" fill="currentColor"/><circle cx="2" cy="82" r="2" fill="currentColor"/><circle cx="22" cy="82" r="2" fill="currentColor"/><circle cx="42" cy="82" r="2" fill="currentColor"/><circle cx="62" cy="82" r="2" fill="currentColor"/><circle cx="82" cy="82" r="2" fill="currentColor"/><circle cx="102" cy="82" r="2" fill="currentColor"/><circle cx="122" cy="82" r="2" fill="currentColor"/><circle cx="142" cy="82" r="2" fill="currentColor"/><circle cx="162" cy="82" r="2" fill="currentColor"/><circle cx="182" cy="82" r="2" fill="currentColor"/><circle cx="2" cy="102" r="2" fill="currentColor"/><circle cx="22" cy="102" r="2" fill="currentColor"/><circle cx="42" cy="102" r="2" fill="currentColor"/><circle cx="62" cy="102" r="2" fill="currentColor"/><circle cx="82" cy="102" r="2" fill="currentColor"/><circle cx="102" cy="102" r="2" fill="currentColor"/><circle cx="122" cy="102" r="2" fill="currentColor"/><circle cx="142" cy="102" r="2" fill="currentColor"/><circle cx="162" cy="102" r="2" fill="currentColor"/><circle cx="182" cy="102" r="2" fill="currentColor"/><circle cx="2" cy="122" r="2" fill="currentColor"/><circle cx="22" cy="122" r="2" fill="currentColor"/><circle cx="42" cy="122" r="2" fill="currentColor"/><circle cx="62" cy="122" r="2" fill="currentColor"/><circle cx="82" cy="122" r="2" fill="currentColor"/><circle cx="102" cy="122" r="2" fill="currentColor"/><circle cx="122" cy="122" r="2" fill="currentColor"/><circle cx="142" cy="122" r="2" fill="currentColor"/><circle cx="162" cy="122" r="2" fill="currentColor"/><circle cx="182" cy="122" r="2" fill="currentColor"/><circle cx="2" cy="142" r="2" fill="currentColor"/><circle cx="22" cy="142" r="2" fill="currentColor"/><circle cx="42" cy="142" r="2" fill="currentColor"/><circle cx="62" cy="142" r="2" fill="currentColor"/><circle cx="82" cy="142" r="2" fill="currentColor"/><circle cx="102" cy="142" r="2" fill="currentColor"/><circle cx="122" cy="142" r="2" fill="currentColor"/><circle cx="142" cy="142" r="2" fill="currentColor"/><circle cx="162" cy="142" r="2" fill="currentColor"/><circle cx="182" cy="142" r="2" fill="currentColor"/><circle cx="2" cy="162" r="2" fill="currentColor"/><circle cx="22" cy="162" r="2" fill="currentColor"/><circle cx="42" cy="162" r="2" fill="currentColor"/><circle cx="62" cy="162" r="2" fill="currentColor"/><circle cx="82" cy="162" r="2" fill="currentColor"/><circle cx="102" cy="162" r="2" fill="currentColor"/><circle cx="122" cy="162" r="2" fill="currentColor"/><circle cx="142" cy="162" r="2" fill="currentColor"/><circle cx="162" cy="162" r="2" fill="currentColor"/><circle cx="182" cy="162" r="2" fill="currentColor"/><circle cx="2" cy="182" r="2" fill="currentColor"/><circle cx="22" cy="182" r="2" fill="currentColor"/><circle cx="42" cy="182" r="2" fill="currentColor"/><circle cx="62" cy="182" r="2" fill="currentColor"/><circle cx="82" cy="182" r="2" fill="currentColor"/><circle cx="102" cy="182" r="2" fill="currentColor"/><circle cx="122" cy="182" r="2" fill="currentColor"/><circle cx="142" cy="182" r="2" fill="currentColor"/><circle cx="162" cy="182" r="2" fill="currentColor"/><circle cx="182" cy="182" r="2" fill="currentColor"/></svg>                </div>
+
+                <!-- Card -->
+                <div class="card card-sm rounded-top-start rounded-bottom-end" data-aos="fade-up">
+
+                  <!-- Image -->
+                  <img class="card-img-top rounded-top-start" src="assets/img/hiring-agency/employee-header-1.jpg" alt="...">
+
+                  <!-- SHAPE -->
+                  <div class="position-relative">
+                    <div class="shape shape-fluid-x shape-top text-white">
+                      <div class="shape-img pb-7">
+                        <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Body -->
+                  <div class="card-body text-center mt-n11">
+
+                    <!-- Avatar -->
+                    <div class="avatar avatar-xl mb-3">
+                      <img class="avatar-img rounded-circle border-5 border-white" src="assets/img/avatars/avatar-1.jpg" alt="...">
+                    </div>
+
+                    <!-- Heading -->
+                    <h4 class="font-sans-serif mb-0">
+                      Katie Williams
+                    </h4>
+
+                    <!-- Text -->
+                    <p class="fs-sm text-muted mt-n1 mb-5">
+                      Wordpress expert
+                    </p>
+
+                    <!-- Blockquote -->
+                    <blockquote class="mb-5">
+                      <q class="fs-lg">
+                        Build it the right way the first time around to save money in the long term.
+                      </q>
+                    </blockquote>
+
+                    <!-- Divider -->
+                    <hr class="my-5" style="max-width: 60px;">
+
+                    <!-- Link -->
+                    <a class="h6 text-uppercase text-decoration-none" href="#!">
+                      Hire now
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Card -->
+              <div class="card card-sm rounded-top-start rounded-bottom-end mt-5" data-aos="fade-up">
+
+                <!-- Image -->
+                <img class="card-img-top rounded-top-start" src="assets/img/hiring-agency/employee-header-2.jpg" alt="...">
+
+                <!-- SHAPE -->
+                <div class="position-relative">
+                  <div class="shape shape-fluid-x shape-top text-white">
+                    <div class="shape-img pb-7">
+                      <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                    </div>
+                  </div>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body text-center mt-n11">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xl mb-3">
+                    <img class="avatar-img rounded-circle border-5 border-white" src="assets/img/avatars/avatar-2.jpg" alt="...">
+                  </div>
+
+                  <!-- Heading -->
+                  <h4 class="font-sans-serif mb-0">
+                    Kyle Cassidy
+                  </h4>
+
+                  <!-- Text -->
+                  <p class="fs-sm text-muted mt-n1 mb-5">
+                    React developer
+                  </p>
+
+                  <!-- Blockquote -->
+                  <blockquote class="mb-5">
+                    <q class="fs-lg">
+                      I love developing well considered systems for early growth startups.
+                    </q>
+                  </blockquote>
+
+                  <!-- Divider -->
+                  <hr class="my-5" style="max-width: 60px;">
+
+                  <!-- Link -->
+                  <a class="h6 text-uppercase text-decoration-none" href="#!">
+                    Hire now
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-md-4 mt-md-15">
+
+              <!-- Card -->
+              <div class="card card-sm rounded-top-start rounded-bottom-end mt-5" data-aos="fade-up">
+
+                <!-- Image -->
+                <img class="card-img-top rounded-top-start" src="assets/img/hiring-agency/employee-header-3.jpg" alt="...">
+
+                <!-- SHAPE -->
+                <div class="position-relative">
+                  <div class="shape shape-fluid-x shape-top text-white">
+                    <div class="shape-img pb-7">
+                      <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                    </div>
+                  </div>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body text-center mt-n11">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xl mb-3">
+                    <img class="avatar-img rounded-circle border-5 border-white" src="assets/img/avatars/avatar-3.jpg" alt="...">
+                  </div>
+
+                  <!-- Heading -->
+                  <h4 class="font-sans-serif mb-0">
+                    Danielle Callan
+                  </h4>
+
+                  <!-- Text -->
+                  <p class="fs-sm text-muted mt-n1 mb-5">
+                    Rails developer
+                  </p>
+
+                  <!-- Blockquote -->
+                  <blockquote class="mb-5">
+                    <q class="fs-lg">
+                      Helping a company get from a blank slate to MVP is my bread and butter.
+                    </q>
+                  </blockquote>
+
+                  <!-- Divider -->
+                  <hr class="my-5" style="max-width: 60px;">
+
+                  <!-- Link -->
+                  <a class="h6 text-uppercase text-decoration-none" href="#!">
+                    Hire now
+                  </a>
+
+                </div>
+
+              </div>
+
+              <!-- Card -->
+              <div class="card card-sm rounded-top-start rounded-bottom-end mt-5 d-none d-md-block" data-aos="fade-up">
+
+                <!-- Image -->
+                <img class="card-img-top rounded-top-start" src="assets/img/hiring-agency/employee-header-4.jpg" alt="...">
+
+                <!-- SHAPE -->
+                <div class="position-relative">
+                  <div class="shape shape-fluid-x shape-top text-white">
+                    <div class="shape-img pb-7">
+                      <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                    </div>
+                  </div>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body text-center mt-n11">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xl mb-3">
+                    <img class="avatar-img rounded-circle border-5 border-white" src="assets/img/avatars/avatar-4.jpg" alt="...">
+                  </div>
+
+                  <!-- Heading -->
+                  <h4 class="font-sans-serif mb-0">
+                    Catherine Westerly
+                  </h4>
+
+                  <!-- Text -->
+                  <p class="fs-sm text-muted mt-n1 mb-5">
+                    UX & Visual Designer
+                  </p>
+
+                  <!-- Blockquote -->
+                  <blockquote class="mb-5">
+                    <q class="fs-lg">
+                      My job is to design a cohesive brand and language for emerging startups.
+                    </q>
+                  </blockquote>
+
+                  <!-- Divider -->
+                  <hr class="my-5" style="max-width: 60px;">
+
+                  <!-- Link -->
+                  <a class="h6 text-uppercase text-decoration-none" href="#!">
+                    Hire now
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-md-4 align-self-center">
+
+              <!-- Card -->
+              <div class="card card-sm rounded-top-start rounded-bottom-end mt-5 d-none d-md-block" data-aos="fade-up">
+
+                <!-- Image -->
+                <img class="card-img-top rounded-top-start" src="assets/img/hiring-agency/employee-header-5.jpg" alt="...">
+
+                <!-- SHAPE -->
+                <div class="position-relative">
+                  <div class="shape shape-fluid-x shape-top text-white">
+                    <div class="shape-img pb-7">
+                      <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                    </div>
+                  </div>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body text-center mt-n11">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xl mb-3">
+                    <img class="avatar-img rounded-circle border-5 border-white" src="assets/img/avatars/avatar-5.jpg" alt="...">
+                  </div>
+
+                  <!-- Heading -->
+                  <h4 class="font-sans-serif mb-0">
+                    Brooke Baker
+                  </h4>
+
+                  <!-- Text -->
+                  <p class="fs-sm text-muted mt-n1 mb-5">
+                    SEO expert
+                  </p>
+
+                  <!-- Blockquote -->
+                  <blockquote class="mb-5">
+                    <q class="fs-lg">
+                      I take companies into the Alexa 500 within 3-6 months every single time.
+                    </q>
+                  </blockquote>
+
+                  <!-- Divider -->
+                  <hr class="my-5" style="max-width: 60px;">
+
+                  <!-- Link -->
+                  <a class="h6 text-uppercase text-decoration-none" href="#!">
+                    Hire now
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- SHAPE -->
+    <div class="position-relative">
+      <div class="shape shape-fluid-x shape-top text-white pb-18">
+        <div class="shape-img pb-9 pb-md-15">
+          <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 0h25l50 25h25v75H0z" fill="currentColor"/></svg>        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <section class="pt-10 pt-md-12">
+      <div class="container-lg">
+        <div class="row justify-content-center mt-n6">
+          <div class="col-md-6 px-lg-9 border-end-md mt-6">
+
+            <!-- Blockquote -->
+            <blockquote>
+
+              <!-- Logo -->
+              <p class="img-fluid svg-shim text-stripe mx-auto mb-3 mb-md-5" style="max-width: 85px">
+                <svg viewBox="0 0 65 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.56803 10.5801C4.56803 9.87724 5.14579 9.60679 6.10289 9.60679C7.475 9.60679 9.20829 10.0215 10.5805 10.7604V6.52467C9.08197 5.92992 7.60145 5.69559 6.10289 5.69559C2.4375 5.69559 0 7.6062 0 10.7966C0 15.771 6.86105 14.9781 6.86105 17.123C6.86105 17.952 6.13895 18.2224 5.12776 18.2224C3.62921 18.2224 1.71526 17.6095 0.198555 16.7805V21.0702C1.87776 21.7912 3.575 22.0975 5.12776 22.0975C8.88329 22.0975 11.4653 20.2411 11.4653 17.0148C11.4472 11.6436 4.56803 12.5988 4.56803 10.5801ZM16.7736 2.09082L12.368 3.02801L12.35 17.4653C12.35 20.133 14.3542 22.0975 17.0264 22.0975C18.507 22.0975 19.5903 21.8272 20.1861 21.5027V17.8439C19.6084 18.0782 16.7555 18.9073 16.7555 16.2397V9.84112H20.1861V6.00203H16.7555L16.7736 2.09082ZM25.8014 7.33576L25.5125 6.00203H21.6125V21.7731H26.1264V11.0849C27.1916 9.69703 28.9972 9.94935 29.557 10.1476V6.00203C28.9792 5.7857 26.8667 5.38915 25.8014 7.33576ZM30.6583 6.00203H35.1903V21.7731H30.6583V6.00203ZM30.6583 4.63218L35.1903 3.65888V0L30.6583 0.955306V4.63205V4.63218ZM44.6153 5.69559C42.8458 5.69559 41.7083 6.52467 41.0764 7.10155L40.8416 5.98403H36.8695V27L41.3833 26.0448L41.4014 20.944C42.0514 21.4126 43.0083 22.0795 44.5972 22.0795C47.8292 22.0795 50.7722 19.484 50.7722 13.7704C50.7542 8.54338 47.775 5.69559 44.6153 5.69559ZM43.532 18.1142C42.4667 18.1142 41.8346 17.7358 41.4014 17.2671L41.3833 10.5801C41.8528 10.0575 42.5028 9.69703 43.532 9.69703C45.175 9.69703 46.3125 11.5354 46.3125 13.8965C46.3125 16.3118 45.193 18.1142 43.532 18.1142ZM65 13.9507C65 9.33647 62.7611 5.69559 58.482 5.69559C54.1846 5.69559 51.5846 9.3366 51.5846 13.9147C51.5846 19.3398 54.6542 22.0795 59.0596 22.0795C61.2083 22.0795 62.8333 21.5929 64.0611 20.908V17.3031C62.8334 17.916 61.425 18.2945 59.6375 18.2945C57.8861 18.2945 56.3333 17.6816 56.1347 15.5548H64.9639C64.9639 15.3204 65 14.3832 65 13.9507ZM56.0805 12.2384C56.0805 10.2017 57.3264 9.35447 58.4639 9.35447C59.5653 9.35447 60.7389 10.2017 60.7389 12.2384H56.0805Z" fill="currentColor"/>
+                </svg>
+              </p>
+
+              <!-- Text -->
+              <p class="lead text-center mb-5 mb-md-8">
+                <q>
+                  Building a thriving business is hard enough without worrying about overhead. Do the smart thing and just use Goodkit.
+                </q>
+              </p>
+
+              <!-- Footer -->
+              <div class="d-flex align-items-center justify-content-center">
+
+                <!-- Avatar -->
+                <div class="avatar avatar-sm">
+                  <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-1.jpg" alt="...">
+                </div>
+
+                <!-- Body -->
+                <div class="ms-4">
+
+                  <!-- Title -->
+                  <p class="fw-bold mb-0">
+                    Clarissa Jones
+                  </p>
+
+                  <!-- Position -->
+                  <p class="small text-muted mt-n1 mb-0">
+                    COO at Stripe
+                  </p>
+
+                </div>
+
+              </div>
+
+            </blockquote>
+
+          </div>
+          <div class="col-md-6 px-lg-9 mt-6">
+
+            <!-- Blockquote -->
+            <blockquote>
+
+              <!-- Logo -->
+              <p class="img-fluid svg-shim text-pinterest mx-auto mb-3 mb-md-5" style="max-width: 132px;">
+                <svg viewBox="0 0 119 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.7945 11.3191C29.0692 11.3191 30.2921 10.2476 30.5048 8.92569C30.7562 7.63902 29.8922 6.56752 28.6185 6.56752C27.3444 6.56752 26.1213 7.63902 25.9054 8.92569C25.6568 10.2476 26.4853 11.3191 27.7945 11.3191ZM114.293 15.1435H117.145C117.536 15.1435 117.764 14.9833 117.852 14.6151C117.989 14.0449 118.129 13.4756 118.273 12.9073C118.358 12.5759 118.167 12.3247 117.803 12.3247H114.989C115.192 11.5105 115.981 8.86711 115.981 7.14376C115.981 3.70203 113.087 0.774522 108.98 0.774522C104.342 0.774522 101.324 3.91741 101.324 8.33988C101.324 9.62981 101.801 11.1334 102.392 12.0661C102.137 12.0514 101.883 12.0441 101.628 12.0443C98.1038 12.0443 95.884 13.9746 95.884 16.7834C95.884 19.4195 97.9421 20.4439 99.8798 21.1256C101.601 21.7314 103.186 22.0132 103.186 23.3709C103.186 24.2863 102.314 24.8235 100.607 24.8235C98.582 24.8235 97.469 23.8606 97.1861 23.4953C97.378 23.3431 97.6634 22.9807 97.6634 22.3769C97.6634 21.5323 97.0758 20.8429 95.9845 20.8429C95.0611 20.8429 94.2805 21.6033 94.0845 22.6036C92.6015 23.8286 90.9829 24.6225 88.6872 24.6225C86.4268 24.6225 85.2536 23.4354 85.2536 20.9093C85.7835 21.0722 87.1634 21.2679 88.0754 21.2679C91.9028 21.2679 94.5113 19.512 94.5113 15.9956C94.5113 14.1047 92.8673 12.1189 89.6149 12.1189H89.6075C85.3298 12.1189 82.9337 14.855 81.8875 17.8644C81.5943 17.7931 81.3007 17.7239 81.0066 17.6569C81.2405 16.9894 81.4085 16.2158 81.4085 15.3581C81.4085 13.8718 80.4969 12.1189 78.0576 12.1189C76.3584 12.1189 74.7466 13.2427 73.6295 14.927C73.9075 13.8283 74.0917 13.0966 74.1037 13.0476C74.1765 12.7602 74.058 12.4402 73.6142 12.4402H71.1105C70.7537 12.4402 70.5019 12.5675 70.4005 12.9777C70.3324 13.2513 69.4722 16.6593 68.6347 19.9778C68.1073 22.0469 65.3786 24.6225 61.9489 24.6225C59.6882 24.6225 58.5159 23.3573 58.5159 20.8302C59.1074 21.068 60.4255 21.2677 61.3371 21.2677C65.3202 21.2677 67.773 19.5118 67.773 15.9954C67.773 14.1045 66.1292 12.1187 62.8764 12.1187H62.8694C58.0525 12.1187 55.1018 15.8964 54.6018 20.1797C54.3938 21.9603 52.9055 24.4054 51.292 24.4054C50.5059 24.4054 50.0676 23.9069 50.0676 23.0605C50.0676 22.3296 50.5772 20.5423 51.1358 18.3025C51.3229 17.5532 51.6069 16.4101 51.9218 15.1435H54.5406C54.9304 15.1435 55.159 14.9833 55.2476 14.6151C55.3729 14.085 55.6029 13.1602 55.6681 12.9073C55.7525 12.5759 55.5625 12.3247 55.1975 12.3247H52.6224C52.6224 12.3247 53.808 7.54827 53.8362 7.42556C53.9503 6.93987 53.5478 6.6596 53.1267 6.74901C53.1267 6.74901 51.1363 7.14242 50.7672 7.22014C50.3961 7.29595 50.1081 7.50175 49.9741 8.04181L48.9199 12.3247H46.8522C46.4624 12.3247 46.2331 12.4853 46.1457 12.8527C46.0084 13.4228 45.8682 13.9922 45.7252 14.5609C45.6397 14.8923 45.8306 15.1435 46.1952 15.1435H48.223C48.2086 15.2021 47.4905 17.96 46.9098 20.4298C46.6364 21.6175 45.7208 24.3966 44.2215 24.3966C43.3258 24.3966 42.9474 23.9404 42.9474 22.9619C42.9474 21.421 44.4496 17.5637 44.4496 15.8133C44.4496 13.4753 43.2073 12.1206 40.6624 12.1206C39.0582 12.1206 37.3948 13.1665 36.6899 14.0844C36.6899 14.0844 36.9038 13.333 36.9769 13.0442C37.0551 12.739 36.893 12.4392 36.4961 12.4392H34.0078C33.4783 12.4392 33.3319 12.725 33.2542 13.0394C33.2231 13.1655 32.3265 16.7206 31.4657 20.1334C30.877 22.4703 29.4465 24.423 27.917 24.423C27.1305 24.423 26.7803 23.9247 26.7803 23.0783C26.7803 22.347 27.2483 20.5425 27.8066 18.3028C28.486 15.5762 29.0853 13.3307 29.1494 13.0685C29.233 12.7323 29.0842 12.4394 28.6551 12.4394H26.1518C25.6983 12.4394 25.5364 12.6797 25.4408 13.0135C25.4408 13.0135 24.7363 15.7065 23.9902 18.7045C23.4484 20.8802 22.85 23.0963 22.85 24.1376C22.85 25.9957 23.6762 27.3963 25.9478 27.3963C27.701 27.3963 29.0885 26.4986 30.148 25.3548C29.9923 25.9739 29.893 26.3658 29.8829 26.4058C29.7915 26.7597 29.9023 27.0726 30.3152 27.0726H32.8769C33.3228 27.0726 33.4942 26.8915 33.5873 26.4988C33.677 26.1242 35.5902 18.5257 35.5902 18.5257C36.0959 16.4845 37.3467 15.133 39.1063 15.133C39.9407 15.133 40.6629 15.6908 40.5793 16.775C40.4864 17.9676 39.062 22.2523 39.062 24.1328C39.062 25.5562 39.5847 27.3976 42.2383 27.3976C44.0471 27.3976 45.3786 26.522 46.3469 25.3919C46.7014 26.5913 47.6407 27.3976 49.3636 27.3976C52.2269 27.3976 53.9528 25.6829 54.9668 23.9605C55.8082 25.9616 57.7789 27.3967 60.6688 27.3967C63.6142 27.3967 65.8935 26.1429 67.5089 24.4385L67.0051 26.4337C66.9136 26.7931 67.0685 27.0756 67.4863 27.0756H70.0216C70.3688 27.0756 70.6158 26.8974 70.7059 26.5292C70.7505 26.3485 71.1168 24.919 71.6342 22.8879C72.6237 19.001 74.214 14.9685 76.6037 14.9685C77.4465 14.9685 77.7921 15.4443 77.7921 16.1937C77.7921 16.5471 77.6905 16.8525 77.6027 17.0162C76.4445 16.7838 75.5126 17.3611 75.5126 18.6099C75.5126 19.4235 76.3605 20.1631 77.5049 20.1631C78.3793 20.1631 79.1023 19.9466 79.6788 19.5547C80.2463 19.6729 80.8126 19.7972 81.3774 19.9276C81.2906 20.4912 81.2461 21.0607 81.2445 21.631C81.2445 24.7508 83.4507 27.3965 87.4051 27.3965C90.5039 27.3965 92.6305 26.2519 94.4662 24.7845C95.3485 26.2423 97.5765 27.4204 100.5 27.4204C104.506 27.4204 106.778 25.317 106.778 22.5368C106.778 20.0203 104.732 19.0941 102.622 18.3229C100.907 17.6973 99.4765 17.3571 99.4765 16.1332C99.4765 15.1301 100.259 14.6712 101.599 14.6712C102.469 14.6712 103.122 14.8604 103.47 14.9591C103.816 15.8331 104.532 16.8008 105.753 16.8008C106.787 16.8008 107.251 15.9753 107.251 15.2151C107.251 13.051 103.681 12.8242 103.681 8.18309C103.681 5.29712 105.298 2.91636 108.648 2.91636C110.975 2.91636 112.495 4.40654 112.495 6.81161C112.495 8.79455 111.304 12.3245 111.304 12.3245H109.279C108.89 12.3245 108.661 12.4851 108.573 12.8525C108.436 13.4228 108.295 13.9922 108.151 14.5608C108.066 14.8921 108.257 15.1433 108.622 15.1433H110.599C110.599 15.1433 108.555 22.7531 108.555 24.137C108.555 25.9951 109.592 27.3953 111.865 27.3953C115.079 27.3953 117.088 25.2862 117.961 22.2193C118.029 21.9821 117.896 21.789 117.658 21.789H116.431C116.187 21.789 116.045 21.9299 115.983 22.1715C115.706 23.2602 115.019 24.4056 113.668 24.4056C112.881 24.4056 112.443 23.9071 112.443 23.0609C112.443 22.3298 112.923 20.6181 113.512 18.3028C113.793 17.2003 114.293 15.1435 114.293 15.1435ZM88.949 15.0135C90.0857 15.0135 90.6257 15.777 90.6257 16.6869C90.6257 18.2259 89.4435 19.1643 87.5946 19.1643C86.9329 19.1643 86.0078 19.006 85.4616 18.8222C85.6912 17.4069 86.7057 15.0135 88.949 15.0135ZM62.211 15.0135C63.4551 15.0135 63.887 15.777 63.887 16.6869C63.887 18.2259 62.7054 19.1643 60.8567 19.1643C60.1948 19.1643 59.2697 19.006 58.7237 18.8222C58.952 17.4069 59.8516 15.0135 62.211 15.0135ZM13.0223 0.741211C4.91171 0.741211 0.822266 6.6127 0.822266 11.509C0.822266 14.4736 1.93388 17.1111 4.31808 18.0938C4.70903 18.2554 5.05922 18.0993 5.1726 17.6623C5.25147 17.3598 5.43803 16.5969 5.52127 16.2789C5.63579 15.8467 5.59123 15.695 5.27574 15.3183C4.58826 14.4995 4.14896 13.4395 4.14896 11.938C4.14896 7.58197 7.37668 3.68232 12.5538 3.68232C17.1383 3.68232 19.6568 6.51066 19.6568 10.288C19.6568 15.258 17.4787 19.4526 14.2447 19.4526C12.4589 19.4526 11.122 17.9613 11.5505 16.1323C12.0635 13.9487 13.0574 11.5921 13.0574 10.0159C13.0574 8.60503 12.3074 7.42824 10.7551 7.42824C8.92949 7.42824 7.46294 9.33518 7.46294 11.8898C7.46294 13.5168 8.00747 14.6172 8.00747 14.6172C8.00747 14.6172 6.13917 22.6101 5.81173 24.0099C5.15951 26.7976 5.71352 30.2151 5.76035 30.5602C5.78803 30.7647 6.04835 30.8133 6.16628 30.659C6.33464 30.4371 8.50877 27.7267 9.2482 25.0182C9.45733 24.2513 10.4489 20.2804 10.4489 20.2804C11.042 21.4228 12.7755 22.429 14.619 22.429C20.1065 22.429 23.8298 17.3774 23.8298 10.6157C23.8298 5.50292 19.5409 0.741211 13.0223 0.741211Z" fill="currentColor"/>
+                </svg>
+              </p>
+
+              <!-- Text -->
+              <p class="lead text-center mb-5 mb-md-8">
+                <q>
+                  We wouldn't be able to run the majority of our business without the Goodkit platform helping us manage everything.
+                </q>
+              </p>
+
+              <!-- Footer -->
+              <div class="d-flex align-items-center justify-content-center">
+
+                <!-- Avatar -->
+                <div class="avatar avatar-sm">
+                  <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-2.jpg" alt="...">
+                </div>
+
+                <!-- Body -->
+                <div class="ms-4">
+
+                  <!-- Title -->
+                  <p class="fw-bold mb-0">
+                    Malcolm Travillon
+                  </p>
+
+                  <!-- Position -->
+                  <p class="small text-muted mt-n1 mb-0">
+                    HR at Pinterest
+                  </p>
+
+                </div>
+
+              </div>
+
+            </blockquote>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pt-10 pt-md-12">
+      <div class="container-lg position-relative" style="z-index: 1;">
+        <div class="row">
+          <div class="col-12">
+
+            <!-- Card -->
+            <div class="card card-lg rounded-top-start-3 rounded-bottom-end-3">
+              <div class="card-body">
+                <div class="row justify-content-center">
+                  <div class="col-md-10 col-lg-8 text-center">
+
+                    <!-- Heading -->
+                    <h2 class="display-3 mb-4">
+                      Pricing made simple.
+                    </h2>
+
+                    <!-- Text -->
+                    <p class="text-muted mb-9">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque.
+                    </p>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+
+                    <!-- Text -->
+                    <p class="text-center text-muted">
+                      How many people to you need to hire?
+                    </p>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+
+                    <!-- Form -->
+                    <form>
+                      <div class="form-group timeline-radio timeline-radio-warning">
+
+                        <!-- Timeline radio -->
+                        <input class="timeline-radio-input" id="timelineRadioOne" data-toggle="price" data-target="#price" data-value="199" name="timelineRadio" type="radio">
+                        <label class="timeline-radio-label" for="timelineRadioOne">
+                          <small class="text-muted">1-5</small>
+                        </label>
+
+                        <!-- Timeline radio -->
+                        <input class="timeline-radio-input" id="timelineRadioTwo" data-toggle="price" data-target="#price" data-value="299" name="timelineRadio" type="radio">
+                        <label class="timeline-radio-label" for="timelineRadioTwo">
+                          <small class="text-muted">6-15</small>
+                        </label>
+
+                        <!-- Timeline radio -->
+                        <input class="timeline-radio-input" id="timelineRadioThree" data-toggle="price" data-target="#price" data-value="399" name="timelineRadio" type="radio">
+                        <label class="timeline-radio-label" for="timelineRadioThree">
+                          <small class="text-muted">16-40</small>
+                        </label>
+
+                        <!-- Timeline radio -->
+                        <input class="timeline-radio-input" id="timelineRadioFour" data-toggle="price" data-target="#price" data-value="499" name="timelineRadio" type="radio" checked>
+                        <label class="timeline-radio-label" for="timelineRadioFour">
+                          <small class="text-muted">41-100</small>
+                        </label>
+
+                        <!-- Timeline radio -->
+                        <input class="timeline-radio-input" id="timelineRadioFive" data-toggle="price" data-target="#price" data-value="599" name="timelineRadio" type="radio">
+                        <label class="timeline-radio-label" for="timelineRadioFive">
+                          <small class="text-muted">100+</small>
+                        </label>
+
+                      </div>
+                      <div class="row align-items-center">
+                        <div class="col-md text-center text-md-start">
+
+                          <!-- Price -->
+                          <div class="display-4 font-sans-serif fw-bolder mb-4 mb-md-0">
+                            <span class="fs-3 align-middle">$</span>
+                            <span class="mx-n2" id="price">499</span>
+                            <span class="fs-2 align-middle">/mo </span>
+                          </div>
+
+                        </div>
+                        <div class="col-md-auto">
+
+                          <!-- Button -->
+                          <button class="btn w-100 btn-primary-dark lift">
+                            Start Hiring
+                          </button>
+
+                        </div>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-gray-800 pt-14 pt-md-18 pb-12 pb-md-16 mt-n10 mt-md-n12" style="background-image: url(assets/img/patterns/pattern-2.svg);">
+      <div class="container-lg">
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8 text-center">
+
+            <!-- Preheading -->
+            <h6 class="text-uppercase text-warning mb-5">
+              What's the scale?
+            </h6>
+
+            <!-- Heading -->
+            <h2 class="display-1 text-white mb-4">
+              1.92 million hired
+            </h2>
+
+            <!-- Text -->
+            <p class="text-white-80 mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer py-8 pt-md-11 bg-dark border-multicolor">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-6 col-md">
+    
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Services
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Press</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">About us</a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-6 col-md">
+    
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Products
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Homepage</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Pages</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Legal</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">Terms</a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-6 col-md">
+    
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Services
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Press</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">About us</a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-6 col-md">
+    
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Connect
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Press</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">About us</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">Pages</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+    
+            <!-- Divider -->
+            <hr class="text-white-10 my-7">
+    
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col">
+    
+            <!-- Social -->
+            <ul class="list-inline list-unstyled text-gray-600 mb-0">
+              <li class="list-inline-item">
+                <a class="icon icon-sm text-reset" href="#!">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2.163C15.204 2.163 15.584 2.175 16.85 2.233C20.102 2.381 21.621 3.924 21.769 7.152C21.827 8.417 21.838 8.797 21.838 12.001C21.838 15.206 21.826 15.585 21.769 16.85C21.62 20.075 20.105 21.621 16.85 21.769C15.584 21.827 15.206 21.839 12 21.839C8.796 21.839 8.416 21.827 7.151 21.769C3.891 21.62 2.38 20.07 2.232 16.849C2.174 15.584 2.162 15.205 2.162 12C2.162 8.796 2.175 8.417 2.232 7.151C2.381 3.924 3.896 2.38 7.151 2.232C8.417 2.175 8.796 2.163 12 2.163ZM12 0C8.741 0 8.333 0.014 7.053 0.072C2.695 0.272 0.273 2.69 0.073 7.052C0.014 8.333 0 8.741 0 12C0 15.259 0.014 15.668 0.072 16.948C0.272 21.306 2.69 23.728 7.052 23.928C8.333 23.986 8.741 24 12 24C15.259 24 15.668 23.986 16.948 23.928C21.302 23.728 23.73 21.31 23.927 16.948C23.986 15.668 24 15.259 24 12C24 8.741 23.986 8.333 23.928 7.053C23.732 2.699 21.311 0.273 16.949 0.073C15.668 0.014 15.259 0 12 0V0ZM12 5.838C8.597 5.838 5.838 8.597 5.838 12C5.838 15.403 8.597 18.163 12 18.163C15.403 18.163 18.162 15.404 18.162 12C18.162 8.597 15.403 5.838 12 5.838ZM12 16C9.791 16 8 14.21 8 12C8 9.791 9.791 8 12 8C14.209 8 16 9.791 16 12C16 14.21 14.209 16 12 16ZM18.406 4.155C17.61 4.155 16.965 4.8 16.965 5.595C16.965 6.39 17.61 7.035 18.406 7.035C19.201 7.035 19.845 6.39 19.845 5.595C19.845 4.8 19.201 4.155 18.406 4.155Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="list-inline-item ms-1">
+                <a class="icon icon-sm text-reset" href="#!">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.675 0H1.325C0.593 0 0 0.593 0 1.325V22.676C0 23.407 0.593 24 1.325 24H12.82V14.706H9.692V11.084H12.82V8.413C12.82 5.313 14.713 3.625 17.479 3.625C18.804 3.625 19.942 3.724 20.274 3.768V7.008L18.356 7.009C16.852 7.009 16.561 7.724 16.561 8.772V11.085H20.148L19.681 14.707H16.561V24H22.677C23.407 24 24 23.407 24 22.675V1.325C24 0.593 23.407 0 22.675 0V0Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="list-inline-item ms-1">
+                <a class="icon icon-sm text-reset" href="#!">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 4.55705C23.117 4.94905 22.168 5.21305 21.172 5.33205C22.189 4.72305 22.97 3.75805 23.337 2.60805C22.386 3.17205 21.332 3.58205 20.21 3.80305C19.313 2.84605 18.032 2.24805 16.616 2.24805C13.437 2.24805 11.101 5.21405 11.819 8.29305C7.728 8.08805 4.1 6.12805 1.671 3.14905C0.381 5.36205 1.002 8.25705 3.194 9.72305C2.388 9.69705 1.628 9.47605 0.965 9.10705C0.911 11.388 2.546 13.522 4.914 13.997C4.221 14.185 3.462 14.229 2.69 14.081C3.316 16.037 5.134 17.46 7.29 17.5C5.22 19.123 2.612 19.848 0 19.54C2.179 20.937 4.768 21.752 7.548 21.752C16.69 21.752 21.855 14.031 21.543 7.10605C22.505 6.41105 23.34 5.54405 24 4.55705Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="list-inline-item ms-1">
+                <a class="icon icon-sm text-reset" href="#!">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.373 0 0 5.372 0 12C0 17.084 3.163 21.426 7.627 23.174C7.522 22.225 7.427 20.769 7.669 19.733C7.887 18.796 9.076 13.768 9.076 13.768C9.076 13.768 8.717 13.049 8.717 11.986C8.717 10.318 9.684 9.072 10.888 9.072C11.911 9.072 12.406 9.841 12.406 10.762C12.406 11.791 11.751 13.33 11.412 14.757C11.129 15.951 12.011 16.926 13.189 16.926C15.322 16.926 16.961 14.677 16.961 11.431C16.961 8.558 14.897 6.549 11.949 6.549C8.535 6.549 6.531 9.11 6.531 11.756C6.531 12.787 6.928 13.894 7.424 14.494C7.522 14.613 7.536 14.718 7.507 14.839L7.174 16.199C7.121 16.419 7 16.466 6.772 16.36C5.273 15.662 4.336 13.471 4.336 11.711C4.336 7.926 7.086 4.449 12.265 4.449C16.428 4.449 19.663 7.416 19.663 11.38C19.663 15.516 17.056 18.844 13.436 18.844C12.22 18.844 11.077 18.213 10.686 17.466L9.938 20.319C9.667 21.362 8.936 22.669 8.446 23.465C9.57 23.812 10.763 24 12 24C18.627 24 24 18.627 24 12C24 5.372 18.627 0 12 0V0Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-auto">
+    
+            <!-- Button -->
+            <a class="btn btn-sm btn-primary" href="#!">
+              Join Now
+            </a>
+    
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+    
+            <!-- Divider -->
+            <hr class="text-white-10 my-7">
+    
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+    
+            <!-- Brand -->
+            <h2 class="font-serif text-white mb-0">
+              Goodkit
+            </h2>
+    
+          </div>
+          <div class="col-auto">
+    
+            <!-- Text -->
+            <small class="text-gray-600">
+              Made with ❤️ by GoodThemes
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="./assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="./assets/js/theme.bundle.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+    
+    <!-- 
+      Theme Sans Serif CSS
+      Remove the "disabled" attribute if you want to enable Sans Serif for headings.
+    -->
+    <link rel="stylesheet" href="./assets/css/theme-sans-serif.bundle.css" id="themeSansSerif" disabled />
+    
+    <!--
+      Demo JS
+      Remove the code below on a production website.
+    -->
+    <script src="./assets/js/demo.bundle.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>Goodkit</title>
+  </head>
+  <body>
+
+    <!-- BODY -->
+    <main class="border-multicolor">
+      <div class="container-lg d-flex flex-column">
+        <div class="row align-items-center justify-content-center min-vh-100 py-10 py-md-12 mt-n1">
+          <div class="col-12 col-md-7 col-lg-5 text-center">
+
+            <!-- Preheading -->
+            <h6 class="text-uppercase text-warning mb-5">
+              404
+            </h6>
+
+            <!-- Heading -->
+            <h1 class="display-3 mb-4">
+              Uh oh.
+            </h1>
+
+            <!-- Text -->
+            <p class="text-muted">
+              There’s nothing here, but if you feel this is an error please <a href="#!">let us know</a>.
+            </p>
+
+            <!-- Button -->
+            <a class="btn btn-primary" href="#!" onclick="goBack()">
+              Go back
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="./assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="./assets/js/theme.bundle.js"></script>
+
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+
+    </script>
+
+  </body>
+</html>

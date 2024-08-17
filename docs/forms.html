@@ -1,0 +1,1616 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="../assets/css/libs.bundle.css" />
+    
+    <!-- 
+      Theme Sans Serif CSS
+      Remove the "disabled" attribute if you want to enable Sans Serif for headings.
+    -->
+    <link rel="stylesheet" href="../assets/css/theme-sans-serif.bundle.css" id="themeSansSerif" disabled />
+    
+    <!--
+      Demo JS
+      Remove the code below on a production website.
+    -->
+    <script src="../assets/js/demo.bundle.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>Goodkit</title>
+  </head>
+  <body class="docs-body">
+
+    <!-- MODALS -->
+    <!-- Sign in -->
+    <div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" aria-labelledby="modalSignInHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSignInHeading">
+              Sign In
+            </h1>
+    
+            <!-- Text -->
+            <p>
+              Don’t have an account? <a href="sign-up.html">Sign up</a>
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="signInEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="signInEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="signInPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signInPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="signInPasswordCaption" data-toggle="password" href="#signInPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign in
+              </button>
+    
+            </form>
+    
+            <!-- Link -->
+            <a class="fs-sm" href="password-reset.html">
+              Forgot your password?
+            </a>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sign up -->
+    <div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="modalSignUpHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSignUpHeading">
+              Sign Up
+            </h1>
+    
+            <!-- Text -->
+            <p>
+              Create beautiful marketing websites in hours instead of weeks.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="signUpEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="signUpEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="signUpPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signUpPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="signUpPasswordCaption" data-toggle="password" href="#signUpPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign up
+              </button>
+    
+            </form>
+    
+            <!-- Link -->
+            <small class="text-muted">
+              Already have an account? <a href="sign-in.html">Login</a>
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Password reset -->
+    <div class="modal fade" id="modalPasswordReset" tabindex="-1" role="dialog" aria-labelledby="modalPasswordResetHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="display-4 mb-4" id="modalPasswordResetHeading">
+              Password reset
+            </h1>
+    
+            <!-- Text -->
+            <p class="text-muted">
+              Enter your email to reset your password.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="passwordResetEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="passwordResetEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Reset password
+              </button>
+    
+            </form>
+    
+            <!-- Text -->
+            <small class="text-muted">
+              Remember your password? <a href="sign-in.html">Log in</a>.
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sale -->
+    <div class="modal fade" id="modalSale" tabindex="-1" role="dialog" aria-labelledby="modalSaleHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Image -->
+            <img class="img-fluid mb-4 mt-n11" src="../assets/img/illustrations/illustration-4.png" alt="...">
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSaleHeading">
+              30 Day Free Trial
+            </h1>
+    
+            <!-- Text -->
+            <p class="text-muted">
+              We’ll help you get started by getting you guides and all the basic informaiton.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="saleModalEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="saleModalEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Start Trial
+              </button>
+    
+            </form>
+    
+            <!-- Text -->
+            <small class="text-muted">
+              <a class="text-reset" data-bs-dismiss="modal" href="#!">No thanks, I hate free stuff.</a>
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white border-bottom">
+      <div class="container-lg">
+    
+        <!-- Brand -->
+        <a class="navbar-brand d-lg-none" href="../index.html">Goodkit</a>
+    
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-end w-100">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="landingsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Landings
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-xl dropdown-menu-flush" aria-labelledby="landingsDropdown">
+                  <div class="row align-items-center gx-0">
+                    <div class="col-md-6 order-1 dropdown-menu-col rounded-top-start-0 bg-gray-900 pt-4 py-lg-5">
+                      <div class="dropdown-menu-body">
+                
+                        <!-- Heading -->
+                        <h6 class="dropdown-header text-uppercase text-primary-light d-none d-lg-block">
+                          Services
+                        </h6>
+                
+                        <!-- Links -->
+                        <a class="d-flex text-decoration-none" href="../coworking.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.133 2.036c6.945 3.876 9.445 8.206 7.5 12.99-4.97-.79-7.47-5.12-7.5-12.99z" fill="#335EEA" opacity=".3"/><path d="M18.742 2.036c-6.945 3.876-9.445 8.206-7.5 12.99 4.97-.79 7.47-5.12 7.5-12.99z" fill="#335EEA" opacity=".3"/><path d="M12 1c-4.076 6.83-4.076 11.83 0 15 3.91-3.17 3.91-8.17 0-15z" fill="#335EEA" opacity=".3"/><path d="M6.344 13h11.312a1 1 0 01.958 1.287l-2.186 7.288A2 2 0 0114.512 23H9.488a2 2 0 01-1.916-1.425l-2.186-7.288A1 1 0 016.344 13z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Coworking
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              Minimal, image-focused content
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="../hiring-agency.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M12 11a4 4 0 110-8 4 4 0 010 8z" fill="#335EEA" opacity=".3"/><path d="M3 20.2c.388-4.773 4.262-7.2 8.983-7.2 4.788 0 8.722 2.293 9.015 7.2.012.195 0 .8-.751.8H3.727c-.25 0-.747-.54-.726-.8z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Hiring Platform
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              A hiring service platform
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="../course.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M6 3h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2zm-.5 2a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm0 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1z" fill="#335EEA" opacity=".3"/><path d="M11.352 14.572l2.605-1.78a.5.5 0 00.001-.825l-2.605-1.792a.5.5 0 00-.783.412v3.572a.5.5 0 00.782.413z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Course
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              React programming course
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="../software-automation.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 7a1 1 0 110-2h8a4 4 0 110 8H8a2 2 0 100 4h9a1 1 0 010 2H8a4 4 0 110-8h8a2 2 0 100-4H8z" fill="#335EEA" opacity=".3"/><path d="M9.707 8.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 1.414L7.414 6l2.293 2.293zM14.293 20.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 00-1.414 1.414L16.586 18l-2.293 2.293z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Automated Integrations
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              Digital integration software
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                
+                      </div>
+                    </div>
+                    <div class="col-md-6 order-0 dropdown-menu-col">
+                      <div class="dropdown-menu-body">
+                
+                        <!-- Heading -->
+                        <h6 class="dropdown-header text-uppercase d-none d-lg-block">
+                          Software
+                        </h6>
+                
+                        <!-- Links -->
+                        <a class="d-flex text-decoration-none text-reset" href="../robo-advisor.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" fill="#335EEA" opacity=".3"/><path d="M18.5 11h-13A1.5 1.5 0 004 12.5v.5h4.586a1 1 0 01.707.293l1 1a2.414 2.414 0 003.414 0l1-1a1 1 0 01.707-.293H20v-.5a1.5 1.5 0 00-1.5-1.5zM5.5 6A1.5 1.5 0 004 7.5V8h16v-.5A1.5 1.5 0 0018.5 6h-13z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Robo Advisor
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              A simple and professional layout
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="../analytics-saas.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4.002 12.2L13 14V4.062A8.001 8.001 0 0112 20a8 8 0 01-7.998-7.8z" fill="#335EEA" opacity=".3"/><path d="M3.06 10.012A8.001 8.001 0 0111 3v8.6l-7.94-1.588z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Analytics SaaS
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              UI-heavy product example
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="../e-commerce-platform.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M18.145 11.844l-.698 4.185a1 1 0 01-1.165.82L4.913 14.78a1 1 0 01-.783-.709L2.306 7.685a1 1 0 01.961-1.275h13.726l.613-2.627a1.18 1.18 0 011.15-.912h2.064a1.18 1.18 0 110 2.36h-1.128l-1.547 6.613z" fill="#335EEA" opacity=".3"/><path d="M6.5 21a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm9 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              E-Commerce Platform
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              SaaS for sales of goods
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="../mobile-chat-app.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M7.139 4v15h9.722V4H7.14zm.694-3h8.334c1.406 0 2.083.981 2.083 2.5v17c0 1.519-.677 2.5-2.083 2.5H7.833c-1.406 0-2.083-.981-2.083-2.5v-17c0-1.519.677-2.5 2.083-2.5z" fill="#335EEA"/><path fill="#335EEA" opacity=".3" d="M7 4v15h10V4z"/><circle fill="#335EEA" cx="12" cy="21" r="1"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Mobile Apps
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              Minimal layout for mobile apps
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                
+                      </div>
+                      <div class="dropdown-menu-footer align-items-center d-none d-lg-flex">
+                
+                        <!-- Text -->
+                        <span>Sans Serif Headers</span>
+                
+                        <!-- Switch -->
+                        <form class="ms-auto me-n3">
+                          <div class="form-check form-switch mb-0">
+                            <input class="form-check-input family-switch" type="checkbox" id="familySwitch" onchange="switchFamily(this.checked)">
+                            <label class="form-check-label" for="familySwitch"></label>
+                          </div>
+                        </form>
+                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Pages
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="pagesDropdown">
+                  <div class="row gx-0">
+                    <div class="col">
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Company
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="../about-orig.html">
+                        About
+                      </a>
+                      <a class="dropdown-item" href="../pricing-orig.html">
+                        Pricing
+                      </a>
+                      <a class="dropdown-item" href="../pricing-feature-list.html">
+                        Pricing Table
+                      </a>
+                      <a class="dropdown-item" href="../career-listing.html">
+                        Careers
+                      </a>
+                      <a class="dropdown-item" href="../career-benefits.html">
+                        Job benefits
+                      </a>
+                      <a class="dropdown-item" href="../contact.html">
+                        Contact
+                      </a>
+                      <a class="dropdown-item" href="../faq.html">
+                        FAQ
+                      </a><a class="dropdown-item" href="../terms.html">
+                        Terms
+                      </a>
+                
+                    </div>
+                    <div class="col">
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Blog
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="../blog-listing.html">
+                        Listing
+                      </a>
+                      <a class="dropdown-item" href="../blog-post.html">
+                        Article
+                      </a>
+                      <a class="dropdown-item" href="../blog-post-cover.html">
+                        Cover Article
+                      </a>
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Help Center
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="../help-center.html">
+                        Overview
+                      </a>
+                      <a class="dropdown-item" href="../help-center-article.html">
+                        Article
+                      </a>
+                
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+    
+          <!-- Brand -->
+          <a class="navbar-brand d-none d-lg-block px-lg-6" href="../index-orig.html">Goodkit</a>
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-start w-100">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="accountDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Account
+              </a>
+              <div class="dropdown-positioner">
+                <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="signInDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Sign In
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="signInDropright">
+                        <a class="dropdown-item" href="../sign-in-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="../sign-in.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignIn">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="signUpDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Sign Up
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="signUpDropright">
+                        <a class="dropdown-item" href="../sign-up-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="../sign-up.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignUp">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="passwordResetDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Password Reset
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="passwordResetDropright">
+                        <a class="dropdown-item" href="../password-reset-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="../password-reset.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalPasswordReset">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="errorsDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Errors
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="errorsDropright">
+                        <a class="dropdown-item" href="../error-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="../error.html">
+                          Simple
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="docsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Docs
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="docsDropdown">
+                  <a class="d-flex align-items-center text-reset text-decoration-none" href="../docs/index.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 3v.5A1.5 1.5 0 009.5 5h5A1.5 1.5 0 0016 3.5V3h2a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h2z" fill="#335EEA" opacity=".3"/><path d="M11 2a1 1 0 012 0h1.5a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-5a.5.5 0 01-.5-.5v-1a.5.5 0 01.5-.5H11z" fill="#335EEA"/><rect fill="#335EEA" opacity=".3" x="7" y="10" width="5" height="2" rx="1"/><rect fill="#335EEA" opacity=".3" x="7" y="14" width="9" height="2" rx="1"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Documentation
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>Compiling and building.</span>
+                
+                    </div>
+                
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="../docs/alerts.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.5 4h4A1.5 1.5 0 0111 5.5v1A1.5 1.5 0 019.5 8h-4A1.5 1.5 0 014 6.5v-1A1.5 1.5 0 015.5 4zm9 12h4a1.5 1.5 0 011.5 1.5v1a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-1a1.5 1.5 0 011.5-1.5z" fill="#335EEA"/><path d="M5.5 10h4a1.5 1.5 0 011.5 1.5v7A1.5 1.5 0 019.5 20h-4A1.5 1.5 0 014 18.5v-7A1.5 1.5 0 015.5 10zm9-6h4A1.5 1.5 0 0120 5.5v7a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-7A1.5 1.5 0 0114.5 4z" fill="#335EEA" opacity=".3"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Components
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>Full list of pieces in the theme</span>
+                
+                    </div>
+                
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="../docs/changelog.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.857 2h7.88a1.5 1.5 0 01.968.355l4.764 4.029A1.5 1.5 0 0120 7.529v12.554c0 1.79-.02 1.917-1.857 1.917H5.857C4.02 22 4 21.874 4 20.083V3.917C4 2.127 4.02 2 5.857 2z" fill="#335EEA" opacity=".3"/><rect fill="#335EEA" x="6" y="11" width="9" height="2" rx="1"/><rect fill="#335EEA" x="6" y="15" width="5" height="2" rx="1"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Changelog
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>This is the new version</span>
+                
+                    </div>
+                
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item d-lg-none">
+              <div class="nav-link">
+    
+                <!-- Text -->
+                <span>
+                  Sans Serif Headers
+                </span>
+    
+                <!-- Switch -->
+                <form class="ms-auto me-n3">
+                  <div class="form-check form-switch mb-0">
+                    <input class="form-check-input family-switch" type="checkbox" id="familySwitchMobile" onchange="switchFamily(this.checked)">
+                    <label class="form-check-label" for="familySwitchMobile"></label>
+                  </div>
+                </form>
+    
+              </div>
+            </li>
+          </ul>
+    
+        </div>
+    
+      </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <nav class="navbar-dark docs-breadcrumb">
+      <div class="container-lg">
+        <div class="row align-items-center">
+          <div class="col">
+    
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb breadcrumb-dark px-0 mb-0">
+              <li class="breadcrumb-item">
+                <a href="index.html">Docs</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Forms
+              </li>
+            </ol>
+    
+          </div>
+          <div class="col-auto">
+    
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docsSidenav" aria-controls="docsSidenav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <section>
+      <div class="container-fluid">
+        <div class="row align-items-start">
+          <div class="col-lg-3 col-xl-2 docs-sidenav docs-sidenav-start">
+
+            <!-- Collapse -->
+            <div class="collapse d-lg-block" id="docsSidenav">
+              <div class="border-bottom border-bottom-lg-0 py-6 py-md-9 px-lg-8">
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Basics
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-6">
+                  <li class="mb-2">
+                    <a class="text-reset" href="index.html">Setup</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="changelog.html">Changelog</a>
+                  </li>
+                </ul>
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Design
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-6">
+                  <li class="mb-2">
+                    <a class="text-reset" href="figma.html">Figma</a>
+                  </li>
+                </ul>
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Components
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-6">
+                  <li class="mb-2">
+                    <a class="text-reset" href="accordion.html">Accordion</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="alerts.html">Alerts</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="avatars.html">Avatars</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="badges.html">Badges</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="breadcrumb.html">Breadcrumb</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="buttons.html">Buttons</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="button-group.html">Button group</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="cards.html">Cards</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="decorations.html">Decorations</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="dropdowns.html">Dropdowns</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="forms.html">Forms</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="icons.html">Icons</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="images.html">Images</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="list-group.html">List group</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="modal.html">Modal</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="navbar.html">Navbar</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="navs-tabs.html">Navs & tabs</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="offcanvas.html">Offcanvas</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="pagination.html">Pagination</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="placeholders.html">Placeholders</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="popovers.html">Popovers</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="progress.html">Progress</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="shapes.html">Shapes</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="spinners.html">Spinners</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="tables.html">Tables</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="timeline.html">Timeline</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="toasts.html">Toasts</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="tooltips.html">Tooltips</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="typography.html">Typography</a>
+                  </li>
+                </ul>
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Plugins
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-6">
+                  <li class="mb-2">
+                    <a class="text-reset" href="aos.html">AOS</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="bigpicture.html">BigPicture</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="countup.html">Count up</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="flickity.html">Flickity</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="isotope.html">Isotope</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="jarallax.html">Jarallax</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="map.html">Map</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="smooth-scroll.html">Smooth scroll</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="typed.html">Typed</a>
+                  </li>
+                </ul>
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Utilities
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-0">
+                  <li class="mb-2">
+                    <a class="text-reset" href="background.html">Background</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="border.html">Border</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="lift.html">Lift</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="position.html">Position</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="sizing.html">Sizing</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="type.html">Type</a>
+                  </li>
+                </ul>
+            
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-9 col-xl-8 offset-lg-3 offset-xl-2 py-6 py-md-9 px-lg-10">
+
+            <!-- Heading -->
+            <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h1 class="font-sans-serif mb-0">
+                  Forms
+                </h1>
+            
+            
+            </div>
+            
+            <!-- Text -->
+              <p class="fs-lg mb-5">
+                Goodkit supports all of Bootstrap&#x27;s default form styling in addition to a handful of new input types and features.
+              </p>
+            
+              <!-- Link -->
+              <p>
+                <a href="https://getbootstrap.com/docs/5.2/forms/" target="_blank">
+                  <i class="fe fe-external-link pe-1"></i> Bootstrap Documentation
+                </a>
+              </p>
+            
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+            
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Form -->
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+              <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h2 class="font-sans-serif mb-0" id="formControls" >
+                  Form controls
+                </h2>
+            
+            
+              </div>
+            
+              <!-- Text -->
+              <p>
+                Give textual form controls like &lt;input&gt;s and &lt;textarea&gt;s an upgrade with custom styles, sizing, focus states, and more.
+              </p>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Form -->
+                <form>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+              <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h2 class="font-sans-serif mb-0" id="sizing" >
+                  Sizing
+                </h2>
+            
+            
+              </div>
+            
+              <!-- Text -->
+              <p>
+                Set heights using classes like .form-control-lg and .form-control-sm.
+              </p>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Input -->
+                <div class="form-group">
+                  <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
+                </div>
+
+                <!-- Input -->
+                <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+                </div>
+
+                <!-- Input -->
+                <div class="form-group mb-0">
+                  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+              <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h2 class="font-sans-serif mb-0" id="disabled" >
+                  Disabled
+                </h2>
+            
+            
+              </div>
+            
+              <!-- Text -->
+              <p>
+                Add the disabled boolean attribute on an input to give it a grayed out appearance and remove pointer events.
+              </p>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Input -->
+                <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Disabled input" aria-label="Disabled input example" disabled>
+                </div>
+
+                <!-- Input -->
+                <div class="form-group mb-0">
+                  <input class="form-control" type="text" placeholder="Disabled readonly input" aria-label="Disabled input example" disabled readonly>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+              <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h2 class="font-sans-serif mb-0" id="readonly" >
+                  Readonly
+                </h2>
+            
+            
+              </div>
+            
+              <!-- Text -->
+              <p>
+                Add the readonly boolean attribute on an input to prevent modification of the input’s value. Read-only inputs appear lighter (just like disabled inputs), but retain the standard cursor.
+              </p>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Input -->
+                <input class="form-control" type="text" placeholder="Readonly input here..." aria-label="readonly input example" readonly>
+
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+              <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h2 class="font-sans-serif mb-0" id="select" >
+                  Select
+                </h2>
+            
+            
+              </div>
+            
+              <!-- Text -->
+              <p>
+                Customize the native &lt;select&gt;s with custom CSS that changes the element’s initial appearance.
+              </p>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Select -->
+                <select class="form-select form-select-lg form-group" aria-label=".form-select-lg example">
+                  <option selected>Open this select menu</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+
+                <!-- Select -->
+                <select class="form-select form-group" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+
+                <!-- Select -->
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                  <option selected>Open this select menu</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+              <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h2 class="font-sans-serif mb-0" id="checksAndRadios" >
+                  Checks and radios
+                </h2>
+            
+            
+              </div>
+            
+              <!-- Text -->
+              <p>
+                Create consistent cross-browser and cross-device checkboxes and radios with our completely rewritten checks component.
+              </p>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Form check -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+
+                <!-- Form check -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                  <label class="form-check-label" for="flexCheckChecked">
+                    Checked checkbox
+                  </label>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Form check -->
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Default radio
+                  </label>
+                </div>
+
+                <!-- Form check -->
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Default checked radio
+                  </label>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+              <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h2 class="font-sans-serif mb-0" id="inputGroup" >
+                  Input group
+                </h2>
+            
+            
+              </div>
+            
+              <!-- Text -->
+              <p>
+                Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.
+              </p>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <div class="input-group form-group">
+                  <span class="input-group-text" id="basic-addon1">@</span>
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group form-group">
+                  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <span class="input-group-text" id="basic-addon2">@example.com</span>
+                </div>
+
+                <label for="basic-url" class="form-label">Your vanity URL</label>
+                <div class="input-group form-group">
+                  <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group form-group">
+                  <span class="input-group-text">$</span>
+                  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <span class="input-group-text">.00</span>
+                </div>
+
+                <div class="input-group form-group">
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                  <span class="input-group-text">@</span>
+                  <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                </div>
+
+                <div class="input-group">
+                  <span class="input-group-text">With textarea</span>
+                  <textarea class="form-control" aria-label="With textarea"></textarea>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+              <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h2 class="font-sans-serif mb-0" id="validation" >
+                  Validation
+                </h2>
+            
+            
+              </div>
+            
+              <!-- Text -->
+              <p>
+                Provide valuable, actionable feedback to your users with HTML5 form validation, via browser default behaviors or custom styles and JavaScript.
+              </p>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Form -->
+                <form class="row g-3">
+                  <div class="col-md-4">
+                    <label for="validationServer01" class="form-label">First name</label>
+                    <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationServer02" class="form-label">Last name</label>
+                    <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="validationServerUsername" class="form-label">Username</label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                      <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                      <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                        Please choose a username.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="validationServer03" class="form-label">City</label>
+                    <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+                    <div id="validationServer03Feedback" class="invalid-feedback">
+                      Please provide a valid city.
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="validationServer04" class="form-label">State</label>
+                    <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+                      <option selected disabled value="">Choose...</option>
+                      <option>...</option>
+                    </select>
+                    <div id="validationServer04Feedback" class="invalid-feedback">
+                      Please select a valid state.
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="validationServer05" class="form-label">Zip</label>
+                    <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+                    <div id="validationServer05Feedback" class="invalid-feedback">
+                      Please provide a valid zip.
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+                      <label class="form-check-label" for="invalidCheck3">
+                        Agree to terms and conditions
+                      </label>
+                      <div id="invalidCheck3Feedback" class="invalid-feedback">
+                        You must agree before submitting.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+              <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h2 class="font-sans-serif mb-0" id="underline" >
+                  Underline
+                </h2>
+            
+                  <!-- Badge -->
+                  <div class="badge bg-primary-soft h6 font-sans-serif mb-0 ms-3">Goodkit Exclusive</div>
+            
+              </div>
+            
+              <!-- Text -->
+              <p>
+                Removes background and all by bottom borders.
+              </p>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-underline" placeholder="Form control underline">
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-underline is-valid" placeholder="Form control underline">
+                </div>
+
+                <div class="form-group mb-0">
+                  <input type="text" class="form-control form-control-underline is-invalid" placeholder="Form control underline">
+                </div>
+
+              </div>
+              <div class="card-footer">
+                <code class="html highlight">
+                  &lt;div&nbsp;class=&quot;form-group&quot;&gt;<br />&nbsp;&nbsp;&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;form-control&nbsp;form-control-underline&quot;&nbsp;placeholder=&quot;Form&nbsp;control&nbsp;underline&quot;&gt;<br />&lt;/div&gt;
+                </code>
+              </div>
+            </div>
+
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+              <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h2 class="font-sans-serif mb-0" id="timelineRadio" >
+                  Timeline radio
+                </h2>
+            
+                  <!-- Badge -->
+                  <div class="badge bg-primary-soft h6 font-sans-serif mb-0 ms-3">Goodkit Exclusive</div>
+            
+              </div>
+            
+              <!-- Text -->
+              <p>
+                The timeline radio component that combines the custom radios and the countUp plugin. The color of the timeline radio component can be controlled with the .timeline-radio-{color} utility classes.
+              </p>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Form -->
+                <form>
+                  <div class="form-group timeline-radio timeline-radio-warning">
+
+                    <!-- Timeline radio -->
+                    <input class="timeline-radio-input" id="timelineRadioOne" data-toggle="price" data-target="#price" data-value="199" name="timelineRadio" type="radio">
+                    <label class="timeline-radio-label" for="timelineRadioOne">
+                      <small class="text-muted">1-5</small>
+                    </label>
+
+                    <!-- Timeline radio -->
+                    <input class="timeline-radio-input" id="timelineRadioTwo" data-toggle="price" data-target="#price" data-value="299" name="timelineRadio" type="radio">
+                    <label class="timeline-radio-label" for="timelineRadioTwo">
+                      <small class="text-muted">6-15</small>
+                    </label>
+
+                    <!-- Timeline radio -->
+                    <input class="timeline-radio-input" id="timelineRadioThree" data-toggle="price" data-target="#price" data-value="399" name="timelineRadio" type="radio">
+                    <label class="timeline-radio-label" for="timelineRadioThree">
+                      <small class="text-muted">16-40</small>
+                    </label>
+
+                    <!-- Timeline radio -->
+                    <input class="timeline-radio-input" id="timelineRadioFour" data-toggle="price" data-target="#price" data-value="499" name="timelineRadio" type="radio" checked>
+                    <label class="timeline-radio-label" for="timelineRadioFour">
+                      <small class="text-muted">41-100</small>
+                    </label>
+
+                    <!-- Timeline radio -->
+                    <input class="timeline-radio-input" id="timelineRadioFive" data-toggle="price" data-target="#price" data-value="599" name="timelineRadio" type="radio">
+                    <label class="timeline-radio-label" for="timelineRadioFive">
+                      <small class="text-muted">100+</small>
+                    </label>
+
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-md text-center text-md-start">
+
+                      <!-- Price -->
+                      <div class="display-4 font-sans-serif fw-bolder mb-4 mb-md-0">
+                        <span class="fs-3 align-middle">$</span>
+                        <span class="mx-n2" id="price">499</span>
+                        <span class="fs-2 align-middle">/mo </span>
+                      </div>
+
+                    </div>
+                    <div class="col-md-auto">
+
+                      <!-- Button -->
+                      <button class="btn w-100 btn-primary-dark lift">
+                        Start Hiring
+                      </button>
+
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+              <div class="card-footer">
+                <code class="html highlight">
+                  &lt;form&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;form-group&nbsp;timeline-radio&nbsp;timeline-radio-warning&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Timeline&nbsp;radio&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;timeline-radio-input&quot;&nbsp;id=&quot;timelineRadioOne&quot;&nbsp;data-toggle=&quot;price&quot;&nbsp;data-target=&quot;#price&quot;&nbsp;data-value=&quot;199&quot;&nbsp;name=&quot;timelineRadio&quot;&nbsp;type=&quot;radio&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;class=&quot;timeline-radio-label&quot;&nbsp;for=&quot;timelineRadioOne&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;small&nbsp;class=&quot;text-muted&quot;&gt;1-5&lt;/small&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Timeline&nbsp;radio&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;timeline-radio-input&quot;&nbsp;id=&quot;timelineRadioTwo&quot;&nbsp;data-toggle=&quot;price&quot;&nbsp;data-target=&quot;#price&quot;&nbsp;data-value=&quot;299&quot;&nbsp;name=&quot;timelineRadio&quot;&nbsp;type=&quot;radio&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;class=&quot;timeline-radio-label&quot;&nbsp;for=&quot;timelineRadioTwo&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;small&nbsp;class=&quot;text-muted&quot;&gt;6-15&lt;/small&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Timeline&nbsp;radio&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;timeline-radio-input&quot;&nbsp;id=&quot;timelineRadioThree&quot;&nbsp;data-toggle=&quot;price&quot;&nbsp;data-target=&quot;#price&quot;&nbsp;data-value=&quot;399&quot;&nbsp;name=&quot;timelineRadio&quot;&nbsp;type=&quot;radio&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;class=&quot;timeline-radio-label&quot;&nbsp;for=&quot;timelineRadioThree&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;small&nbsp;class=&quot;text-muted&quot;&gt;16-40&lt;/small&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Timeline&nbsp;radio&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;timeline-radio-input&quot;&nbsp;id=&quot;timelineRadioFour&quot;&nbsp;data-toggle=&quot;price&quot;&nbsp;data-target=&quot;#price&quot;&nbsp;data-value=&quot;499&quot;&nbsp;name=&quot;timelineRadio&quot;&nbsp;type=&quot;radio&quot;&nbsp;checked&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;class=&quot;timeline-radio-label&quot;&nbsp;for=&quot;timelineRadioFour&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;small&nbsp;class=&quot;text-muted&quot;&gt;41-100&lt;/small&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Timeline&nbsp;radio&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;timeline-radio-input&quot;&nbsp;id=&quot;timelineRadioFive&quot;&nbsp;data-toggle=&quot;price&quot;&nbsp;data-target=&quot;#price&quot;&nbsp;data-value=&quot;599&quot;&nbsp;name=&quot;timelineRadio&quot;&nbsp;type=&quot;radio&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;class=&quot;timeline-radio-label&quot;&nbsp;for=&quot;timelineRadioFive&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;small&nbsp;class=&quot;text-muted&quot;&gt;100+&lt;/small&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br /><br />&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;row&nbsp;align-items-center&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-md&nbsp;text-center&nbsp;text-md-start&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Price&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;display-4&nbsp;fw-bolder&nbsp;mb-4&nbsp;mb-md-0&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;fs-3&nbsp;align-middle&quot;&gt;$&lt;/span&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;mx-n2&quot;&nbsp;id=&quot;price&quot;&gt;499&lt;/span&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;fs-2&nbsp;align-middle&quot;&gt;/mo&nbsp;&lt;/span&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-md-auto&quot;&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Button&nbsp;--&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;class=&quot;btn&nbsp;w-100&nbsp;btn-primary-dark&nbsp;lift&quot;&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start&nbsp;Hiring<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />&nbsp;&nbsp;&lt;/div&gt;<br />&lt;/form&gt;
+                </code>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-xl-2 d-none d-xl-block docs-sidenav docs-sidenav-end">
+
+            <!-- List -->
+            <div class="my-6 my-md-9 px-lg-8 border-start">
+
+              <!-- List -->
+              <ul class="list-unstyled fs-xs mb-0">
+                <li class="mb-2">
+                  <a class="text-reset" href="#formControls" data-scroll>Form controls</a>
+                </li>
+                <li class="mb-2">
+                  <a class="text-reset" href="#sizing" data-scroll>Sizing</a>
+                </li>
+                <li class="mb-2">
+                  <a class="text-reset" href="#disabled" data-scroll>Disabled</a>
+                </li>
+                <li class="mb-2">
+                  <a class="text-reset" href="#readonly" data-scroll>Readonly</a>
+                </li>
+                <li class="mb-2">
+                  <a class="text-reset" href="#select" data-scroll>Select</a>
+                </li>
+                <li class="mb-2">
+                  <a class="text-reset" href="#checksAndRadios" data-scroll>Checks and radios</a>
+                </li>
+                <li class="mb-2">
+                  <a class="text-reset" href="#inputGroup" data-scroll>Input group</a>
+                </li>
+                <li class="mb-2">
+                  <a class="text-reset" href="#validation" data-scroll>Validatiion</a>
+                </li>
+                <li class="mb-2">
+                  <a class="text-reset" href="#underline" data-scroll>Underline</a>
+                </li>
+                <li class="mb-2">
+                  <a class="text-reset" href="#timelineRadio" data-scroll>Timeline radio</a>
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="../assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="../assets/js/theme.bundle.js"></script>
+
+  </body>
+</html>

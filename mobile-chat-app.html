@@ -1,0 +1,1646 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+    
+    <!-- 
+      Theme Sans Serif CSS
+      Remove the "disabled" attribute if you want to enable Sans Serif for headings.
+    -->
+    <link rel="stylesheet" href="./assets/css/theme-sans-serif.bundle.css" id="themeSansSerif" disabled />
+    
+    <!--
+      Demo JS
+      Remove the code below on a production website.
+    -->
+    <script src="./assets/js/demo.bundle.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>Goodkit</title>
+  </head>
+  <body class="bg-light">
+
+    <!-- MODALS -->
+    <!-- Sign in -->
+    <div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" aria-labelledby="modalSignInHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSignInHeading">
+              Sign In
+            </h1>
+    
+            <!-- Text -->
+            <p>
+              Don’t have an account? <a href="sign-up.html">Sign up</a>
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="signInEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="signInEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="signInPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signInPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="signInPasswordCaption" data-toggle="password" href="#signInPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign in
+              </button>
+    
+            </form>
+    
+            <!-- Link -->
+            <a class="fs-sm" href="password-reset.html">
+              Forgot your password?
+            </a>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sign up -->
+    <div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="modalSignUpHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSignUpHeading">
+              Sign Up
+            </h1>
+    
+            <!-- Text -->
+            <p>
+              Create beautiful marketing websites in hours instead of weeks.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="signUpEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="signUpEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="signUpPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signUpPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="signUpPasswordCaption" data-toggle="password" href="#signUpPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign up
+              </button>
+    
+            </form>
+    
+            <!-- Link -->
+            <small class="text-muted">
+              Already have an account? <a href="sign-in.html">Login</a>
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Password reset -->
+    <div class="modal fade" id="modalPasswordReset" tabindex="-1" role="dialog" aria-labelledby="modalPasswordResetHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="display-4 mb-4" id="modalPasswordResetHeading">
+              Password reset
+            </h1>
+    
+            <!-- Text -->
+            <p class="text-muted">
+              Enter your email to reset your password.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="passwordResetEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="passwordResetEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Reset password
+              </button>
+    
+            </form>
+    
+            <!-- Text -->
+            <small class="text-muted">
+              Remember your password? <a href="sign-in.html">Log in</a>.
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sale -->
+    <div class="modal fade" id="modalSale" tabindex="-1" role="dialog" aria-labelledby="modalSaleHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Image -->
+            <img class="img-fluid mb-4 mt-n11" src="./assets/img/illustrations/illustration-4.png" alt="...">
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSaleHeading">
+              30 Day Free Trial
+            </h1>
+    
+            <!-- Text -->
+            <p class="text-muted">
+              We’ll help you get started by getting you guides and all the basic informaiton.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="saleModalEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="saleModalEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Start Trial
+              </button>
+    
+            </form>
+    
+            <!-- Text -->
+            <small class="text-muted">
+              <a class="text-reset" data-bs-dismiss="modal" href="#!">No thanks, I hate free stuff.</a>
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-lg">
+    
+        <!-- Brand -->
+        <a class="navbar-brand d-lg-none" href="./index.html">Goodkit</a>
+    
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-end w-100">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="landingsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Landings
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-xl dropdown-menu-flush" aria-labelledby="landingsDropdown">
+                  <div class="row align-items-center gx-0">
+                    <div class="col-md-6 order-1 dropdown-menu-col rounded-top-start-0 bg-gray-900 pt-4 py-lg-5">
+                      <div class="dropdown-menu-body">
+                
+                        <!-- Heading -->
+                        <h6 class="dropdown-header text-uppercase text-primary-light d-none d-lg-block">
+                          Services
+                        </h6>
+                
+                        <!-- Links -->
+                        <a class="d-flex text-decoration-none" href="./coworking.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.133 2.036c6.945 3.876 9.445 8.206 7.5 12.99-4.97-.79-7.47-5.12-7.5-12.99z" fill="#335EEA" opacity=".3"/><path d="M18.742 2.036c-6.945 3.876-9.445 8.206-7.5 12.99 4.97-.79 7.47-5.12 7.5-12.99z" fill="#335EEA" opacity=".3"/><path d="M12 1c-4.076 6.83-4.076 11.83 0 15 3.91-3.17 3.91-8.17 0-15z" fill="#335EEA" opacity=".3"/><path d="M6.344 13h11.312a1 1 0 01.958 1.287l-2.186 7.288A2 2 0 0114.512 23H9.488a2 2 0 01-1.916-1.425l-2.186-7.288A1 1 0 016.344 13z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Coworking
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              Minimal, image-focused content
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="./hiring-agency.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M12 11a4 4 0 110-8 4 4 0 010 8z" fill="#335EEA" opacity=".3"/><path d="M3 20.2c.388-4.773 4.262-7.2 8.983-7.2 4.788 0 8.722 2.293 9.015 7.2.012.195 0 .8-.751.8H3.727c-.25 0-.747-.54-.726-.8z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Hiring Platform
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              A hiring service platform
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="./course.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M6 3h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2zm-.5 2a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm0 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1z" fill="#335EEA" opacity=".3"/><path d="M11.352 14.572l2.605-1.78a.5.5 0 00.001-.825l-2.605-1.792a.5.5 0 00-.783.412v3.572a.5.5 0 00.782.413z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Course
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              React programming course
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="./software-automation.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 7a1 1 0 110-2h8a4 4 0 110 8H8a2 2 0 100 4h9a1 1 0 010 2H8a4 4 0 110-8h8a2 2 0 100-4H8z" fill="#335EEA" opacity=".3"/><path d="M9.707 8.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 1.414L7.414 6l2.293 2.293zM14.293 20.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 00-1.414 1.414L16.586 18l-2.293 2.293z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Automated Integrations
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              Digital integration software
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                
+                      </div>
+                    </div>
+                    <div class="col-md-6 order-0 dropdown-menu-col">
+                      <div class="dropdown-menu-body">
+                
+                        <!-- Heading -->
+                        <h6 class="dropdown-header text-uppercase d-none d-lg-block">
+                          Software
+                        </h6>
+                
+                        <!-- Links -->
+                        <a class="d-flex text-decoration-none text-reset" href="./robo-advisor.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" fill="#335EEA" opacity=".3"/><path d="M18.5 11h-13A1.5 1.5 0 004 12.5v.5h4.586a1 1 0 01.707.293l1 1a2.414 2.414 0 003.414 0l1-1a1 1 0 01.707-.293H20v-.5a1.5 1.5 0 00-1.5-1.5zM5.5 6A1.5 1.5 0 004 7.5V8h16v-.5A1.5 1.5 0 0018.5 6h-13z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Robo Advisor
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              A simple and professional layout
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="./analytics-saas.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4.002 12.2L13 14V4.062A8.001 8.001 0 0112 20a8 8 0 01-7.998-7.8z" fill="#335EEA" opacity=".3"/><path d="M3.06 10.012A8.001 8.001 0 0111 3v8.6l-7.94-1.588z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Analytics SaaS
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              UI-heavy product example
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="./e-commerce-platform.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M18.145 11.844l-.698 4.185a1 1 0 01-1.165.82L4.913 14.78a1 1 0 01-.783-.709L2.306 7.685a1 1 0 01.961-1.275h13.726l.613-2.627a1.18 1.18 0 011.15-.912h2.064a1.18 1.18 0 110 2.36h-1.128l-1.547 6.613z" fill="#335EEA" opacity=".3"/><path d="M6.5 21a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm9 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              E-Commerce Platform
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              SaaS for sales of goods
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="./mobile-chat-app.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M7.139 4v15h9.722V4H7.14zm.694-3h8.334c1.406 0 2.083.981 2.083 2.5v17c0 1.519-.677 2.5-2.083 2.5H7.833c-1.406 0-2.083-.981-2.083-2.5v-17c0-1.519.677-2.5 2.083-2.5z" fill="#335EEA"/><path fill="#335EEA" opacity=".3" d="M7 4v15h10V4z"/><circle fill="#335EEA" cx="12" cy="21" r="1"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Mobile Apps
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              Minimal layout for mobile apps
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                
+                      </div>
+                      <div class="dropdown-menu-footer align-items-center d-none d-lg-flex">
+                
+                        <!-- Text -->
+                        <span>Sans Serif Headers</span>
+                
+                        <!-- Switch -->
+                        <form class="ms-auto me-n3">
+                          <div class="form-check form-switch mb-0">
+                            <input class="form-check-input family-switch" type="checkbox" id="familySwitch" onchange="switchFamily(this.checked)">
+                            <label class="form-check-label" for="familySwitch"></label>
+                          </div>
+                        </form>
+                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Pages
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="pagesDropdown">
+                  <div class="row gx-0">
+                    <div class="col">
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Company
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="./about-orig.html">
+                        About
+                      </a>
+                      <a class="dropdown-item" href="./pricing-orig.html">
+                        Pricing
+                      </a>
+                      <a class="dropdown-item" href="./pricing-feature-list.html">
+                        Pricing Table
+                      </a>
+                      <a class="dropdown-item" href="./career-listing.html">
+                        Careers
+                      </a>
+                      <a class="dropdown-item" href="./career-benefits.html">
+                        Job benefits
+                      </a>
+                      <a class="dropdown-item" href="./contact.html">
+                        Contact
+                      </a>
+                      <a class="dropdown-item" href="./faq.html">
+                        FAQ
+                      </a><a class="dropdown-item" href="./terms.html">
+                        Terms
+                      </a>
+                
+                    </div>
+                    <div class="col">
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Blog
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="./blog-listing.html">
+                        Listing
+                      </a>
+                      <a class="dropdown-item" href="./blog-post.html">
+                        Article
+                      </a>
+                      <a class="dropdown-item" href="./blog-post-cover.html">
+                        Cover Article
+                      </a>
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Help Center
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="./help-center.html">
+                        Overview
+                      </a>
+                      <a class="dropdown-item" href="./help-center-article.html">
+                        Article
+                      </a>
+                
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+    
+          <!-- Brand -->
+          <a class="navbar-brand d-none d-lg-block px-lg-6" href="./index-orig.html">Goodkit</a>
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-start w-100">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="accountDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Account
+              </a>
+              <div class="dropdown-positioner">
+                <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="signInDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Sign In
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="signInDropright">
+                        <a class="dropdown-item" href="./sign-in-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="./sign-in.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignIn">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="signUpDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Sign Up
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="signUpDropright">
+                        <a class="dropdown-item" href="./sign-up-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="./sign-up.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignUp">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="passwordResetDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Password Reset
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="passwordResetDropright">
+                        <a class="dropdown-item" href="./password-reset-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="./password-reset.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalPasswordReset">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="errorsDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Errors
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="errorsDropright">
+                        <a class="dropdown-item" href="./error-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="./error.html">
+                          Simple
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="docsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Docs
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="docsDropdown">
+                  <a class="d-flex align-items-center text-reset text-decoration-none" href="./docs/index.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 3v.5A1.5 1.5 0 009.5 5h5A1.5 1.5 0 0016 3.5V3h2a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h2z" fill="#335EEA" opacity=".3"/><path d="M11 2a1 1 0 012 0h1.5a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-5a.5.5 0 01-.5-.5v-1a.5.5 0 01.5-.5H11z" fill="#335EEA"/><rect fill="#335EEA" opacity=".3" x="7" y="10" width="5" height="2" rx="1"/><rect fill="#335EEA" opacity=".3" x="7" y="14" width="9" height="2" rx="1"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Documentation
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>Compiling and building.</span>
+                
+                    </div>
+                
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="./docs/alerts.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.5 4h4A1.5 1.5 0 0111 5.5v1A1.5 1.5 0 019.5 8h-4A1.5 1.5 0 014 6.5v-1A1.5 1.5 0 015.5 4zm9 12h4a1.5 1.5 0 011.5 1.5v1a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-1a1.5 1.5 0 011.5-1.5z" fill="#335EEA"/><path d="M5.5 10h4a1.5 1.5 0 011.5 1.5v7A1.5 1.5 0 019.5 20h-4A1.5 1.5 0 014 18.5v-7A1.5 1.5 0 015.5 10zm9-6h4A1.5 1.5 0 0120 5.5v7a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-7A1.5 1.5 0 0114.5 4z" fill="#335EEA" opacity=".3"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Components
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>Full list of pieces in the theme</span>
+                
+                    </div>
+                
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="./docs/changelog.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.857 2h7.88a1.5 1.5 0 01.968.355l4.764 4.029A1.5 1.5 0 0120 7.529v12.554c0 1.79-.02 1.917-1.857 1.917H5.857C4.02 22 4 21.874 4 20.083V3.917C4 2.127 4.02 2 5.857 2z" fill="#335EEA" opacity=".3"/><rect fill="#335EEA" x="6" y="11" width="9" height="2" rx="1"/><rect fill="#335EEA" x="6" y="15" width="5" height="2" rx="1"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Changelog
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>This is the new version</span>
+                
+                    </div>
+                
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item d-lg-none">
+              <div class="nav-link">
+    
+                <!-- Text -->
+                <span>
+                  Sans Serif Headers
+                </span>
+    
+                <!-- Switch -->
+                <form class="ms-auto me-n3">
+                  <div class="form-check form-switch mb-0">
+                    <input class="form-check-input family-switch" type="checkbox" id="familySwitchMobile" onchange="switchFamily(this.checked)">
+                    <label class="form-check-label" for="familySwitchMobile"></label>
+                  </div>
+                </form>
+    
+              </div>
+            </li>
+          </ul>
+    
+        </div>
+    
+      </div>
+    </nav>
+
+    <!-- WELCOME -->
+    <section class="pt-6 pt-md-10">
+      <div class="container-lg">
+        <div class="row align-items-center">
+          <div class="col-md-6 col-xl-5 text-center text-md-start mt-md-n8" data-aos="fade-up">
+
+            <!-- Heading -->
+            <h1 class="display-3 mb-4">
+              Chat Solutions for <span class="text-primary-light text-underline-primary-light d-none d-lg-inline"><span data-typed='{"strings": ["Enterprise", "Startups", "Agencies"]}'></span></span><span class="text-primary-light text-underline-primary-light d-lg-none">Enterprise</span>
+            </h1>
+
+            <!-- Text -->
+            <p class="fs-lg">
+              World class communication software built with enterprise customers as our focus.
+            </p>
+
+            <!-- Buttons -->
+            <div class="mb-8 mb-md-0">
+              <a class="btn btn-primary-light lift" href="#!">
+                Get Started
+              </a>
+              <a class="btn btn-white lift ms-3" href="#!">
+                Why Us?
+              </a>
+            </div>
+
+          </div>
+          <div class="col-md-5 offset-md-1 offset-xl-2 align-self-start d-none d-md-block">
+
+            <!-- Blur -->
+            <img class="position-absolute img-fluid mw-125 mt-n9" src="assets/img/blurs/blur-1.svg" alt="..." data-aos="fade-up" data-aos-delay="100">
+
+          </div>
+          <div class="col-md-4 offset-md-n4">
+
+            <!-- Image -->
+            <div class="position-relative">
+
+              <!-- Decoration -->
+              <div class="position-absolute bottom-end text-primary-light me-n8 mb-n6" data-aos="fade-up" data-aos-delay="150">
+                <svg width="185" height="186" viewBox="0 0 185 186" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="currentColor"/><circle cx="22" cy="2" r="2" fill="currentColor"/><circle cx="42" cy="2" r="2" fill="currentColor"/><circle cx="62" cy="2" r="2" fill="currentColor"/><circle cx="82" cy="2" r="2" fill="currentColor"/><circle cx="102" cy="2" r="2" fill="currentColor"/><circle cx="122" cy="2" r="2" fill="currentColor"/><circle cx="142" cy="2" r="2" fill="currentColor"/><circle cx="162" cy="2" r="2" fill="currentColor"/><circle cx="182" cy="2" r="2" fill="currentColor"/><circle cx="2" cy="22" r="2" fill="currentColor"/><circle cx="22" cy="22" r="2" fill="currentColor"/><circle cx="42" cy="22" r="2" fill="currentColor"/><circle cx="62" cy="22" r="2" fill="currentColor"/><circle cx="82" cy="22" r="2" fill="currentColor"/><circle cx="102" cy="22" r="2" fill="currentColor"/><circle cx="122" cy="22" r="2" fill="currentColor"/><circle cx="142" cy="22" r="2" fill="currentColor"/><circle cx="162" cy="22" r="2" fill="currentColor"/><circle cx="182" cy="22" r="2" fill="currentColor"/><circle cx="2" cy="42" r="2" fill="currentColor"/><circle cx="22" cy="42" r="2" fill="currentColor"/><circle cx="42" cy="42" r="2" fill="currentColor"/><circle cx="62" cy="42" r="2" fill="currentColor"/><circle cx="82" cy="42" r="2" fill="currentColor"/><circle cx="102" cy="42" r="2" fill="currentColor"/><circle cx="122" cy="42" r="2" fill="currentColor"/><circle cx="142" cy="42" r="2" fill="currentColor"/><circle cx="162" cy="42" r="2" fill="currentColor"/><circle cx="182" cy="42" r="2" fill="currentColor"/><circle cx="2" cy="62" r="2" fill="currentColor"/><circle cx="22" cy="62" r="2" fill="currentColor"/><circle cx="42" cy="62" r="2" fill="currentColor"/><circle cx="62" cy="62" r="2" fill="currentColor"/><circle cx="82" cy="62" r="2" fill="currentColor"/><circle cx="102" cy="62" r="2" fill="currentColor"/><circle cx="122" cy="62" r="2" fill="currentColor"/><circle cx="142" cy="62" r="2" fill="currentColor"/><circle cx="162" cy="62" r="2" fill="currentColor"/><circle cx="182" cy="62" r="2" fill="currentColor"/><circle cx="2" cy="82" r="2" fill="currentColor"/><circle cx="22" cy="82" r="2" fill="currentColor"/><circle cx="42" cy="82" r="2" fill="currentColor"/><circle cx="62" cy="82" r="2" fill="currentColor"/><circle cx="82" cy="82" r="2" fill="currentColor"/><circle cx="102" cy="82" r="2" fill="currentColor"/><circle cx="122" cy="82" r="2" fill="currentColor"/><circle cx="142" cy="82" r="2" fill="currentColor"/><circle cx="162" cy="82" r="2" fill="currentColor"/><circle cx="182" cy="82" r="2" fill="currentColor"/><circle cx="2" cy="102" r="2" fill="currentColor"/><circle cx="22" cy="102" r="2" fill="currentColor"/><circle cx="42" cy="102" r="2" fill="currentColor"/><circle cx="62" cy="102" r="2" fill="currentColor"/><circle cx="82" cy="102" r="2" fill="currentColor"/><circle cx="102" cy="102" r="2" fill="currentColor"/><circle cx="122" cy="102" r="2" fill="currentColor"/><circle cx="142" cy="102" r="2" fill="currentColor"/><circle cx="162" cy="102" r="2" fill="currentColor"/><circle cx="182" cy="102" r="2" fill="currentColor"/><circle cx="2" cy="122" r="2" fill="currentColor"/><circle cx="22" cy="122" r="2" fill="currentColor"/><circle cx="42" cy="122" r="2" fill="currentColor"/><circle cx="62" cy="122" r="2" fill="currentColor"/><circle cx="82" cy="122" r="2" fill="currentColor"/><circle cx="102" cy="122" r="2" fill="currentColor"/><circle cx="122" cy="122" r="2" fill="currentColor"/><circle cx="142" cy="122" r="2" fill="currentColor"/><circle cx="162" cy="122" r="2" fill="currentColor"/><circle cx="182" cy="122" r="2" fill="currentColor"/><circle cx="2" cy="142" r="2" fill="currentColor"/><circle cx="22" cy="142" r="2" fill="currentColor"/><circle cx="42" cy="142" r="2" fill="currentColor"/><circle cx="62" cy="142" r="2" fill="currentColor"/><circle cx="82" cy="142" r="2" fill="currentColor"/><circle cx="102" cy="142" r="2" fill="currentColor"/><circle cx="122" cy="142" r="2" fill="currentColor"/><circle cx="142" cy="142" r="2" fill="currentColor"/><circle cx="162" cy="142" r="2" fill="currentColor"/><circle cx="182" cy="142" r="2" fill="currentColor"/><circle cx="2" cy="162" r="2" fill="currentColor"/><circle cx="22" cy="162" r="2" fill="currentColor"/><circle cx="42" cy="162" r="2" fill="currentColor"/><circle cx="62" cy="162" r="2" fill="currentColor"/><circle cx="82" cy="162" r="2" fill="currentColor"/><circle cx="102" cy="162" r="2" fill="currentColor"/><circle cx="122" cy="162" r="2" fill="currentColor"/><circle cx="142" cy="162" r="2" fill="currentColor"/><circle cx="162" cy="162" r="2" fill="currentColor"/><circle cx="182" cy="162" r="2" fill="currentColor"/><circle cx="2" cy="182" r="2" fill="currentColor"/><circle cx="22" cy="182" r="2" fill="currentColor"/><circle cx="42" cy="182" r="2" fill="currentColor"/><circle cx="62" cy="182" r="2" fill="currentColor"/><circle cx="82" cy="182" r="2" fill="currentColor"/><circle cx="102" cy="182" r="2" fill="currentColor"/><circle cx="122" cy="182" r="2" fill="currentColor"/><circle cx="142" cy="182" r="2" fill="currentColor"/><circle cx="162" cy="182" r="2" fill="currentColor"/><circle cx="182" cy="182" r="2" fill="currentColor"/></svg>              </div>
+
+              <!-- Image -->
+              <div class="text-center">
+                <img class="position-relative img-fluid mw-75 mw-md-100 rounded-top-start rounded-bottom-end shadow-lg" src="assets/img/screenshots/mobile/screenshot-2.jpg" alt="..." data-aos="fade-up" data-aos-delay="200">
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="pt-10 pt-md-12">
+      <div class="container-lg">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md-5">
+
+            <!-- Image grid -->
+            <div class="img-grid img-grid-1 mb-8 mb-md-0">
+              <div class="img-grid-item">
+
+                <!-- Image -->
+                <img class="img-fluid rounded-top-start-3 rounded-bottom-end-3 shadow-lg" data-jarallax-element="-30" src="assets/img/avatars/avatar-jumbo-1.jpg" alt="...">
+
+              </div>
+              <div class="img-grid-item">
+
+                <!-- Image -->
+                <img class="img-fluid rounded-top-start rounded-bottom-end shadow-lg" data-jarallax-element="-85" src="assets/img/avatars/avatar-2.jpg" alt="...">
+
+              </div>
+              <div class="img-grid-item">
+
+                <!-- Image -->
+                <img class="img-fluid rounded-top-start rounded-bottom-end shadow-lg" data-jarallax-element="-45" src="assets/img/avatars/avatar-8.jpg" alt="...">
+
+              </div>
+              <div class="img-grid-item">
+
+                <!-- Image -->
+                <img class="img-fluid rounded-top-start rounded-bottom-end shadow-lg" data-jarallax-element="-50" src="assets/img/avatars/avatar-10.jpg" alt="...">
+
+              </div>
+              <div class="img-grid-item">
+
+                <!-- Image -->
+                <img class="img-fluid rounded-top-start rounded-bottom-end shadow-lg" data-jarallax-element="-20" src="assets/img/avatars/avatar-6.jpg" alt="...">
+
+              </div>
+              <div class="img-grid-item">
+
+                <!-- Image -->
+                <img class="img-fluid rounded-top-start rounded-bottom-end shadow-lg" data-jarallax-element="-15" src="assets/img/avatars/avatar-4.jpg" alt="...">
+
+              </div>
+              <div class="img-grid-item">
+
+                <!-- Image -->
+                <img class="img-fluid rounded-top-start rounded-bottom-end shadow-lg" data-jarallax-element="-10" src="assets/img/avatars/avatar-3.jpg" alt="...">
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-xl-5 text-center text-md-start">
+
+            <!-- Heading -->
+            <h2 class="display-4 mb-4">
+              Your entire network is already online.
+            </h2>
+
+            <!-- Text -->
+            <p class="text-muted mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque.
+            </p>
+            <p class="text-muted mb-0">
+              In hac habitasse platea dictumst. Proin sit amet convallis enim. Sed auctor lorem id tortor dignissim, in sollicitudin odio porta.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="py-10 py-md-12">
+      <div class="container-lg">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md-6 order-md-1">
+
+            <!-- Image -->
+            <img class="img-fluid mb-6 mb-md-0" src="assets/img/screenshots/ui-elements/chat.png" alt="...">
+
+          </div>
+          <div class="col-md-6 col-xl-5 order-md-0 text-center text-md-start">
+
+            <!-- Heading -->
+            <h2 class="display-4 mb-6">
+              Simple, accessible messaging for all.
+            </h2>
+
+            <!-- Item -->
+            <div class="row">
+              <div class="col-12 col-md-auto">
+
+                <!-- Icon -->
+                <div class="icon text-primary-light mb-2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M6 9v6a3 3 0 003 3h6v.818C15 20.232 14.232 21 12.818 21H5.182C3.768 21 3 20.232 3 18.818v-7.636C3 9.768 3.768 9 5.182 9H6z" fill="#335EEA"/><path d="M10.182 4h7.636C19.232 4 20 4.768 20 6.182v7.636C20 15.232 19.232 16 17.818 16h-7.636C8.768 16 8 15.232 8 13.818V6.182C8 4.768 8.768 4 10.182 4z" fill="#335EEA" opacity=".3"/></g></svg>                </div>
+
+              </div>
+              <div class="col">
+
+                <!-- Title -->
+                <p class="fs-lg fw-bold mb-2">
+                  Beautiful Interfaces
+                </p>
+
+                <!-- Text -->
+                <p class="text-muted mb-5">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor.
+                </p>
+
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="row">
+              <div class="col-12 col-md-auto">
+
+                <!-- Icon -->
+                <div class="icon text-primary-light mb-2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4 4l7.631-1.43a2 2 0 01.738 0L20 4v9.283a8.51 8.51 0 01-4 7.217l-3.47 2.169a1 1 0 01-1.06 0L8 20.5a8.51 8.51 0 01-4-7.217V4z" fill="#335EEA" opacity=".3"/><path d="M11.175 14.75a.946.946 0 01-.67-.287l-1.917-1.917a.926.926 0 010-1.342c.383-.383 1.006-.383 1.341 0l1.246 1.246 3.163-3.162a.926.926 0 011.341 0 .926.926 0 010 1.341l-3.833 3.834a.946.946 0 01-.671.287z" fill="#335EEA"/></g></svg>                </div>
+
+              </div>
+              <div class="col">
+
+                <!-- Title -->
+                <p class="fs-lg fw-bold mb-2">
+                  Enterprise Security
+                </p>
+
+                <!-- Text -->
+                <p class="text-muted mb-0">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor.
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section>
+      <div class="container-lg position-relative" style="z-index: 1;">
+        <div class="row align-items-center">
+          <div class="col-12">
+
+            <!-- Decoration -->
+            <div class="position-absolute bottom-end text-gray-800 mb-n10 me-n8">
+              <svg width="207" height="207" viewBox="0 0 207 207" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.469 12.938A6.469 6.469 0 106.469 0a6.469 6.469 0 000 12.938zm0-1.618a4.852 4.852 0 100-9.703 4.852 4.852 0 000 9.703zM33.487 6.47l4.811-4.811L37.155.514l-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.81 4.812 1.143 1.143 4.81-4.81 4.812 4.81 1.143-1.143-4.81-4.811zm-1.143 32.343a6.469 6.469 0 100-12.937 6.469 6.469 0 000 12.938zm0-1.617a4.852 4.852 0 100-9.703 4.852 4.852 0 000 9.703zM7.612 32.344l4.811-4.811-1.143-1.144L6.469 31.2l-4.811-4.81-1.144 1.143 4.811 4.81-4.81 4.812 1.143 1.143 4.81-4.81 4.812 4.81 1.143-1.143-4.81-4.811z" fill="currentColor"/><g clip-path="url(#decoration4clip0)"><path fill-rule="evenodd" clip-rule="evenodd" d="M109.969 12.938a6.47 6.47 0 100-12.94 6.47 6.47 0 000 12.94zm0-1.618a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.811 4.812 1.144 1.143 4.811-4.81 4.811 4.81 1.143-1.143-4.811-4.811zm-1.143 32.343a6.469 6.469 0 10-.001-12.937 6.469 6.469 0 00.001 12.938zm0-1.617a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.811 4.812 1.144 1.143 4.811-4.81 4.811 4.81 1.143-1.143-4.811-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip1)"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.469 64.688a6.469 6.469 0 100-12.938 6.469 6.469 0 000 12.938zm0-1.618a4.852 4.852 0 100-9.703 4.852 4.852 0 000 9.703zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.81 4.812 1.143 1.143 4.81-4.81 4.812 4.81 1.143-1.143-4.81-4.811zm-1.143 32.343a6.469 6.469 0 100-12.937 6.469 6.469 0 000 12.938zm0-1.617a4.852 4.852 0 100-9.703 4.852 4.852 0 000 9.703zM7.612 84.094l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.81 4.812 1.143 1.143 4.81-4.81 4.812 4.81 1.143-1.143-4.81-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip2)"><path fill-rule="evenodd" clip-rule="evenodd" d="M109.969 64.688a6.47 6.47 0 100-12.94 6.47 6.47 0 000 12.94zm0-1.618a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.811 4.812 1.144 1.143 4.811-4.81 4.811 4.81 1.143-1.143-4.811-4.811zm-1.143 32.343a6.469 6.469 0 10-.001-12.937 6.469 6.469 0 00.001 12.938zm0-1.617a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.811 4.812 1.144 1.143 4.811-4.81 4.811 4.81 1.143-1.143-4.811-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip3)"><path fill-rule="evenodd" clip-rule="evenodd" d="M58.219 12.938a6.469 6.469 0 100-12.938 6.469 6.469 0 000 12.938zm0-1.618a4.852 4.852 0 100-9.703 4.852 4.852 0 000 9.703zM85.237 6.47l4.811-4.811L88.905.514l-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.81 4.812 1.143 1.143 4.81-4.81 4.812 4.81 1.143-1.143-4.81-4.811zm-1.143 32.343a6.469 6.469 0 100-12.937 6.469 6.469 0 000 12.938zm0-1.617a4.852 4.852 0 100-9.703 4.852 4.852 0 000 9.703zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.81 4.812 1.143 1.143 4.81-4.81 4.812 4.81 1.143-1.143-4.81-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip4)"><path fill-rule="evenodd" clip-rule="evenodd" d="M161.719 12.938a6.47 6.47 0 100-12.94 6.47 6.47 0 000 12.94zm0-1.618a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.811 4.812 1.144 1.143 4.811-4.81 4.811 4.81 1.143-1.143-4.811-4.811zm-1.143 32.343a6.469 6.469 0 10-.001-12.937 6.469 6.469 0 00.001 12.938zm0-1.617a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.811 4.812 1.144 1.143 4.811-4.81 4.811 4.81 1.143-1.143-4.811-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip5)"><path fill-rule="evenodd" clip-rule="evenodd" d="M58.219 64.688a6.469 6.469 0 100-12.938 6.469 6.469 0 000 12.938zm0-1.618a4.852 4.852 0 100-9.703 4.852 4.852 0 000 9.703zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.81 4.812 1.143 1.143 4.81-4.81 4.812 4.81 1.143-1.143-4.81-4.811zm-1.143 32.343a6.469 6.469 0 100-12.937 6.469 6.469 0 000 12.938zm0-1.617a4.852 4.852 0 100-9.703 4.852 4.852 0 000 9.703zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.81 4.812 1.143 1.143 4.81-4.81 4.812 4.81 1.143-1.143-4.81-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip6)"><path fill-rule="evenodd" clip-rule="evenodd" d="M161.719 64.688a6.47 6.47 0 100-12.94 6.47 6.47 0 000 12.94zm0-1.618a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.811 4.812 1.144 1.143 4.811-4.81 4.811 4.81 1.143-1.143-4.811-4.811zm-1.143 32.343a6.469 6.469 0 10-.001-12.937 6.469 6.469 0 00.001 12.938zm0-1.617a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.81-1.144 1.143 4.811 4.81-4.811 4.812 1.144 1.143 4.811-4.81 4.811 4.81 1.143-1.143-4.811-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip7)"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.469 116.438a6.47 6.47 0 10-.001-12.939 6.47 6.47 0 000 12.939zm0-1.618a4.851 4.851 0 100-9.703 4.851 4.851 0 000 9.703zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.81 4.811 1.143 1.143 4.81-4.811 4.812 4.811 1.143-1.143-4.81-4.811zm-1.143 32.343a6.469 6.469 0 100-12.937 6.469 6.469 0 000 12.937zm0-1.617a4.851 4.851 0 100-9.703 4.851 4.851 0 000 9.703zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.81 4.811 1.143 1.143 4.81-4.811 4.812 4.811 1.143-1.143-4.81-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip8)"><path fill-rule="evenodd" clip-rule="evenodd" d="M109.969 116.438a6.47 6.47 0 10-.002-12.94 6.47 6.47 0 00.002 12.94zm0-1.618a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.811 4.811 1.144 1.143 4.811-4.811 4.811 4.811 1.143-1.143-4.811-4.811zm-1.143 32.343a6.468 6.468 0 100-12.936 6.468 6.468 0 000 12.936zm0-1.617a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.811 4.811 1.144 1.143 4.811-4.811 4.811 4.811 1.143-1.143-4.811-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip9)"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.469 168.188a6.47 6.47 0 10-.001-12.939 6.47 6.47 0 000 12.939zm0-1.618a4.851 4.851 0 100-9.703 4.851 4.851 0 000 9.703zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.81 4.811 1.143 1.143 4.81-4.811 4.812 4.811 1.143-1.143-4.81-4.811zm-1.143 32.343a6.469 6.469 0 100-12.937 6.469 6.469 0 000 12.937zm0-1.617a4.851 4.851 0 100-9.703 4.851 4.851 0 000 9.703zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.81 4.811 1.143 1.143 4.81-4.811 4.812 4.811 1.143-1.143-4.81-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip10)"><path fill-rule="evenodd" clip-rule="evenodd" d="M109.969 168.188a6.47 6.47 0 10-.002-12.94 6.47 6.47 0 00.002 12.94zm0-1.618a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.811 4.811 1.144 1.143 4.811-4.811 4.811 4.811 1.143-1.143-4.811-4.811zm-1.143 32.343a6.468 6.468 0 100-12.936 6.468 6.468 0 000 12.936zm0-1.617a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.811 4.811 1.144 1.143 4.811-4.811 4.811 4.811 1.143-1.143-4.811-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip11)"><path fill-rule="evenodd" clip-rule="evenodd" d="M58.219 116.438a6.47 6.47 0 10-.002-12.939 6.47 6.47 0 00.002 12.939zm0-1.618a4.851 4.851 0 100-9.703 4.851 4.851 0 000 9.703zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.81 4.811 1.143 1.143 4.81-4.811 4.812 4.811 1.143-1.143-4.81-4.811zm-1.143 32.343a6.469 6.469 0 100-12.937 6.469 6.469 0 000 12.937zm0-1.617a4.851 4.851 0 100-9.703 4.851 4.851 0 000 9.703zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.81 4.811 1.143 1.143 4.81-4.811 4.812 4.811 1.143-1.143-4.81-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip12)"><path fill-rule="evenodd" clip-rule="evenodd" d="M161.719 116.438a6.47 6.47 0 10-.002-12.94 6.47 6.47 0 00.002 12.94zm0-1.618a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.811 4.811 1.144 1.143 4.811-4.811 4.811 4.811 1.143-1.143-4.811-4.811zm-1.143 32.343a6.468 6.468 0 100-12.936 6.468 6.468 0 000 12.936zm0-1.617a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.811 4.811 1.144 1.143 4.811-4.811 4.811 4.811 1.143-1.143-4.811-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip13)"><path fill-rule="evenodd" clip-rule="evenodd" d="M58.219 168.188a6.47 6.47 0 10-.002-12.939 6.47 6.47 0 00.002 12.939zm0-1.618a4.851 4.851 0 100-9.703 4.851 4.851 0 000 9.703zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.81 4.811 1.143 1.143 4.81-4.811 4.812 4.811 1.143-1.143-4.81-4.811zm-1.143 32.343a6.469 6.469 0 100-12.937 6.469 6.469 0 000 12.937zm0-1.617a4.851 4.851 0 100-9.703 4.851 4.851 0 000 9.703zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.81 4.811 1.143 1.143 4.81-4.811 4.812 4.811 1.143-1.143-4.81-4.811z" fill="currentColor"/></g><g clip-path="url(#decoration4clip14)"><path fill-rule="evenodd" clip-rule="evenodd" d="M161.719 168.188a6.47 6.47 0 10-.002-12.94 6.47 6.47 0 00.002 12.94zm0-1.618a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm27.018-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.811 4.811 1.144 1.143 4.811-4.811 4.811 4.811 1.143-1.143-4.811-4.811zm-1.143 32.343a6.468 6.468 0 100-12.936 6.468 6.468 0 000 12.936zm0-1.617a4.851 4.851 0 100-9.702 4.851 4.851 0 000 9.702zm-24.732-4.851l4.811-4.811-1.143-1.144-4.811 4.811-4.811-4.811-1.144 1.144 4.811 4.811-4.811 4.811 1.144 1.143 4.811-4.811 4.811 4.811 1.143-1.143-4.811-4.811z" fill="currentColor"/></g><defs><clipPath id="decoration4clip7"><path fill="#fff" d="M0 103.5h51.75v51.75H0z"/></clipPath><clipPath id="decoration4clip0"><path fill="#fff" d="M103.5 0h51.75v51.75H103.5z"/></clipPath><clipPath id="decoration4clip2"><path fill="#fff" d="M103.5 51.75h51.75v51.75H103.5z"/></clipPath><clipPath id="decoration4clip3"><path fill="#fff" d="M51.75 0h51.75v51.75H51.75z"/></clipPath><clipPath id="decoration4clip4"><path fill="#fff" d="M155.25 0H207v51.75h-51.75z"/></clipPath><clipPath id="decoration4clip5"><path fill="#fff" d="M51.75 51.75h51.75v51.75H51.75z"/></clipPath><clipPath id="decoration4clip6"><path fill="#fff" d="M155.25 51.75H207v51.75h-51.75z"/></clipPath><clipPath id="decoration4clip1"><path fill="#fff" d="M0 51.75h51.75v51.75H0z"/></clipPath><clipPath id="decoration4clip8"><path fill="#fff" d="M103.5 103.5h51.75v51.75H103.5z"/></clipPath><clipPath id="decoration4clip9"><path fill="#fff" d="M0 155.25h51.75V207H0z"/></clipPath><clipPath id="decoration4clip10"><path fill="#fff" d="M103.5 155.25h51.75V207H103.5z"/></clipPath><clipPath id="decoration4clip11"><path fill="#fff" d="M51.75 103.5h51.75v51.75H51.75z"/></clipPath><clipPath id="decoration4clip12"><path fill="#fff" d="M155.25 103.5H207v51.75h-51.75z"/></clipPath><clipPath id="decoration4clip13"><path fill="#fff" d="M51.75 155.25h51.75V207H51.75z"/></clipPath><clipPath id="decoration4clip14"><path fill="#fff" d="M155.25 155.25H207V207h-51.75z"/></clipPath></defs></svg>            </div>
+
+            <!-- Image -->
+            <img class="position-relative img-fluid rounded" src="assets/img/mobile-chat-app/video-thumb.jpg" alt="...">
+
+          </div>
+          <div class="col-12 offset-n12 text-center">
+
+            <!-- Button -->
+            <a class="btn btn-primary-light lift" data-bigpicture='{"ytSrc": "9I-Y6VQ6tyI"}' href="#">
+              <span class="d-inline-block small align-top me-3"><svg width="0.727em" height="1em" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 9.63V1.19C0 .683.567.38.988.664l6.455 4.334A.634.634 0 017.43 6.06L.975 10.166A.635.635 0 010 9.631z" fill="currentColor"/></svg></span> Watch Preview
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHAPE -->
+    <div class="position-relative">
+      <div class="shape shape-fluid-x shape-top text-dark pb-8 pb-md-12">
+        <div class="shape-img pb-9 pb-md-15">
+          <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>        </div>
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <section class="pt-10 pt-md-12 bg-dark">
+      <div class="container-lg">
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">
+
+            <!-- Heading -->
+            <h2 class="display-4 text-center text-white mb-9 mb-md-10">
+              Explore our services to find the right match for you.
+            </h2>
+
+          </div>
+        </div>
+        <div class="row mt-n8 mt-md-n9" data-aos="fade-up">
+          <div class="col-md-6 col-lg-4">
+
+            <!-- Item -->
+            <div class="d-flex mt-8 mt-md-9">
+
+              <!-- Icon -->
+              <div class="icon text-primary-light">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4 4l7.631-1.43a2 2 0 01.738 0L20 4v9.283a8.51 8.51 0 01-4 7.217l-3.47 2.169a1 1 0 01-1.06 0L8 20.5a8.51 8.51 0 01-4-7.217V4z" fill="#335EEA" opacity=".3"/><path d="M11.175 14.75a.946.946 0 01-.67-.287l-1.917-1.917a.926.926 0 010-1.342c.383-.383 1.006-.383 1.341 0l1.246 1.246 3.163-3.162a.926.926 0 011.341 0 .926.926 0 010 1.341l-3.833 3.834a.946.946 0 01-.671.287z" fill="#335EEA"/></g></svg>              </div>
+
+              <!-- Body -->
+              <div class="ms-5">
+
+                <!-- Title -->
+                <p class="fs-lg fw-bold text-white mb-1">
+                  Secure
+                </p>
+
+                <!-- Text -->
+                <p class="fs-sm text-white-60 mb-0">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque. In hac habitasse platea dictumst.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4">
+
+            <!-- Item -->
+            <div class="d-flex mt-8 mt-md-9">
+
+              <!-- Icon -->
+              <div class="icon text-primary-light">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M22 15.01l.025-.01v4.586a1 1 0 01-1.707.707L18.025 18H5a3 3 0 01-3-3V6a3 3 0 013-3h14a3 3 0 013 3v9.01zM6.168 10.555C7.678 12.819 9.646 14 12 14c2.354 0 4.322-1.18 5.832-3.445a1 1 0 10-1.664-1.11C15.01 11.181 13.646 12 12 12c-1.646 0-3.01-.82-4.168-2.555a1 1 0 00-1.664 1.11z" fill="#335EEA"/></g></svg>              </div>
+
+              <!-- Body -->
+              <div class="ms-5">
+
+                <!-- Title -->
+                <p class="fs-lg fw-bold text-white mb-1">
+                  Cross-platform
+                </p>
+
+                <!-- Text -->
+                <p class="fs-sm text-white-60 mb-0">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque. In hac habitasse platea dictumst.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4">
+
+            <!-- Item -->
+            <div class="d-flex mt-9">
+
+              <!-- Icon -->
+              <div class="icon text-primary-light">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M14.293 16.707a1 1 0 011.414-1.414l4 4a1 1 0 01-1.414 1.414l-4-4z" fill="#335EEA" opacity=".3"/><path d="M11 16a5 5 0 100-10 5 5 0 000 10zm0 2a7 7 0 110-14 7 7 0 010 14z" fill="#335EEA"/></g></svg>              </div>
+
+              <!-- Body -->
+              <div class="ms-5">
+
+                <!-- Title -->
+                <p class="fs-lg fw-bold text-white mb-1">
+                  Searchable
+                </p>
+
+                <!-- Text -->
+                <p class="fs-sm text-white-60 mb-0">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque. In hac habitasse platea dictumst.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4">
+
+            <!-- Item -->
+            <div class="d-flex mt-8 mt-md-9">
+
+              <!-- Icon -->
+              <div class="icon text-primary-light">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M7 11h8a2 2 0 002-2V8h2v1a4 4 0 01-4 4H7v2a1 1 0 01-2 0V9a1 1 0 112 0v2z" fill="#335EEA" opacity=".3"/><path d="M6 21a2 2 0 100-4 2 2 0 000 4zm0 2a4 4 0 110-8 4 4 0 010 8zM18 7a2 2 0 100-4 2 2 0 000 4zm0 2a4 4 0 110-8 4 4 0 010 8zM6 7a2 2 0 100-4 2 2 0 000 4zm0 2a4 4 0 110-8 4 4 0 010 8z" fill="#335EEA"/></g></svg>              </div>
+
+              <!-- Body -->
+              <div class="ms-5">
+
+                <!-- Title -->
+                <p class="fs-lg fw-bold text-white mb-1">
+                  Document History
+                </p>
+
+                <!-- Text -->
+                <p class="fs-sm text-white-60 mb-0">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque. In hac habitasse platea dictumst.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4">
+
+            <!-- Item -->
+            <div class="d-flex mt-8 mt-md-9">
+
+              <!-- Icon -->
+              <div class="icon text-primary-light">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" fill="#335EEA" opacity=".3"/><path d="M18.5 11h-13A1.5 1.5 0 004 12.5v.5h4.586a1 1 0 01.707.293l1 1a2.414 2.414 0 003.414 0l1-1a1 1 0 01.707-.293H20v-.5a1.5 1.5 0 00-1.5-1.5zM5.5 6A1.5 1.5 0 004 7.5V8h16v-.5A1.5 1.5 0 0018.5 6h-13z" fill="#335EEA"/></g></svg>              </div>
+
+              <!-- Body -->
+              <div class="ms-5">
+
+                <!-- Title -->
+                <p class="fs-lg fw-bold text-white mb-1">
+                  100% Free
+                </p>
+
+                <!-- Text -->
+                <p class="fs-sm text-white-60 mb-0">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque. In hac habitasse platea dictumst.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4">
+
+            <!-- Item -->
+            <div class="d-flex mt-8 mt-md-9">
+
+              <!-- Icon -->
+              <div class="icon text-primary-light">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M16.374 19.939l5.849-8.773A.75.75 0 0021.599 10H17V4.477a.75.75 0 00-1.374-.416l-5.849 8.773A.75.75 0 0010.401 14H15v5.523a.75.75 0 001.374.416z" fill="#335EEA"/><path d="M4.5 5h5a1.5 1.5 0 010 3h-5a1.5 1.5 0 010-3zm0 12h5a1.5 1.5 0 010 3h-5a1.5 1.5 0 010-3zm-2-6h4a1.5 1.5 0 010 3h-4a1.5 1.5 0 010-3z" fill="#335EEA" opacity=".3"/></g></svg>              </div>
+
+              <!-- Body -->
+              <div class="ms-5">
+
+                <!-- Title -->
+                <p class="fs-lg fw-bold text-white mb-1">
+                  Group Sync
+                </p>
+
+                <!-- Text -->
+                <p class="fs-sm text-white-60 mb-0">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque. In hac habitasse platea dictumst.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASES -->
+    <section class="pt-10 pt-md-12 bg-dark">
+
+      <!-- Content -->
+      <div class="container-lg">
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8 text-center">
+
+            <!-- Divider -->
+            <hr class="hr-sm bg-warning mx-auto mb-10 mb-md-12">
+
+            <!-- Preheading -->
+            <h6 class="text-uppercase text-warning mb-5">
+              Communication Anywhere
+            </h6>
+
+            <!-- Heading -->
+            <h2 class="display-4 text-white mb-9">
+              Our mobile app makes it dead simple to <span class="text-underline-primary-light">run your business</span>.
+            </h2>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider -->
+      <div class="flickity-items-fade" data-flickity='{"imagesLoaded": true, "pageDots": false, "wrapAround": true}'>
+        <div style="width: calc(100% - 2rem); max-width: 380px;">
+
+          <!-- Image -->
+          <img class="img-fluid rounded" src="assets/img/screenshots/mobile/screenshot-1.jpg" alt="...">
+
+          <!-- Body -->
+          <div class="flickity-hidden py-6 text-center">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white">
+              Account Management
+            </h6>
+
+            <!-- Text -->
+            <p class="fs-sm text-center text-white-80 mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan.
+            </p>
+
+          </div>
+
+        </div>
+        <div style="width: calc(100% - 2rem); max-width: 380px;">
+
+          <!-- Image -->
+          <img class="img-fluid rounded" src="assets/img/screenshots/mobile/screenshot-2.jpg" alt="...">
+
+          <!-- Body -->
+          <div class="flickity-hidden py-6 text-center">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white">
+              Customer Communication
+            </h6>
+
+            <!-- Text -->
+            <p class="fs-sm text-center text-white-80 mb-0">
+              In urna lectus, mattis non accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+
+          </div>
+
+        </div>
+        <div style="width: calc(100% - 2rem); max-width: 380px;">
+
+          <!-- Image -->
+          <img class="img-fluid rounded" src="assets/img/screenshots/mobile/screenshot-4.jpg" alt="...">
+
+          <!-- Body -->
+          <div class="flickity-hidden py-6 text-center">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white">
+              Appointment Scheduling
+            </h6>
+
+            <!-- Text -->
+            <p class="fs-sm text-center text-white-80 mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan.
+            </p>
+
+          </div>
+
+        </div>
+        <div style="width: calc(100% - 2rem); max-width: 380px;">
+
+          <!-- Image -->
+          <img class="img-fluid rounded" src="assets/img/screenshots/mobile/screenshot-5.jpg" alt="...">
+
+          <!-- Body -->
+          <div class="flickity-hidden py-6 text-center">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white">
+              Calendar Sharing
+            </h6>
+
+            <!-- Text -->
+            <p class="fs-sm text-center text-white-80 mb-0">
+              In urna lectus, mattis non accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+
+          </div>
+
+        </div>
+        <div style="width: calc(100% - 2rem); max-width: 380px;">
+
+          <!-- Image -->
+          <img class="img-fluid rounded" src="assets/img/screenshots/mobile/screenshot-6.jpg" alt="...">
+
+          <!-- Body -->
+          <div class="flickity-hidden py-6 text-center">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white">
+              Project Management
+            </h6>
+
+            <!-- Text -->
+            <p class="fs-sm text-center text-white-80 mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan.
+            </p>
+
+          </div>
+
+        </div>
+        <div style="width: calc(100% - 2rem); max-width: 380px;">
+
+          <!-- Image -->
+          <img class="img-fluid rounded" src="assets/img/screenshots/mobile/screenshot-7.jpg" alt="...">
+
+          <!-- Body -->
+          <div class="flickity-hidden py-6 text-center">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white">
+              Automatic Scheduling
+            </h6>
+
+            <!-- Text -->
+            <p class="fs-sm text-center text-white-80 mb-0">
+              In urna lectus, mattis non accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+
+          </div>
+
+        </div>
+        <div style="width: calc(100% - 2rem); max-width: 380px;">
+
+          <!-- Image -->
+          <img class="img-fluid rounded" src="assets/img/screenshots/mobile/screenshot-1.jpg" alt="...">
+
+          <!-- Body -->
+          <div class="flickity-hidden py-6 text-center">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white">
+              Account Management
+            </h6>
+
+            <!-- Text -->
+            <p class="fs-sm text-center text-white-80 mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan.
+            </p>
+
+          </div>
+
+        </div>
+        <div style="width: calc(100% - 2rem); max-width: 380px;">
+
+          <!-- Image -->
+          <img class="img-fluid rounded" src="assets/img/screenshots/mobile/screenshot-2.jpg" alt="...">
+
+          <!-- Body -->
+          <div class="flickity-hidden py-6 text-center">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white">
+              Customer Communication
+            </h6>
+
+            <!-- Text -->
+            <p class="fs-sm text-center text-white-80 mb-0">
+              In urna lectus, mattis non accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+
+          </div>
+
+        </div>
+        <div style="width: calc(100% - 2rem); max-width: 380px;">
+
+          <!-- Image -->
+          <img class="img-fluid rounded" src="assets/img/screenshots/mobile/screenshot-4.jpg" alt="...">
+
+          <!-- Body -->
+          <div class="flickity-hidden py-6 text-center">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white">
+              Appointment Scheduling
+            </h6>
+
+            <!-- Text -->
+            <p class="fs-sm text-center text-white-80 mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan.
+            </p>
+
+          </div>
+
+        </div>
+        <div style="width: calc(100% - 2rem); max-width: 380px;">
+
+          <!-- Image -->
+          <img class="img-fluid rounded" src="assets/img/screenshots/mobile/screenshot-5.jpg" alt="...">
+
+          <!-- Body -->
+          <div class="flickity-hidden py-6 text-center">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white">
+              Calendar Sharing
+            </h6>
+
+            <!-- Text -->
+            <p class="fs-sm text-center text-white-80 mb-0">
+              In urna lectus, mattis non accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+
+          </div>
+
+        </div>
+        <div style="width: calc(100% - 2rem); max-width: 380px;">
+
+          <!-- Image -->
+          <img class="img-fluid rounded" src="assets/img/screenshots/mobile/screenshot-6.jpg" alt="...">
+
+          <!-- Body -->
+          <div class="flickity-hidden py-6 text-center">
+
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white">
+              Project Management
+            </h6>
+
+            <!-- Text -->
+            <p class="fs-sm text-center text-white-80 mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- PRICING -->
+    <section class="py-10 py-md-12 bg-dark">
+      <div class="container-lg">
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-7 col-xl-6 text-center">
+
+            <!-- Divider -->
+            <hr class="hr-sm bg-warning mx-auto mb-10 mb-md-12">
+
+            <!-- Preheading -->
+            <h6 class="text-uppercase text-primary-light mb-5">
+              Chat anywhere
+            </h6>
+
+            <!-- Heading -->
+            <h2 class="display-4 text-white mb-4">
+              Start today.
+            </h2>
+
+            <!-- Text -->
+            <p class="text-white-80 mb-9">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque.
+            </p>
+
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-5 col-xl-4">
+
+            <!-- Card -->
+            <div class="card rounded-top-start-3 rounded-bottom-end-3 mb-6">
+              <div class="card-body text-center">
+
+                <!-- Preheading -->
+                <h6 class="text-uppercase text-warning">
+                  Starter
+                </h6>
+
+                <!-- Price -->
+                <p class="display-4 fw-bold">
+                  <span class="fs-3 align-middle">$</span>
+                  <span class="mx-n2">19</span>
+                  <span class="fs-2 align-middle">/mo </span>
+                </p>
+
+                <!-- List -->
+                <ul class="list-checked list-checked-warning">
+                  <li>
+                    50 user seats
+                  </li>
+                  <li>
+                    30 day history
+                  </li>
+                  <li>
+                    Limited API access
+                  </li>
+                </ul>
+
+                <!-- Button -->
+                <a class="btn w-100 btn-gray-300 shadow-none lift" href="#!">
+                  Get Started
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-5 col-xl-4">
+
+            <!-- Card -->
+            <div class="card rounded-top-start-3 rounded-bottom-end-3">
+              <div class="card-body text-center">
+
+                <!-- Preheading -->
+                <h6 class="text-uppercase text-warning">
+                  Standard
+                </h6>
+
+                <!-- Price -->
+                <p class="display-4 fw-bold">
+                  <span class="fs-3 align-middle">$</span>
+                  <span class="mx-n2">49</span>
+                  <span class="fs-2 align-middle">/mo </span>
+                </p>
+
+                <!-- List -->
+                <ul class="list-checked list-checked-warning">
+                  <li>
+                    500 user seats
+                  </li>
+                  <li>
+                    5 year history
+                  </li>
+                  <li>
+                    AES-256 encryption
+                  </li>
+                  <li>
+                    24/7 direct support
+                  </li>
+                  <li>
+                    Unlimited API access
+                  </li>
+                </ul>
+
+                <!-- Button -->
+                <a class="btn w-100 btn-primary lift" href="#!">
+                  Get Started
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer py-8 py-md-11 bg-dark border-top border-gray-900">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-md-4">
+    
+            <!-- Brand -->
+            <h2 class="font-serif text-white mb-1">
+              Goodkit
+            </h2>
+    
+            <!-- Text -->
+            <p class="text-white-60">
+              A better way to build.
+            </p>
+    
+          </div>
+          <div class="col-6 col-md">
+    
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Services
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Press</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">About us</a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-6 col-md">
+    
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Products
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Homepage</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Pages</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Legal</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">Terms</a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-6 col-md">
+    
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Services
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Press</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">About us</a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-6 col-md">
+    
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Connect
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Press</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">About us</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">Pages</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="./assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="./assets/js/theme.bundle.js"></script>
+
+  </body>
+</html>

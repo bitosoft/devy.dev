@@ -1,0 +1,1109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="../assets/css/libs.bundle.css" />
+    
+    <!-- 
+      Theme Sans Serif CSS
+      Remove the "disabled" attribute if you want to enable Sans Serif for headings.
+    -->
+    <link rel="stylesheet" href="../assets/css/theme-sans-serif.bundle.css" id="themeSansSerif" disabled />
+    
+    <!--
+      Demo JS
+      Remove the code below on a production website.
+    -->
+    <script src="../assets/js/demo.bundle.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>Goodkit</title>
+  </head>
+  <body class="docs-body">
+
+    <!-- MODALS -->
+    <!-- Sign in -->
+    <div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" aria-labelledby="modalSignInHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSignInHeading">
+              Sign In
+            </h1>
+    
+            <!-- Text -->
+            <p>
+              Don’t have an account? <a href="sign-up.html">Sign up</a>
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="signInEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="signInEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="signInPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signInPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="signInPasswordCaption" data-toggle="password" href="#signInPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign in
+              </button>
+    
+            </form>
+    
+            <!-- Link -->
+            <a class="fs-sm" href="password-reset.html">
+              Forgot your password?
+            </a>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sign up -->
+    <div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="modalSignUpHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSignUpHeading">
+              Sign Up
+            </h1>
+    
+            <!-- Text -->
+            <p>
+              Create beautiful marketing websites in hours instead of weeks.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="signUpEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="signUpEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="signUpPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signUpPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="signUpPasswordCaption" data-toggle="password" href="#signUpPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign up
+              </button>
+    
+            </form>
+    
+            <!-- Link -->
+            <small class="text-muted">
+              Already have an account? <a href="sign-in.html">Login</a>
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Password reset -->
+    <div class="modal fade" id="modalPasswordReset" tabindex="-1" role="dialog" aria-labelledby="modalPasswordResetHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="display-4 mb-4" id="modalPasswordResetHeading">
+              Password reset
+            </h1>
+    
+            <!-- Text -->
+            <p class="text-muted">
+              Enter your email to reset your password.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="passwordResetEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="passwordResetEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Reset password
+              </button>
+    
+            </form>
+    
+            <!-- Text -->
+            <small class="text-muted">
+              Remember your password? <a href="sign-in.html">Log in</a>.
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sale -->
+    <div class="modal fade" id="modalSale" tabindex="-1" role="dialog" aria-labelledby="modalSaleHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Image -->
+            <img class="img-fluid mb-4 mt-n11" src="../assets/img/illustrations/illustration-4.png" alt="...">
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSaleHeading">
+              30 Day Free Trial
+            </h1>
+    
+            <!-- Text -->
+            <p class="text-muted">
+              We’ll help you get started by getting you guides and all the basic informaiton.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="saleModalEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="saleModalEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Start Trial
+              </button>
+    
+            </form>
+    
+            <!-- Text -->
+            <small class="text-muted">
+              <a class="text-reset" data-bs-dismiss="modal" href="#!">No thanks, I hate free stuff.</a>
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white border-bottom">
+      <div class="container-lg">
+    
+        <!-- Brand -->
+        <a class="navbar-brand d-lg-none" href="../index.html">Goodkit</a>
+    
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-end w-100">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="landingsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Landings
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-xl dropdown-menu-flush" aria-labelledby="landingsDropdown">
+                  <div class="row align-items-center gx-0">
+                    <div class="col-md-6 order-1 dropdown-menu-col rounded-top-start-0 bg-gray-900 pt-4 py-lg-5">
+                      <div class="dropdown-menu-body">
+                
+                        <!-- Heading -->
+                        <h6 class="dropdown-header text-uppercase text-primary-light d-none d-lg-block">
+                          Services
+                        </h6>
+                
+                        <!-- Links -->
+                        <a class="d-flex text-decoration-none" href="../coworking.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.133 2.036c6.945 3.876 9.445 8.206 7.5 12.99-4.97-.79-7.47-5.12-7.5-12.99z" fill="#335EEA" opacity=".3"/><path d="M18.742 2.036c-6.945 3.876-9.445 8.206-7.5 12.99 4.97-.79 7.47-5.12 7.5-12.99z" fill="#335EEA" opacity=".3"/><path d="M12 1c-4.076 6.83-4.076 11.83 0 15 3.91-3.17 3.91-8.17 0-15z" fill="#335EEA" opacity=".3"/><path d="M6.344 13h11.312a1 1 0 01.958 1.287l-2.186 7.288A2 2 0 0114.512 23H9.488a2 2 0 01-1.916-1.425l-2.186-7.288A1 1 0 016.344 13z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Coworking
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              Minimal, image-focused content
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="../hiring-agency.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M12 11a4 4 0 110-8 4 4 0 010 8z" fill="#335EEA" opacity=".3"/><path d="M3 20.2c.388-4.773 4.262-7.2 8.983-7.2 4.788 0 8.722 2.293 9.015 7.2.012.195 0 .8-.751.8H3.727c-.25 0-.747-.54-.726-.8z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Hiring Platform
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              A hiring service platform
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="../course.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M6 3h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2zm-.5 2a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm0 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1z" fill="#335EEA" opacity=".3"/><path d="M11.352 14.572l2.605-1.78a.5.5 0 00.001-.825l-2.605-1.792a.5.5 0 00-.783.412v3.572a.5.5 0 00.782.413z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Course
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              React programming course
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="../software-automation.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 7a1 1 0 110-2h8a4 4 0 110 8H8a2 2 0 100 4h9a1 1 0 010 2H8a4 4 0 110-8h8a2 2 0 100-4H8z" fill="#335EEA" opacity=".3"/><path d="M9.707 8.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 1.414L7.414 6l2.293 2.293zM14.293 20.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 00-1.414 1.414L16.586 18l-2.293 2.293z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Automated Integrations
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              Digital integration software
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                
+                      </div>
+                    </div>
+                    <div class="col-md-6 order-0 dropdown-menu-col">
+                      <div class="dropdown-menu-body">
+                
+                        <!-- Heading -->
+                        <h6 class="dropdown-header text-uppercase d-none d-lg-block">
+                          Software
+                        </h6>
+                
+                        <!-- Links -->
+                        <a class="d-flex text-decoration-none text-reset" href="../robo-advisor.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" fill="#335EEA" opacity=".3"/><path d="M18.5 11h-13A1.5 1.5 0 004 12.5v.5h4.586a1 1 0 01.707.293l1 1a2.414 2.414 0 003.414 0l1-1a1 1 0 01.707-.293H20v-.5a1.5 1.5 0 00-1.5-1.5zM5.5 6A1.5 1.5 0 004 7.5V8h16v-.5A1.5 1.5 0 0018.5 6h-13z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Robo Advisor
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              A simple and professional layout
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="../analytics-saas.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4.002 12.2L13 14V4.062A8.001 8.001 0 0112 20a8 8 0 01-7.998-7.8z" fill="#335EEA" opacity=".3"/><path d="M3.06 10.012A8.001 8.001 0 0111 3v8.6l-7.94-1.588z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Analytics SaaS
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              UI-heavy product example
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="../e-commerce-platform.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M18.145 11.844l-.698 4.185a1 1 0 01-1.165.82L4.913 14.78a1 1 0 01-.783-.709L2.306 7.685a1 1 0 01.961-1.275h13.726l.613-2.627a1.18 1.18 0 011.15-.912h2.064a1.18 1.18 0 110 2.36h-1.128l-1.547 6.613z" fill="#335EEA" opacity=".3"/><path d="M6.5 21a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm9 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              E-Commerce Platform
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              SaaS for sales of goods
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="../mobile-chat-app.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M7.139 4v15h9.722V4H7.14zm.694-3h8.334c1.406 0 2.083.981 2.083 2.5v17c0 1.519-.677 2.5-2.083 2.5H7.833c-1.406 0-2.083-.981-2.083-2.5v-17c0-1.519.677-2.5 2.083-2.5z" fill="#335EEA"/><path fill="#335EEA" opacity=".3" d="M7 4v15h10V4z"/><circle fill="#335EEA" cx="12" cy="21" r="1"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Mobile Apps
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              Minimal layout for mobile apps
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                
+                      </div>
+                      <div class="dropdown-menu-footer align-items-center d-none d-lg-flex">
+                
+                        <!-- Text -->
+                        <span>Sans Serif Headers</span>
+                
+                        <!-- Switch -->
+                        <form class="ms-auto me-n3">
+                          <div class="form-check form-switch mb-0">
+                            <input class="form-check-input family-switch" type="checkbox" id="familySwitch" onchange="switchFamily(this.checked)">
+                            <label class="form-check-label" for="familySwitch"></label>
+                          </div>
+                        </form>
+                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Pages
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="pagesDropdown">
+                  <div class="row gx-0">
+                    <div class="col">
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Company
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="../about-orig.html">
+                        About
+                      </a>
+                      <a class="dropdown-item" href="../pricing-orig.html">
+                        Pricing
+                      </a>
+                      <a class="dropdown-item" href="../pricing-feature-list.html">
+                        Pricing Table
+                      </a>
+                      <a class="dropdown-item" href="../career-listing.html">
+                        Careers
+                      </a>
+                      <a class="dropdown-item" href="../career-benefits.html">
+                        Job benefits
+                      </a>
+                      <a class="dropdown-item" href="../contact.html">
+                        Contact
+                      </a>
+                      <a class="dropdown-item" href="../faq.html">
+                        FAQ
+                      </a><a class="dropdown-item" href="../terms.html">
+                        Terms
+                      </a>
+                
+                    </div>
+                    <div class="col">
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Blog
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="../blog-listing.html">
+                        Listing
+                      </a>
+                      <a class="dropdown-item" href="../blog-post.html">
+                        Article
+                      </a>
+                      <a class="dropdown-item" href="../blog-post-cover.html">
+                        Cover Article
+                      </a>
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Help Center
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="../help-center.html">
+                        Overview
+                      </a>
+                      <a class="dropdown-item" href="../help-center-article.html">
+                        Article
+                      </a>
+                
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+    
+          <!-- Brand -->
+          <a class="navbar-brand d-none d-lg-block px-lg-6" href="../index-orig.html">Goodkit</a>
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-start w-100">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="accountDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Account
+              </a>
+              <div class="dropdown-positioner">
+                <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="signInDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Sign In
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="signInDropright">
+                        <a class="dropdown-item" href="../sign-in-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="../sign-in.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignIn">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="signUpDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Sign Up
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="signUpDropright">
+                        <a class="dropdown-item" href="../sign-up-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="../sign-up.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignUp">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="passwordResetDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Password Reset
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="passwordResetDropright">
+                        <a class="dropdown-item" href="../password-reset-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="../password-reset.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalPasswordReset">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="errorsDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Errors
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="errorsDropright">
+                        <a class="dropdown-item" href="../error-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="../error.html">
+                          Simple
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="docsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Docs
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="docsDropdown">
+                  <a class="d-flex align-items-center text-reset text-decoration-none" href="../docs/index.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 3v.5A1.5 1.5 0 009.5 5h5A1.5 1.5 0 0016 3.5V3h2a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h2z" fill="#335EEA" opacity=".3"/><path d="M11 2a1 1 0 012 0h1.5a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-5a.5.5 0 01-.5-.5v-1a.5.5 0 01.5-.5H11z" fill="#335EEA"/><rect fill="#335EEA" opacity=".3" x="7" y="10" width="5" height="2" rx="1"/><rect fill="#335EEA" opacity=".3" x="7" y="14" width="9" height="2" rx="1"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Documentation
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>Compiling and building.</span>
+                
+                    </div>
+                
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="../docs/alerts.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.5 4h4A1.5 1.5 0 0111 5.5v1A1.5 1.5 0 019.5 8h-4A1.5 1.5 0 014 6.5v-1A1.5 1.5 0 015.5 4zm9 12h4a1.5 1.5 0 011.5 1.5v1a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-1a1.5 1.5 0 011.5-1.5z" fill="#335EEA"/><path d="M5.5 10h4a1.5 1.5 0 011.5 1.5v7A1.5 1.5 0 019.5 20h-4A1.5 1.5 0 014 18.5v-7A1.5 1.5 0 015.5 10zm9-6h4A1.5 1.5 0 0120 5.5v7a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-7A1.5 1.5 0 0114.5 4z" fill="#335EEA" opacity=".3"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Components
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>Full list of pieces in the theme</span>
+                
+                    </div>
+                
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="../docs/changelog.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.857 2h7.88a1.5 1.5 0 01.968.355l4.764 4.029A1.5 1.5 0 0120 7.529v12.554c0 1.79-.02 1.917-1.857 1.917H5.857C4.02 22 4 21.874 4 20.083V3.917C4 2.127 4.02 2 5.857 2z" fill="#335EEA" opacity=".3"/><rect fill="#335EEA" x="6" y="11" width="9" height="2" rx="1"/><rect fill="#335EEA" x="6" y="15" width="5" height="2" rx="1"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Changelog
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>This is the new version</span>
+                
+                    </div>
+                
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item d-lg-none">
+              <div class="nav-link">
+    
+                <!-- Text -->
+                <span>
+                  Sans Serif Headers
+                </span>
+    
+                <!-- Switch -->
+                <form class="ms-auto me-n3">
+                  <div class="form-check form-switch mb-0">
+                    <input class="form-check-input family-switch" type="checkbox" id="familySwitchMobile" onchange="switchFamily(this.checked)">
+                    <label class="form-check-label" for="familySwitchMobile"></label>
+                  </div>
+                </form>
+    
+              </div>
+            </li>
+          </ul>
+    
+        </div>
+    
+      </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <nav class="navbar-dark docs-breadcrumb">
+      <div class="container-lg">
+        <div class="row align-items-center">
+          <div class="col">
+    
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb breadcrumb-dark px-0 mb-0">
+              <li class="breadcrumb-item">
+                <a href="index.html">Docs</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Lift
+              </li>
+            </ol>
+    
+          </div>
+          <div class="col-auto">
+    
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docsSidenav" aria-controls="docsSidenav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <section>
+      <div class="container-fluid">
+        <div class="row align-items-start">
+          <div class="col-lg-3 col-xl-2 docs-sidenav docs-sidenav-start">
+
+            <!-- Collapse -->
+            <div class="collapse d-lg-block" id="docsSidenav">
+              <div class="border-bottom border-bottom-lg-0 py-6 py-md-9 px-lg-8">
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Basics
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-6">
+                  <li class="mb-2">
+                    <a class="text-reset" href="index.html">Setup</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="changelog.html">Changelog</a>
+                  </li>
+                </ul>
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Design
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-6">
+                  <li class="mb-2">
+                    <a class="text-reset" href="figma.html">Figma</a>
+                  </li>
+                </ul>
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Components
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-6">
+                  <li class="mb-2">
+                    <a class="text-reset" href="accordion.html">Accordion</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="alerts.html">Alerts</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="avatars.html">Avatars</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="badges.html">Badges</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="breadcrumb.html">Breadcrumb</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="buttons.html">Buttons</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="button-group.html">Button group</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="cards.html">Cards</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="decorations.html">Decorations</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="dropdowns.html">Dropdowns</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="forms.html">Forms</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="icons.html">Icons</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="images.html">Images</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="list-group.html">List group</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="modal.html">Modal</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="navbar.html">Navbar</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="navs-tabs.html">Navs & tabs</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="offcanvas.html">Offcanvas</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="pagination.html">Pagination</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="placeholders.html">Placeholders</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="popovers.html">Popovers</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="progress.html">Progress</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="shapes.html">Shapes</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="spinners.html">Spinners</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="tables.html">Tables</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="timeline.html">Timeline</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="toasts.html">Toasts</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="tooltips.html">Tooltips</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="typography.html">Typography</a>
+                  </li>
+                </ul>
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Plugins
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-6">
+                  <li class="mb-2">
+                    <a class="text-reset" href="aos.html">AOS</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="bigpicture.html">BigPicture</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="countup.html">Count up</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="flickity.html">Flickity</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="isotope.html">Isotope</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="jarallax.html">Jarallax</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="map.html">Map</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="smooth-scroll.html">Smooth scroll</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="typed.html">Typed</a>
+                  </li>
+                </ul>
+            
+                <!-- Heading -->
+                <h5 class="font-sans-serif mb-3">
+                  Utilities
+                </h5>
+            
+                <!-- List -->
+                <ul class="list-unstyled fs-xs text-muted mb-0">
+                  <li class="mb-2">
+                    <a class="text-reset" href="background.html">Background</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="border.html">Border</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="lift.html">Lift</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="position.html">Position</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="sizing.html">Sizing</a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="text-reset" href="type.html">Type</a>
+                  </li>
+                </ul>
+            
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-9 col-xl-8 offset-lg-3 offset-xl-2 py-6 py-md-9 px-lg-10">
+
+            <!-- Heading -->
+            <div class="d-flex align-items-center mb-2">
+            
+                <!-- Heading -->
+                <h1 class="font-sans-serif mb-0">
+                  Lift
+                </h1>
+            
+                <!-- Badge -->
+                <div class="badge bg-primary-soft h6 font-sans-serif mb-0 ms-3">Goodkit Exclusive</div>
+            
+            </div>
+            
+            <!-- Text -->
+              <p class="fs-lg ">
+                Visually lifts an element on hover and focus.
+              </p>
+            
+            
+
+            <!-- Divider -->
+            <hr class="my-6">
+            
+            
+
+            <!-- Cards -->
+            <div class="row mt-n6 mb-6">
+              <div class="col-md-4">
+
+                <!-- Card -->
+                <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+                  <!-- Image -->
+                  <img class="card-img-top rounded-top-start" src="../assets/img/blog/post-header-10.png" alt="...">
+
+                  <!-- Body -->
+                  <div class="card-body">
+
+                    <!-- Heading -->
+                    <h2 class="mb-2">
+                      Design component systems, not pages.
+                    </h2>
+
+                    <!-- Text -->
+                    <p class="fs-sm mb-4">
+                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                    </p>
+
+                    <!-- Link -->
+                    <a class="stretched-link" href="../blog-post.html"></a>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-4">
+
+                <!-- Card -->
+                <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+                  <!-- Image -->
+                  <img class="card-img-top rounded-top-start" src="../assets/img/blog/post-header-11.png" alt="...">
+
+                  <!-- Body -->
+                  <div class="card-body">
+
+                    <!-- Heading -->
+                    <h2 class="mb-2">
+                      Run your business on profit, not credit.
+                    </h2>
+
+                    <!-- Text -->
+                    <p class="fs-sm mb-4">
+                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                    </p>
+
+                    <!-- Link -->
+                    <a class="stretched-link" href="../blog-post.html"></a>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-4">
+
+                <!-- Card -->
+                <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+                  <!-- Image -->
+                  <img class="card-img-top rounded-top-start" src="../assets/img/blog/post-header-12.png" alt="...">
+
+                  <!-- Body -->
+                  <div class="card-body">
+
+                    <!-- Heading -->
+                    <h2 class="mb-2">
+                      Write documentation for everything.
+                    </h2>
+
+                    <!-- Text -->
+                    <p class="fs-sm mb-4">
+                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                    </p>
+
+                    <!-- Link -->
+                    <a class="stretched-link" href="../blog-post.html"></a>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Button -->
+            <button class="btn w-100 btn-primary lift mb-6">
+              Lift button
+            </button>
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-footer">
+                <code class="html highlight">
+                  &lt;div&nbsp;class=&quot;card&nbsp;lift&nbsp;lift-lg&quot;&gt;...&lt;/div&gt;<br />&lt;button&nbsp;class=&quot;btn&nbsp;w-100&nbsp;btn-primary&nbsp;lift&quot;&gt;Lift&nbsp;button&lt;/button&gt;
+                </code>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-xl-2 d-none d-xl-block docs-sidenav docs-sidenav-end"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="../assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="../assets/js/theme.bundle.js"></script>
+
+  </body>
+</html>

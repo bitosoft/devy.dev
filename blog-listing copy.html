@@ -1,0 +1,1905 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+    
+    <!-- 
+      Theme Sans Serif CSS
+      Remove the "disabled" attribute if you want to enable Sans Serif for headings.
+    -->
+    <link rel="stylesheet" href="./assets/css/theme-sans-serif.bundle.css" id="themeSansSerif" disabled />
+    
+    <!--
+      Demo JS
+      Remove the code below on a production website.
+    -->
+    <script src="./assets/js/demo.bundle.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>Goodkit</title>
+  </head>
+  <body class="bg-light">
+
+    <!-- MODALS -->
+    <!-- Sign in -->
+    <div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" aria-labelledby="modalSignInHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSignInHeading">
+              Sign In
+            </h1>
+    
+            <!-- Text -->
+            <p>
+              Don’t have an account? <a href="sign-up.html">Sign up</a>
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="signInEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="signInEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="signInPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signInPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="signInPasswordCaption" data-toggle="password" href="#signInPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign in
+              </button>
+    
+            </form>
+    
+            <!-- Link -->
+            <a class="fs-sm" href="password-reset.html">
+              Forgot your password?
+            </a>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sign up -->
+    <div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="modalSignUpHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSignUpHeading">
+              Sign Up
+            </h1>
+    
+            <!-- Text -->
+            <p>
+              Create beautiful marketing websites in hours instead of weeks.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="signUpEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="signUpEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Password -->
+              <div class="form-group">
+                <div class="input-group inpit-group-merge">
+                  <input class="form-control" id="signUpPassword" placeholder="Your password" type="password" aria-label="Your password" aria-describedby="signUpPasswordCaption">
+                  <a class="input-group-text text-decoration-none text-gray-500" id="signUpPasswordCaption" data-toggle="password" href="#signUpPassword">
+                    <i class="fe fe-eye"></i>
+                  </a>
+                </div>
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Sign up
+              </button>
+    
+            </form>
+    
+            <!-- Link -->
+            <small class="text-muted">
+              Already have an account? <a href="sign-in.html">Login</a>
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Password reset -->
+    <div class="modal fade" id="modalPasswordReset" tabindex="-1" role="dialog" aria-labelledby="modalPasswordResetHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Heading -->
+            <h1 class="display-4 mb-4" id="modalPasswordResetHeading">
+              Password reset
+            </h1>
+    
+            <!-- Text -->
+            <p class="text-muted">
+              Enter your email to reset your password.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="passwordResetEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="passwordResetEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Reset password
+              </button>
+    
+            </form>
+    
+            <!-- Text -->
+            <small class="text-muted">
+              Remember your password? <a href="sign-in.html">Log in</a>.
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sale -->
+    <div class="modal fade" id="modalSale" tabindex="-1" role="dialog" aria-labelledby="modalSaleHeading" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+    
+            <!-- Close -->
+            <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+    
+            <!-- Image -->
+            <img class="img-fluid mb-4 mt-n11" src="./assets/img/illustrations/illustration-4.png" alt="...">
+    
+            <!-- Heading -->
+            <h1 class="mb-4" id="modalSaleHeading">
+              30 Day Free Trial
+            </h1>
+    
+            <!-- Text -->
+            <p class="text-muted">
+              We’ll help you get started by getting you guides and all the basic informaiton.
+            </p>
+    
+            <!-- Form -->
+            <form class="mb-6">
+    
+              <!-- Email -->
+              <div class="form-group">
+                <label class="visually-hidden" for="saleModalEmail">
+                  Your email
+                </label>
+                <input class="form-control" id="saleModalEmail" type="email" placeholder="Your email">
+              </div>
+    
+              <!-- Button -->
+              <button class="btn w-100 btn-primary">
+                Start Trial
+              </button>
+    
+            </form>
+    
+            <!-- Text -->
+            <small class="text-muted">
+              <a class="text-reset" data-bs-dismiss="modal" href="#!">No thanks, I hate free stuff.</a>
+            </small>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-lg">
+    
+        <!-- Brand -->
+        <a class="navbar-brand d-lg-none" href="./index.html">Goodkit</a>
+    
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-end w-100">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="landingsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Landings
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-xl dropdown-menu-flush" aria-labelledby="landingsDropdown">
+                  <div class="row align-items-center gx-0">
+                    <div class="col-md-6 order-1 dropdown-menu-col rounded-top-start-0 bg-gray-900 pt-4 py-lg-5">
+                      <div class="dropdown-menu-body">
+                
+                        <!-- Heading -->
+                        <h6 class="dropdown-header text-uppercase text-primary-light d-none d-lg-block">
+                          Services
+                        </h6>
+                
+                        <!-- Links -->
+                        <a class="d-flex text-decoration-none" href="./coworking.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.133 2.036c6.945 3.876 9.445 8.206 7.5 12.99-4.97-.79-7.47-5.12-7.5-12.99z" fill="#335EEA" opacity=".3"/><path d="M18.742 2.036c-6.945 3.876-9.445 8.206-7.5 12.99 4.97-.79 7.47-5.12 7.5-12.99z" fill="#335EEA" opacity=".3"/><path d="M12 1c-4.076 6.83-4.076 11.83 0 15 3.91-3.17 3.91-8.17 0-15z" fill="#335EEA" opacity=".3"/><path d="M6.344 13h11.312a1 1 0 01.958 1.287l-2.186 7.288A2 2 0 0114.512 23H9.488a2 2 0 01-1.916-1.425l-2.186-7.288A1 1 0 016.344 13z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Coworking
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              Minimal, image-focused content
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="./hiring-agency.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M12 11a4 4 0 110-8 4 4 0 010 8z" fill="#335EEA" opacity=".3"/><path d="M3 20.2c.388-4.773 4.262-7.2 8.983-7.2 4.788 0 8.722 2.293 9.015 7.2.012.195 0 .8-.751.8H3.727c-.25 0-.747-.54-.726-.8z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Hiring Platform
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              A hiring service platform
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="./course.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M6 3h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2zm-.5 2a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm0 4a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zm-12 0a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1z" fill="#335EEA" opacity=".3"/><path d="M11.352 14.572l2.605-1.78a.5.5 0 00.001-.825l-2.605-1.792a.5.5 0 00-.783.412v3.572a.5.5 0 00.782.413z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Course
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              React programming course
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none mt-4" href="./software-automation.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 7a1 1 0 110-2h8a4 4 0 110 8H8a2 2 0 100 4h9a1 1 0 010 2H8a4 4 0 110-8h8a2 2 0 100-4H8z" fill="#335EEA" opacity=".3"/><path d="M9.707 8.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 1.414L7.414 6l2.293 2.293zM14.293 20.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 00-1.414 1.414L16.586 18l-2.293 2.293z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold text-white mb-0">
+                              Automated Integrations
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-gray-500">
+                              Digital integration software
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                
+                      </div>
+                    </div>
+                    <div class="col-md-6 order-0 dropdown-menu-col">
+                      <div class="dropdown-menu-body">
+                
+                        <!-- Heading -->
+                        <h6 class="dropdown-header text-uppercase d-none d-lg-block">
+                          Software
+                        </h6>
+                
+                        <!-- Links -->
+                        <a class="d-flex text-decoration-none text-reset" href="./robo-advisor.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" fill="#335EEA" opacity=".3"/><path d="M18.5 11h-13A1.5 1.5 0 004 12.5v.5h4.586a1 1 0 01.707.293l1 1a2.414 2.414 0 003.414 0l1-1a1 1 0 01.707-.293H20v-.5a1.5 1.5 0 00-1.5-1.5zM5.5 6A1.5 1.5 0 004 7.5V8h16v-.5A1.5 1.5 0 0018.5 6h-13z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Robo Advisor
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              A simple and professional layout
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="./analytics-saas.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M4.002 12.2L13 14V4.062A8.001 8.001 0 0112 20a8 8 0 01-7.998-7.8z" fill="#335EEA" opacity=".3"/><path d="M3.06 10.012A8.001 8.001 0 0111 3v8.6l-7.94-1.588z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Analytics SaaS
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              UI-heavy product example
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="./e-commerce-platform.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M18.145 11.844l-.698 4.185a1 1 0 01-1.165.82L4.913 14.78a1 1 0 01-.783-.709L2.306 7.685a1 1 0 01.961-1.275h13.726l.613-2.627a1.18 1.18 0 011.15-.912h2.064a1.18 1.18 0 110 2.36h-1.128l-1.547 6.613z" fill="#335EEA" opacity=".3"/><path d="M6.5 21a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm9 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#335EEA"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              E-Commerce Platform
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              SaaS for sales of goods
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                        <a class="d-flex text-decoration-none text-reset mt-4" href="./mobile-chat-app.html">
+                
+                          <!-- Icon -->
+                          <div class="icon icon-sm text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M7.139 4v15h9.722V4H7.14zm.694-3h8.334c1.406 0 2.083.981 2.083 2.5v17c0 1.519-.677 2.5-2.083 2.5H7.833c-1.406 0-2.083-.981-2.083-2.5v-17c0-1.519.677-2.5 2.083-2.5z" fill="#335EEA"/><path fill="#335EEA" opacity=".3" d="M7 4v15h10V4z"/><circle fill="#335EEA" cx="12" cy="21" r="1"/></g></svg>          </div>
+                
+                          <div class="ms-3">
+                
+                            <!-- Heading -->
+                            <p class="fw-bold mb-0">
+                              Mobile Apps
+                            </p>
+                
+                            <!-- Text -->
+                            <span class="text-muted">
+                              Minimal layout for mobile apps
+                            </span>
+                
+                          </div>
+                
+                        </a>
+                
+                      </div>
+                      <div class="dropdown-menu-footer align-items-center d-none d-lg-flex">
+                
+                        <!-- Text -->
+                        <span>Sans Serif Headers</span>
+                
+                        <!-- Switch -->
+                        <form class="ms-auto me-n3">
+                          <div class="form-check form-switch mb-0">
+                            <input class="form-check-input family-switch" type="checkbox" id="familySwitch" onchange="switchFamily(this.checked)">
+                            <label class="form-check-label" for="familySwitch"></label>
+                          </div>
+                        </form>
+                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Pages
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="pagesDropdown">
+                  <div class="row gx-0">
+                    <div class="col">
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Company
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="./about-orig.html">
+                        About
+                      </a>
+                      <a class="dropdown-item" href="./pricing-orig.html">
+                        Pricing
+                      </a>
+                      <a class="dropdown-item" href="./pricing-feature-list.html">
+                        Pricing Table
+                      </a>
+                      <a class="dropdown-item" href="./career-listing.html">
+                        Careers
+                      </a>
+                      <a class="dropdown-item" href="./career-benefits.html">
+                        Job benefits
+                      </a>
+                      <a class="dropdown-item" href="./contact.html">
+                        Contact
+                      </a>
+                      <a class="dropdown-item" href="./faq.html">
+                        FAQ
+                      </a><a class="dropdown-item" href="./terms.html">
+                        Terms
+                      </a>
+                
+                    </div>
+                    <div class="col">
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Blog
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="./blog-listing.html">
+                        Listing
+                      </a>
+                      <a class="dropdown-item" href="./blog-post.html">
+                        Article
+                      </a>
+                      <a class="dropdown-item" href="./blog-post-cover.html">
+                        Cover Article
+                      </a>
+                
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        Help Center
+                      </h6>
+                
+                      <!-- Links -->
+                      <a class="dropdown-item" href="./help-center.html">
+                        Overview
+                      </a>
+                      <a class="dropdown-item" href="./help-center-article.html">
+                        Article
+                      </a>
+                
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+    
+          <!-- Brand -->
+          <a class="navbar-brand d-none d-lg-block px-lg-6" href="./index-orig.html">Goodkit</a>
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav justify-content-start w-100">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="accountDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Account
+              </a>
+              <div class="dropdown-positioner">
+                <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="signInDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Sign In
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="signInDropright">
+                        <a class="dropdown-item" href="./sign-in-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="./sign-in.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignIn">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="signUpDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Sign Up
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="signUpDropright">
+                        <a class="dropdown-item" href="./sign-up-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="./sign-up.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignUp">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="passwordResetDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Password Reset
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="passwordResetDropright">
+                        <a class="dropdown-item" href="./password-reset-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="./password-reset.html">
+                          Simple
+                        </a>
+                        <a class="dropdown-item" data-bs-toggle="modal" href="#modalPasswordReset">
+                          Modal
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown-item dropend">
+                    <a class="dropdown-link dropdown-toggle" id="errorsDropright" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      Errors
+                    </a>
+                    <div class="dropdown-positioner">
+                      <div class="dropdown-menu dropdown-menu-auto" aria-labelledby="errorsDropright">
+                        <a class="dropdown-item" href="./error-cover.html">
+                          Cover
+                        </a>
+                        <a class="dropdown-item" href="./error.html">
+                          Simple
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="docsDropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Docs
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="docsDropdown">
+                  <a class="d-flex align-items-center text-reset text-decoration-none" href="./docs/index.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 3v.5A1.5 1.5 0 009.5 5h5A1.5 1.5 0 0016 3.5V3h2a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h2z" fill="#335EEA" opacity=".3"/><path d="M11 2a1 1 0 012 0h1.5a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-5a.5.5 0 01-.5-.5v-1a.5.5 0 01.5-.5H11z" fill="#335EEA"/><rect fill="#335EEA" opacity=".3" x="7" y="10" width="5" height="2" rx="1"/><rect fill="#335EEA" opacity=".3" x="7" y="14" width="9" height="2" rx="1"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Documentation
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>Compiling and building.</span>
+                
+                    </div>
+                
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="./docs/alerts.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.5 4h4A1.5 1.5 0 0111 5.5v1A1.5 1.5 0 019.5 8h-4A1.5 1.5 0 014 6.5v-1A1.5 1.5 0 015.5 4zm9 12h4a1.5 1.5 0 011.5 1.5v1a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-1a1.5 1.5 0 011.5-1.5z" fill="#335EEA"/><path d="M5.5 10h4a1.5 1.5 0 011.5 1.5v7A1.5 1.5 0 019.5 20h-4A1.5 1.5 0 014 18.5v-7A1.5 1.5 0 015.5 10zm9-6h4A1.5 1.5 0 0120 5.5v7a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-7A1.5 1.5 0 0114.5 4z" fill="#335EEA" opacity=".3"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Components
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>Full list of pieces in the theme</span>
+                
+                    </div>
+                
+                  </a>
+                  <a class="d-flex align-items-center text-reset text-decoration-none mt-5" href="./docs/changelog.html">
+                
+                    <!-- Icon -->
+                    <div class="icon text-primary-light">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.857 2h7.88a1.5 1.5 0 01.968.355l4.764 4.029A1.5 1.5 0 0120 7.529v12.554c0 1.79-.02 1.917-1.857 1.917H5.857C4.02 22 4 21.874 4 20.083V3.917C4 2.127 4.02 2 5.857 2z" fill="#335EEA" opacity=".3"/><rect fill="#335EEA" x="6" y="11" width="9" height="2" rx="1"/><rect fill="#335EEA" x="6" y="15" width="5" height="2" rx="1"/></g></svg>    </div>
+                
+                    <div class="ms-3">
+                
+                      <!-- Heading -->
+                      <h6 class="text-uppercase text-primary mb-0">
+                        Changelog
+                      </h6>
+                
+                      <!-- Text -->
+                      <span>This is the new version</span>
+                
+                    </div>
+                
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item d-lg-none">
+              <div class="nav-link">
+    
+                <!-- Text -->
+                <span>
+                  Sans Serif Headers
+                </span>
+    
+                <!-- Switch -->
+                <form class="ms-auto me-n3">
+                  <div class="form-check form-switch mb-0">
+                    <input class="form-check-input family-switch" type="checkbox" id="familySwitchMobile" onchange="switchFamily(this.checked)">
+                    <label class="form-check-label" for="familySwitchMobile"></label>
+                  </div>
+                </form>
+    
+              </div>
+            </li>
+          </ul>
+    
+        </div>
+    
+      </div>
+    </nav>
+
+    <!-- WELCOME -->
+    <section class="pt-6 pt-md-11 bg-dark">
+      <div class="container-lg">
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8 text-center text-white">
+
+            <!-- Preheading -->
+            <h6 class="text-uppercase text-warning mb-5">
+              News from us
+            </h6>
+
+            <!-- Heading -->
+            <h1 class="display-3 mb-4">
+              Our Newsroom
+            </h1>
+
+            <!-- Text -->
+            <p class="fs-lg">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis non accumsan in, tempor dictum neque.
+            </p>
+
+            <!-- Form -->
+            <form class="mx-auto text-white" style="max-width: 462px;">
+              <div class="input-group">
+                <span class="input-group-text" id="search">
+                  <i class="fe fe-search"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Search for keyword or topic" aria-label="Search" aria-describedby="search">
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHAPE -->
+    <div class="position-relative">
+      <div class="shape shape-fluid-x shape-bottom text-dark pb-18">
+        <div class="shape-img pb-8 pb-md-11">
+          <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 0h100v25H75L25 50H0z" fill="currentColor"/></svg>        </div>
+      </div>
+    </div>
+
+    <!-- POSTS -->
+    <section class="pt-10 pt-md-12">
+      <div class="container-lg">
+        <div class="row mt-n6">
+          <div class="col-md-4">
+
+            <!-- Card -->
+            <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+              <!-- Image -->
+              <img class="card-img-top rounded-top-start" src="assets/img/blog/post-header-10.png" alt="...">
+
+              <!-- Body -->
+              <div class="card-body">
+
+                <!-- Heading -->
+                <h2 class="mb-2">
+                  Design component systems, not pages.
+                </h2>
+
+                <!-- Text -->
+                <p class="fs-sm mb-4">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                </p>
+
+                <!-- Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xs">
+                    <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-9.jpg" alt="...">
+                  </div>
+
+                  <!-- Body -->
+                  <div class="ms-4 text-start">
+
+                    <!-- Title -->
+                    <p class="small mb-0">
+                      Danielle Borch
+                    </p>
+
+                    <!-- Position -->
+                    <p class="small text-muted mt-n1 mb-0">
+                      May 02, 2020
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Link -->
+                <a class="stretched-link" href="blog-post.html"></a>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+
+            <!-- Card -->
+            <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+              <!-- Image -->
+              <img class="card-img-top rounded-top-start" src="assets/img/blog/post-header-11.png" alt="...">
+
+              <!-- Body -->
+              <div class="card-body">
+
+                <!-- Heading -->
+                <h2 class="mb-2">
+                  Run your business on profit, not credit.
+                </h2>
+
+                <!-- Text -->
+                <p class="fs-sm mb-4">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                </p>
+
+                <!-- Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xs">
+                    <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-6.jpg" alt="...">
+                  </div>
+
+                  <!-- Body -->
+                  <div class="ms-4 text-start">
+
+                    <!-- Title -->
+                    <p class="small mb-0">
+                      Danny Copter
+                    </p>
+
+                    <!-- Position -->
+                    <p class="small text-muted mt-n1 mb-0">
+                      May 01, 2020
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Link -->
+                <a class="stretched-link" href="blog-post.html"></a>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+
+            <!-- Card -->
+            <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+              <!-- Image -->
+              <img class="card-img-top rounded-top-start" src="assets/img/blog/post-header-12.png" alt="...">
+
+              <!-- Body -->
+              <div class="card-body">
+
+                <!-- Heading -->
+                <h2 class="mb-2">
+                  Write documentation for everything.
+                </h2>
+
+                <!-- Text -->
+                <p class="fs-sm mb-4">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                </p>
+
+                <!-- Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xs">
+                    <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-2.jpg" alt="...">
+                  </div>
+
+                  <!-- Body -->
+                  <div class="ms-4 text-start">
+
+                    <!-- Title -->
+                    <p class="small mb-0">
+                      James Owens
+                    </p>
+
+                    <!-- Position -->
+                    <p class="small text-muted mt-n1 mb-0">
+                      April 25, 2020
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Link -->
+                <a class="stretched-link" href="blog-post.html"></a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUIDEBOOK -->
+    <section class="pt-9 pt-md-11">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-12">
+
+            <!-- Heading -->
+            <h1 class="mb-0">
+              Our Guidebook
+            </h1>
+
+            <!-- Text -->
+            <p class="text-gray-600">
+              What we’ve been working on lately.
+            </p>
+
+            <!-- DECORATION -->
+            <div class="position-relative">
+              <div class="position-absolute top-end text-warning mt-n11 me-n7">
+                <svg width="185" height="186" viewBox="0 0 185 186" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="currentColor"/><circle cx="22" cy="2" r="2" fill="currentColor"/><circle cx="42" cy="2" r="2" fill="currentColor"/><circle cx="62" cy="2" r="2" fill="currentColor"/><circle cx="82" cy="2" r="2" fill="currentColor"/><circle cx="102" cy="2" r="2" fill="currentColor"/><circle cx="122" cy="2" r="2" fill="currentColor"/><circle cx="142" cy="2" r="2" fill="currentColor"/><circle cx="162" cy="2" r="2" fill="currentColor"/><circle cx="182" cy="2" r="2" fill="currentColor"/><circle cx="2" cy="22" r="2" fill="currentColor"/><circle cx="22" cy="22" r="2" fill="currentColor"/><circle cx="42" cy="22" r="2" fill="currentColor"/><circle cx="62" cy="22" r="2" fill="currentColor"/><circle cx="82" cy="22" r="2" fill="currentColor"/><circle cx="102" cy="22" r="2" fill="currentColor"/><circle cx="122" cy="22" r="2" fill="currentColor"/><circle cx="142" cy="22" r="2" fill="currentColor"/><circle cx="162" cy="22" r="2" fill="currentColor"/><circle cx="182" cy="22" r="2" fill="currentColor"/><circle cx="2" cy="42" r="2" fill="currentColor"/><circle cx="22" cy="42" r="2" fill="currentColor"/><circle cx="42" cy="42" r="2" fill="currentColor"/><circle cx="62" cy="42" r="2" fill="currentColor"/><circle cx="82" cy="42" r="2" fill="currentColor"/><circle cx="102" cy="42" r="2" fill="currentColor"/><circle cx="122" cy="42" r="2" fill="currentColor"/><circle cx="142" cy="42" r="2" fill="currentColor"/><circle cx="162" cy="42" r="2" fill="currentColor"/><circle cx="182" cy="42" r="2" fill="currentColor"/><circle cx="2" cy="62" r="2" fill="currentColor"/><circle cx="22" cy="62" r="2" fill="currentColor"/><circle cx="42" cy="62" r="2" fill="currentColor"/><circle cx="62" cy="62" r="2" fill="currentColor"/><circle cx="82" cy="62" r="2" fill="currentColor"/><circle cx="102" cy="62" r="2" fill="currentColor"/><circle cx="122" cy="62" r="2" fill="currentColor"/><circle cx="142" cy="62" r="2" fill="currentColor"/><circle cx="162" cy="62" r="2" fill="currentColor"/><circle cx="182" cy="62" r="2" fill="currentColor"/><circle cx="2" cy="82" r="2" fill="currentColor"/><circle cx="22" cy="82" r="2" fill="currentColor"/><circle cx="42" cy="82" r="2" fill="currentColor"/><circle cx="62" cy="82" r="2" fill="currentColor"/><circle cx="82" cy="82" r="2" fill="currentColor"/><circle cx="102" cy="82" r="2" fill="currentColor"/><circle cx="122" cy="82" r="2" fill="currentColor"/><circle cx="142" cy="82" r="2" fill="currentColor"/><circle cx="162" cy="82" r="2" fill="currentColor"/><circle cx="182" cy="82" r="2" fill="currentColor"/><circle cx="2" cy="102" r="2" fill="currentColor"/><circle cx="22" cy="102" r="2" fill="currentColor"/><circle cx="42" cy="102" r="2" fill="currentColor"/><circle cx="62" cy="102" r="2" fill="currentColor"/><circle cx="82" cy="102" r="2" fill="currentColor"/><circle cx="102" cy="102" r="2" fill="currentColor"/><circle cx="122" cy="102" r="2" fill="currentColor"/><circle cx="142" cy="102" r="2" fill="currentColor"/><circle cx="162" cy="102" r="2" fill="currentColor"/><circle cx="182" cy="102" r="2" fill="currentColor"/><circle cx="2" cy="122" r="2" fill="currentColor"/><circle cx="22" cy="122" r="2" fill="currentColor"/><circle cx="42" cy="122" r="2" fill="currentColor"/><circle cx="62" cy="122" r="2" fill="currentColor"/><circle cx="82" cy="122" r="2" fill="currentColor"/><circle cx="102" cy="122" r="2" fill="currentColor"/><circle cx="122" cy="122" r="2" fill="currentColor"/><circle cx="142" cy="122" r="2" fill="currentColor"/><circle cx="162" cy="122" r="2" fill="currentColor"/><circle cx="182" cy="122" r="2" fill="currentColor"/><circle cx="2" cy="142" r="2" fill="currentColor"/><circle cx="22" cy="142" r="2" fill="currentColor"/><circle cx="42" cy="142" r="2" fill="currentColor"/><circle cx="62" cy="142" r="2" fill="currentColor"/><circle cx="82" cy="142" r="2" fill="currentColor"/><circle cx="102" cy="142" r="2" fill="currentColor"/><circle cx="122" cy="142" r="2" fill="currentColor"/><circle cx="142" cy="142" r="2" fill="currentColor"/><circle cx="162" cy="142" r="2" fill="currentColor"/><circle cx="182" cy="142" r="2" fill="currentColor"/><circle cx="2" cy="162" r="2" fill="currentColor"/><circle cx="22" cy="162" r="2" fill="currentColor"/><circle cx="42" cy="162" r="2" fill="currentColor"/><circle cx="62" cy="162" r="2" fill="currentColor"/><circle cx="82" cy="162" r="2" fill="currentColor"/><circle cx="102" cy="162" r="2" fill="currentColor"/><circle cx="122" cy="162" r="2" fill="currentColor"/><circle cx="142" cy="162" r="2" fill="currentColor"/><circle cx="162" cy="162" r="2" fill="currentColor"/><circle cx="182" cy="162" r="2" fill="currentColor"/><circle cx="2" cy="182" r="2" fill="currentColor"/><circle cx="22" cy="182" r="2" fill="currentColor"/><circle cx="42" cy="182" r="2" fill="currentColor"/><circle cx="62" cy="182" r="2" fill="currentColor"/><circle cx="82" cy="182" r="2" fill="currentColor"/><circle cx="102" cy="182" r="2" fill="currentColor"/><circle cx="122" cy="182" r="2" fill="currentColor"/><circle cx="142" cy="182" r="2" fill="currentColor"/><circle cx="162" cy="182" r="2" fill="currentColor"/><circle cx="182" cy="182" r="2" fill="currentColor"/></svg>              </div>
+            </div>
+
+            <!-- Card -->
+            <div class="card card-lg rounded-top-start rounded-bottom-end lift lift-lg">
+              <div class="row gx-0">
+                <div class="col-md-6 bg-cover rounded-top-start my-n2" style="background-image: url(assets/img/blog/post-side-header-1.png); background-position: center right;">
+
+                  <!-- Image (placeholder) -->
+                  <img class="img-fluid invisible" src="assets/img/blog/post-side-header-1.png" alt="...">
+
+                </div>
+                <div class="col-md-6">
+
+                  <!-- Body -->
+                  <div class="card-body">
+
+                    <!-- Preheading -->
+                    <h6 class="font-sans-serif text-primary mb-2">
+                      Featured Story
+                    </h6>
+
+                    <!-- Heading -->
+                    <h2 class="display-4 mb-4">
+                      Designing for a simpler future.
+                    </h2>
+
+                    <!-- Text -->
+                    <p class="mb-4">
+                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque. Unde omnis iste natus error sit voluptatem.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="d-flex align-items-center">
+
+                      <!-- Avatar -->
+                      <div class="avatar avatar-xs">
+                        <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-1.jpg" alt="...">
+                      </div>
+
+                      <!-- Body -->
+                      <div class="ms-4 text-start">
+
+                        <!-- Title -->
+                        <p class="mb-0">
+                          Katie Williams
+                        </p>
+
+                        <!-- Position -->
+                        <p class="small text-muted mt-n1 mb-0">
+                          May 03, 2020
+                        </p>
+
+                      </div>
+
+                    </div>
+
+                    <!-- Link -->
+                    <a class="stretched-link" href="blog-post.html"></a>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USER EXPERIENCE -->
+    <section class="pt-9 pt-md-11">
+      <div class="container-lg">
+        <div class="row align-items-center mb-6">
+          <div class="col-md">
+
+            <!-- Heading -->
+            <h1 class="mb-0">
+              User Experience
+            </h1>
+
+            <!-- Text -->
+            <p class="text-gray-600 mb-2 mb-md-0">
+              Learn to build products for your users.
+            </p>
+
+          </div>
+          <div class="col-md-auto">
+
+            <!-- Button -->
+            <a class="btn btn-sm btn-primary" href="#!">
+              View All
+            </a>
+
+          </div>
+        </div>
+        <div class="row mt-n6">
+          <div class="col-md-4">
+
+            <!-- Card -->
+            <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+              <!-- Image -->
+              <img class="card-img-top rounded-top-start" src="assets/img/blog/post-header-1.jpg" alt="...">
+
+              <!-- Shape -->
+              <div class="position-relative">
+                <div class="shape shape-fluid-x shape-top text-white">
+                  <div class="shape-img pb-5">
+                    <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                  </div>
+                </div>
+              </div>
+
+              <!-- Body -->
+              <div class="card-body">
+
+                <!-- Heading -->
+                <h2 class="mb-2">
+                  Build a culture where everyone designs.
+                </h2>
+
+                <!-- Text -->
+                <p class="fs-sm mb-4">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                </p>
+
+                <!-- Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xs">
+                    <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-3.jpg" alt="...">
+                  </div>
+
+                  <!-- Body -->
+                  <div class="ms-4 text-start">
+
+                    <!-- Title -->
+                    <p class="small mb-0">
+                      Danielle Callan
+                    </p>
+
+                    <!-- Position -->
+                    <p class="small text-muted mt-n1 mb-0">
+                      March 31, 2020
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Link -->
+                <a class="stretched-link" href="blog-post.html"></a>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+
+            <!-- Card -->
+            <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+              <!-- Image -->
+              <img class="card-img-top rounded-top-start" src="assets/img/blog/post-header-2.jpg" alt="...">
+
+              <!-- Shape -->
+              <div class="position-relative">
+                <div class="shape shape-fluid-x shape-top text-white">
+                  <div class="shape-img pb-5">
+                    <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                  </div>
+                </div>
+              </div>
+
+              <!-- Body -->
+              <div class="card-body">
+
+                <!-- Heading -->
+                <h2 class="mb-2">
+                  Detach your worth from your work.
+                </h2>
+
+                <!-- Text -->
+                <p class="fs-sm mb-4">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                </p>
+
+                <!-- Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xs">
+                    <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-5.jpg" alt="...">
+                  </div>
+
+                  <!-- Body -->
+                  <div class="ms-4 text-start">
+
+                    <!-- Title -->
+                    <p class="small mb-0">
+                      Brooke Baker
+                    </p>
+
+                    <!-- Position -->
+                    <p class="small text-muted mt-n1 mb-0">
+                      April 19, 2020
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Link -->
+                <a class="stretched-link" href="blog-post.html"></a>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+
+            <!-- Card -->
+            <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+              <!-- Image -->
+              <img class="card-img-top rounded-top-start" src="assets/img/blog/post-header-3.jpg" alt="...">
+
+              <!-- Shape -->
+              <div class="position-relative">
+                <div class="shape shape-fluid-x shape-top text-white">
+                  <div class="shape-img pb-5">
+                    <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                  </div>
+                </div>
+              </div>
+
+              <!-- Body -->
+              <div class="card-body">
+
+                <!-- Heading -->
+                <h2 class="mb-2">
+                  Designers can learn from interior design.
+                </h2>
+
+                <!-- Text -->
+                <p class="fs-sm mb-4">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                </p>
+
+                <!-- Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xs">
+                    <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-4.jpg" alt="...">
+                  </div>
+
+                  <!-- Body -->
+                  <div class="ms-4 text-start">
+
+                    <!-- Title -->
+                    <p class="small mb-0">
+                      Catherine Westerly
+                    </p>
+
+                    <!-- Position -->
+                    <p class="small text-muted mt-n1 mb-0">
+                      May 01, 2020
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Link -->
+                <a class="stretched-link" href="blog-post.html"></a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLOPRENEURS -->
+    <section class="pt-9 pt-md-11">
+      <div class="container-lg">
+        <div class="row align-items-center mb-6">
+          <div class="col-md">
+
+            <!-- Heading -->
+            <h1 class="mb-0">
+              Solopreneurs
+            </h1>
+
+            <!-- Text -->
+            <p class="text-gray-600 mb-2 md-mb-0">
+              How to grow a business by yourself.
+            </p>
+
+          </div>
+          <div class="col-md-auto">
+
+            <!-- Button -->
+            <a class="btn btn-sm btn-primary" href="#!">
+              View All
+            </a>
+
+          </div>
+        </div>
+        <div class="row mt-n6">
+          <div class="col-md-4">
+
+            <!-- Card -->
+            <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+              <!-- Image -->
+              <img class="card-img-top rounded-top-start" src="assets/img/blog/post-header-4.jpg" alt="...">
+
+              <!-- Shape -->
+              <div class="position-relative">
+                <div class="shape shape-fluid-x shape-top text-white">
+                  <div class="shape-img pb-5">
+                    <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                  </div>
+                </div>
+              </div>
+
+              <!-- Body -->
+              <div class="card-body">
+
+                <!-- Heading -->
+                <h2 class="mb-2">
+                  Build a culture where everyone designs.
+                </h2>
+
+                <!-- Text -->
+                <p class="fs-sm mb-4">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                </p>
+
+                <!-- Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xs">
+                    <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-9.jpg" alt="...">
+                  </div>
+
+                  <!-- Body -->
+                  <div class="ms-4 text-start">
+
+                    <!-- Title -->
+                    <p class="small mb-0">
+                      Danielle Borch
+                    </p>
+
+                    <!-- Position -->
+                    <p class="small text-muted mt-n1 mb-0">
+                      January 01, 2020
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Link -->
+                <a class="stretched-link" href="blog-post.html"></a>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+
+            <!-- Card -->
+            <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+              <!-- Image -->
+              <img class="card-img-top rounded-top-start" src="assets/img/blog/post-header-6.jpg" alt="...">
+
+              <!-- Shape -->
+              <div class="position-relative">
+                <div class="shape shape-fluid-x shape-top text-white">
+                  <div class="shape-img pb-5">
+                    <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                  </div>
+                </div>
+              </div>
+
+              <!-- Body -->
+              <div class="card-body">
+
+                <!-- Heading -->
+                <h2 class="mb-2">
+                  Designers can learn from interior design.
+                </h2>
+
+                <!-- Text -->
+                <p class="fs-sm mb-4">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                </p>
+
+                <!-- Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xs">
+                    <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-6.jpg" alt="...">
+                  </div>
+
+                  <!-- Body -->
+                  <div class="ms-4 text-start">
+
+                    <!-- Title -->
+                    <p class="small mb-0">
+                      Danny Copter
+                    </p>
+
+                    <!-- Position -->
+                    <p class="small text-muted mt-n1 mb-0">
+                      April 05, 2020
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Link -->
+                <a class="stretched-link" href="blog-post.html"></a>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+
+            <!-- Card -->
+            <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+              <!-- Image -->
+              <img class="card-img-top rounded-top-start" src="assets/img/blog/post-header-5.jpg" alt="...">
+
+              <!-- Shape -->
+              <div class="position-relative">
+                <div class="shape shape-fluid-x shape-top text-white">
+                  <div class="shape-img pb-5">
+                    <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                  </div>
+                </div>
+              </div>
+
+              <!-- Body -->
+              <div class="card-body">
+
+                <!-- Heading -->
+                <h2 class="mb-2">
+                  Detach your worth from your work.
+                </h2>
+
+                <!-- Text -->
+                <p class="fs-sm mb-4">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                </p>
+
+                <!-- Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xs">
+                    <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-2.jpg" alt="...">
+                  </div>
+
+                  <!-- Body -->
+                  <div class="ms-4 text-start">
+
+                    <!-- Title -->
+                    <p class="small mb-0">
+                      James Owens
+                    </p>
+
+                    <!-- Position -->
+                    <p class="small text-muted mt-n1 mb-0">
+                      May19, 2020
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Link -->
+                <a class="stretched-link" href="blog-post.html"></a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGINEERING -->
+    <section class="pt-9 pt-md-11 pb-10 pb-md-12">
+      <div class="container-lg">
+        <div class="row align-items-center mb-6">
+          <div class="col-md">
+
+            <!-- Heading -->
+            <h1 class="mb-0">
+              Engineering
+            </h1>
+
+            <!-- Text -->
+            <p class="text-gray-600 mb-2 mb-md-0">
+              Sharing all the tech goodies we discover.
+            </p>
+
+          </div>
+          <div class="col-md-auto">
+
+            <!-- Button -->
+            <a class="btn btn-sm btn-primary" href="#!">
+              View All
+            </a>
+
+          </div>
+        </div>
+        <div class="row mt-n6">
+          <div class="col-md-4">
+
+            <!-- Card -->
+            <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+              <!-- Image -->
+              <img class="card-img-top rounded-top-start" src="assets/img/blog/post-header-7.jpg" alt="...">
+
+              <!-- Shape -->
+              <div class="position-relative">
+                <div class="shape shape-fluid-x shape-top text-white">
+                  <div class="shape-img pb-5">
+                    <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                  </div>
+                </div>
+              </div>
+
+              <!-- Body -->
+              <div class="card-body">
+
+                <!-- Heading -->
+                <h2 class="mb-2">
+                  Build a culture where everyone designs.
+                </h2>
+
+                <!-- Text -->
+                <p class="fs-sm mb-4">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                </p>
+
+                <!-- Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xs">
+                    <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-1.jpg" alt="...">
+                  </div>
+
+                  <!-- Body -->
+                  <div class="ms-4 text-start">
+
+                    <!-- Title -->
+                    <p class="small mb-0">
+                      Katie Williams
+                    </p>
+
+                    <!-- Position -->
+                    <p class="small text-muted mt-n1 mb-0">
+                      April 19, 2020
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Link -->
+                <a class="stretched-link" href="blog-post.html"></a>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+
+            <!-- Card -->
+            <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+              <!-- Image -->
+              <img class="card-img-top rounded-top-start" src="assets/img/blog/post-header-8.jpg" alt="...">
+
+              <!-- Shape -->
+              <div class="position-relative">
+                <div class="shape shape-fluid-x shape-top text-white">
+                  <div class="shape-img pb-5">
+                    <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                  </div>
+                </div>
+              </div>
+
+              <!-- Body -->
+              <div class="card-body">
+
+                <!-- Heading -->
+                <h2 class="mb-2">
+                  Detach your worth from your work.
+                </h2>
+
+                <!-- Text -->
+                <p class="fs-sm mb-4">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                </p>
+
+                <!-- Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xs">
+                    <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-3.jpg" alt="...">
+                  </div>
+
+                  <!-- Body -->
+                  <div class="ms-4 text-start">
+
+                    <!-- Title -->
+                    <p class="small mb-0">
+                      Danielle Callan
+                    </p>
+
+                    <!-- Position -->
+                    <p class="small text-muted mt-n1 mb-0">
+                      May 09, 2020
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Link -->
+                <a class="stretched-link" href="blog-post.html"></a>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+
+            <!-- Card -->
+            <div class="card card-sm rounded-top-start rounded-bottom-end lift lift-lg mt-6">
+
+              <!-- Image -->
+              <img class="card-img-top rounded-top-start" src="assets/img/blog/post-header-9.jpg" alt="...">
+
+              <!-- Shape -->
+              <div class="position-relative">
+                <div class="shape shape-fluid-x shape-top text-white">
+                  <div class="shape-img pb-5">
+                    <svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 25h25L75 0h25v50H0z" fill="currentColor"/></svg>                  </div>
+                </div>
+              </div>
+
+              <!-- Body -->
+              <div class="card-body">
+
+                <!-- Heading -->
+                <h2 class="mb-2">
+                  Designers can learn from interior design.
+                </h2>
+
+                <!-- Text -->
+                <p class="fs-sm mb-4">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                </p>
+
+                <!-- Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Avatar -->
+                  <div class="avatar avatar-xs">
+                    <img class="avatar-img rounded-circle" src="assets/img/avatars/avatar-5.jpg" alt="...">
+                  </div>
+
+                  <!-- Body -->
+                  <div class="ms-4 text-start">
+
+                    <!-- Title -->
+                    <p class="small mb-0">
+                      Brooke Baker
+                    </p>
+
+                    <!-- Position -->
+                    <p class="small text-muted mt-n1 mb-0">
+                      January 19, 2020
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Link -->
+                <a class="stretched-link" href="blog-post.html"></a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-dark border-multicolor">
+      <div class="container-lg">
+        <div class="row align-items-center">
+          <div class="col-12">
+
+            <!-- Divider -->
+            <hr class="text-gray-900 mt-0 mb-8">
+
+          </div>
+          <div class="col-md">
+
+            <!-- Heading -->
+            <h1 class="text-white mb-0">
+              Get your news <span class="text-warning">delivered</span>
+            </h1>
+
+            <!-- Text -->
+            <p class="text-white-60 mb-4 mb-md-0">
+              Only important news and sales. Never spam.
+            </p>
+
+          </div>
+          <div class="col-md-4">
+
+            <!-- Form -->
+            <form>
+              <input class="form-control" type="email" placeholder="Email address">
+            </form>
+
+          </div>
+          <div class="col-12">
+
+            <!-- Divider -->
+            <hr class="text-gray-900 mb-0 mt-8">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer py-8 pt-md-11 bg-dark">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-md-4">
+    
+            <!-- Brand -->
+            <h2 class="font-serif text-white mb-1">
+              Goodkit
+            </h2>
+    
+            <!-- Text -->
+            <p class="text-white-60">
+              A better way to build.
+            </p>
+    
+          </div>
+          <div class="col-6 col-md">
+    
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Services
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Press</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">About us</a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-6 col-md">
+    
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Products
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Homepage</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Pages</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Legal</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">Terms</a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-6 col-md">
+    
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Services
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Press</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">About us</a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-6 col-md">
+    
+            <!-- Heading -->
+            <h6 class="text-uppercase text-white mb-3 mb-md-5">
+              Connect
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">Press</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-white-60" href="#!">About us</a>
+              </li>
+              <li>
+                <a class="text-white-60" href="#!">Pages</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+    
+            <!-- Divider -->
+            <hr class="text-white-10 my-7">
+    
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-12 col-md">
+    
+            <!-- List -->
+            <ul class="list-inline list-unstyled text-gray-600 small mb-md-0">
+              <li class="list-inline-item">
+                © 2020 GoodThemes
+              </li>
+              <li class="list-inline-item ms-md-8">
+                <a class="text-reset" href="#!">
+                  Privacy Policy
+                </a>
+              </li>
+              <li class="list-inline-item ms-md-8">
+                <a class="text-reset" href="#!">
+                  Terms of Service
+                </a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-12 col-md-auto">
+    
+            <!-- Social -->
+            <ul class="list-inline list-unstyled text-gray-600 mb-0">
+              <li class="list-inline-item">
+                <a class="icon icon-sm text-reset" href="#!">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2.163C15.204 2.163 15.584 2.175 16.85 2.233C20.102 2.381 21.621 3.924 21.769 7.152C21.827 8.417 21.838 8.797 21.838 12.001C21.838 15.206 21.826 15.585 21.769 16.85C21.62 20.075 20.105 21.621 16.85 21.769C15.584 21.827 15.206 21.839 12 21.839C8.796 21.839 8.416 21.827 7.151 21.769C3.891 21.62 2.38 20.07 2.232 16.849C2.174 15.584 2.162 15.205 2.162 12C2.162 8.796 2.175 8.417 2.232 7.151C2.381 3.924 3.896 2.38 7.151 2.232C8.417 2.175 8.796 2.163 12 2.163ZM12 0C8.741 0 8.333 0.014 7.053 0.072C2.695 0.272 0.273 2.69 0.073 7.052C0.014 8.333 0 8.741 0 12C0 15.259 0.014 15.668 0.072 16.948C0.272 21.306 2.69 23.728 7.052 23.928C8.333 23.986 8.741 24 12 24C15.259 24 15.668 23.986 16.948 23.928C21.302 23.728 23.73 21.31 23.927 16.948C23.986 15.668 24 15.259 24 12C24 8.741 23.986 8.333 23.928 7.053C23.732 2.699 21.311 0.273 16.949 0.073C15.668 0.014 15.259 0 12 0V0ZM12 5.838C8.597 5.838 5.838 8.597 5.838 12C5.838 15.403 8.597 18.163 12 18.163C15.403 18.163 18.162 15.404 18.162 12C18.162 8.597 15.403 5.838 12 5.838ZM12 16C9.791 16 8 14.21 8 12C8 9.791 9.791 8 12 8C14.209 8 16 9.791 16 12C16 14.21 14.209 16 12 16ZM18.406 4.155C17.61 4.155 16.965 4.8 16.965 5.595C16.965 6.39 17.61 7.035 18.406 7.035C19.201 7.035 19.845 6.39 19.845 5.595C19.845 4.8 19.201 4.155 18.406 4.155Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="list-inline-item ms-1">
+                <a class="icon icon-sm text-reset" href="#!">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.675 0H1.325C0.593 0 0 0.593 0 1.325V22.676C0 23.407 0.593 24 1.325 24H12.82V14.706H9.692V11.084H12.82V8.413C12.82 5.313 14.713 3.625 17.479 3.625C18.804 3.625 19.942 3.724 20.274 3.768V7.008L18.356 7.009C16.852 7.009 16.561 7.724 16.561 8.772V11.085H20.148L19.681 14.707H16.561V24H22.677C23.407 24 24 23.407 24 22.675V1.325C24 0.593 23.407 0 22.675 0V0Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="list-inline-item ms-1">
+                <a class="icon icon-sm text-reset" href="#!">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 4.55705C23.117 4.94905 22.168 5.21305 21.172 5.33205C22.189 4.72305 22.97 3.75805 23.337 2.60805C22.386 3.17205 21.332 3.58205 20.21 3.80305C19.313 2.84605 18.032 2.24805 16.616 2.24805C13.437 2.24805 11.101 5.21405 11.819 8.29305C7.728 8.08805 4.1 6.12805 1.671 3.14905C0.381 5.36205 1.002 8.25705 3.194 9.72305C2.388 9.69705 1.628 9.47605 0.965 9.10705C0.911 11.388 2.546 13.522 4.914 13.997C4.221 14.185 3.462 14.229 2.69 14.081C3.316 16.037 5.134 17.46 7.29 17.5C5.22 19.123 2.612 19.848 0 19.54C2.179 20.937 4.768 21.752 7.548 21.752C16.69 21.752 21.855 14.031 21.543 7.10605C22.505 6.41105 23.34 5.54405 24 4.55705Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="list-inline-item ms-1">
+                <a class="icon icon-sm text-reset" href="#!">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.373 0 0 5.372 0 12C0 17.084 3.163 21.426 7.627 23.174C7.522 22.225 7.427 20.769 7.669 19.733C7.887 18.796 9.076 13.768 9.076 13.768C9.076 13.768 8.717 13.049 8.717 11.986C8.717 10.318 9.684 9.072 10.888 9.072C11.911 9.072 12.406 9.841 12.406 10.762C12.406 11.791 11.751 13.33 11.412 14.757C11.129 15.951 12.011 16.926 13.189 16.926C15.322 16.926 16.961 14.677 16.961 11.431C16.961 8.558 14.897 6.549 11.949 6.549C8.535 6.549 6.531 9.11 6.531 11.756C6.531 12.787 6.928 13.894 7.424 14.494C7.522 14.613 7.536 14.718 7.507 14.839L7.174 16.199C7.121 16.419 7 16.466 6.772 16.36C5.273 15.662 4.336 13.471 4.336 11.711C4.336 7.926 7.086 4.449 12.265 4.449C16.428 4.449 19.663 7.416 19.663 11.38C19.663 15.516 17.056 18.844 13.436 18.844C12.22 18.844 11.077 18.213 10.686 17.466L9.938 20.319C9.667 21.362 8.936 22.669 8.446 23.465C9.57 23.812 10.763 24 12 24C18.627 24 24 18.627 24 12C24 5.372 18.627 0 12 0V0Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="./assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="./assets/js/theme.bundle.js"></script>
+
+  </body>
+</html>
