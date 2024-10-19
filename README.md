@@ -21,7 +21,7 @@ Devy is a powerful, shell-based AI coding assistant designed to boost your produ
 Ensure you have Node.js (version 12 or higher) installed on your system. Then, you can install Devy globally using npm:
 
 ```bash
-$ npm install -g devy
+$ npm install -g @bitosoft/devy
 ```
 
 ## Quick Start
